@@ -12,7 +12,7 @@
     $end_date = $this->Player_Model->now_town->build_start + $cost['time'];
     $ostalos = $end_date - time();
     $one_percent = ($cost['time']/100);
-    $percent = 100 - floor($ostalos/$one_percent);
+    $percent = intval(100 - floor($ostalos/$one_percent));
 ?>
     <div id="upgradeInProgress">
         <div class="isUpgrading"><?=$this->lang->line('is_upgrading')?></div>

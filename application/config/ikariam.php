@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Game name
+ */
+$config['game_name'] = 'iZariam';
 /**
  * Game version
  */
@@ -8,11 +11,11 @@ $config['game_version'] = '0.0.1';
 /**
  * URLs
  */
-$config['style_url'] = 'http://127.0.0.1/design/';   // URL - skin
+$config['style_url'] = 'http://izariam.zzjhons.com/design/';   // URL - skin
 $config['style_version'] = $config['game_version'];  // Skin version
-$config['script_url'] = 'http://127.0.0.1/design/';  // URL - scripts
+$config['script_url'] = 'http://izariam.zzjhons.com/design/';  // URL - scripts
 $config['script_version'] = $config['game_version']; // Scripts version
-$config['forum_url'] = 'http://127.0.0.1/forum/';    // URL - forum
+$config['forum_url'] = 'http://ikariam.zzjhons.com/';    // URL - forum
 
 /**
  * Designs
@@ -23,8 +26,8 @@ $config['design_4'] = TRUE;                          // 0.4.0 design
 /**
  * Mail config
  */
-$config['game_email'] = FALSE;                       // To resolve sending of letters (Adjust SMTP)
-$config['email_from'] = 'hermes@game.ru';            // The address from which the letter comes
+$config['game_email'] = TRUE;                       // To resolve sending of letters (Adjust SMTP)
+$config['email_from'] = 'game@izariam@zzjhons.com';            // The address from which the letter comes
 
 /**
  * Safe
@@ -45,6 +48,6 @@ $config['trade_route_time'] = 604800;                // Duration of a trading ro
 /**
  * News
  */
-$config['head_news'] = 'Welcome to Ikariam!';
+$config['head_news'] = 'Welcome to ' . $config['game_name'] . '!';
 
 ?>

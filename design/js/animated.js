@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           Animated Ikariam (Light version by Nexus)
+// @name           Animated iZariam (Light version by ZZJHONS)
 // @autor          Angelo Verona alias Anilo, Givelin, Omegaboy, TatkaSmoula, _Assassin, Animatrix
 // @email          anilo4ever@gmail.com
 // @namespace      Ikariam

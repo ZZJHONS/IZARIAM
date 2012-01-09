@@ -400,7 +400,7 @@
 <?}?>
 
 <div id="footer">
-    <span class="copyright">&copy; 2010 by Nexus. <?=$this->lang->line('generated')?> {elapsed_time} <?=$this->lang->line('s_mini')?></span>
+    <span class="copyright">ZZJHONS &copy; 2012 - <a href="http://ikariam.zzjhons.com">iZariam</a>. <?=$this->lang->line('generated')?> {elapsed_time} <?=$this->lang->line('s_mini')?></span>
 </div>
 
 <div id="conExtraDiv1"><span></span></div>
@@ -418,7 +418,7 @@
                 <h3><?=$this->lang->line('other_options')?></h3>
                 <ul>
                     <li class="help">
-                        <a href="<?=$this->config->item('base_url')?>game/informations/" title="<?=$this->lang->line('help')?>">
+                        <a href="<?=$this->config->item('base_url')?>game/pedia/" title="<?=$this->lang->line('help')?>">
                             <span class="textLabel"><?=$this->lang->line('help')?></span>
                         </a>
                     </li>

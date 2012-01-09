@@ -250,8 +250,12 @@ class Main extends Controller {
             {
                 case 'russian':
                     $this->session->set_userdata(array('language' => $lang));
-                break;
-                default: $this->session->set_userdata(array('language' => 'english'));
+                	break;
+				case 'spanish':
+					$this->session->set_userdata(array('language' => $lang));
+					break;
+                default:
+					$this->session->set_userdata(array('language' => 'english'));
             }
             redirect($this->config->item('base_url'),'refresh');
         }

@@ -1,71 +1,66 @@
 <?php
 /**
- * Модель центрального отображения
+ * Model of the central display
  */
-class View_Model extends Model
-{
-    function View_Model()
-    {
+class View_Model extends Model {
+    function View_Model() {
         // Call the Model constructor
         parent::Model();
     }
 
     /**
-     * Отображение обучения
+     * The mapping study
      * @param <string> $location
      */
-    function show_tutorial($location, $id)
-    {
-        switch($this->Player_Model->user->tutorial)
-        {
-            // Приветствие
+    function show_tutorial($location, $id) {
+        switch($this->Player_Model->user->tutorial) {
+            // welcome
             case 0: $this->load->view('tut/0',array('location' => $location)); break;
-            // Найм рабочих
+            // recruitment of of workers
             case 1: $this->load->view('tut/1',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 2: $this->load->view('tut/1',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Постройка академии
+            // The construction of Academy
             case 3: $this->load->view('tut/2',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 4: $this->load->view('tut/2',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Найм ученых
+            // recruitment of scientists
             case 5: $this->load->view('tut/3',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 6: $this->load->view('tut/3',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Постройка казарм
+            // The construction of barracks
             case 7: $this->load->view('tut/4',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 8: $this->load->view('tut/4',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Найм копейщиков
+            // Recruitment of spearman
             case 9: $this->load->view('tut/5',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 10: $this->load->view('tut/5',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Постройка стены
+            // The construction of the wall
             case 11: $this->load->view('tut/6',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Постройка порта
+            // The construction of the port
             case 12: $this->load->view('tut/7',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 13: $this->load->view('tut/7',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Апгрейд здания
+            // upgrade buildings
             case 14: $this->load->view('tut/8',array('location' => $location, 'active' => true, 'id' => $id)); break;
             case 15: $this->load->view('tut/8',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            // Нападение на варваров
+            // The attack on the barbarians
             //case 16: $this->load->view('tut/9',array('location' => $location, 'active' => true, 'id' => $id)); break;
             //case 17: $this->load->view('tut/9',array('location' => $location, 'active' => false, 'id' => $id)); break;
-
         }
     }
 
     /**
-     * Главное отображение
+     * The main display
      * @param <string> $location
      * @param <int> $position
      */
-    function show_view($location = 'city', $param1, $param2, $param3)
-    {
-        switch($location)
-        {
+    function show_view($location = 'city', $param1, $param2, $param3) {
+        switch($location) {
             case 'worldmap_iso': $this->load->view('view/'.$location, array('x' => $param1, 'y' => $param2)); break;
             case 'colonize': $this->load->view('view/'.$location, array('id' => $param1, 'position' => $param2)); break;
             case 'academy':
             case 'buildingGround':
             case 'city':
             case 'informations':
+			case 'pedia':
             case 'buildingDetail':
+            case 'wonderDetail':
             case 'island':
             case 'renameCity':
             case 'resource':
@@ -115,32 +110,28 @@ class View_Model extends Model
             case 'stonemason':
             case 'winegrower':
             case 'alchemist':
-            case 'highscore':
-                $this->load->view('view/'.$location);
-            break;
+            case 'highscore': $this->load->view('view/'.$location); break;
             default: $this->load->view('view/null'); break;
         }
     }
 
     /**
-     * Отображение левой части
+     * Displaying the left side
      * @param <string> $location
      */
-    function show_sidebox($location = 'city', $param1, $param2, $param3)
-    {
-        switch($location)
-        {
+    function show_sidebox($location = 'city', $param1, $param2, $param3) {
+        switch($location) {
             case 'diplomacyAdvisorOutBox': $location = 'diplomacyAdvisor'; break;
         }
-        switch($location)
-        {
+        switch($location) {
             case 'demolition': $this->load->view('sidebox/'.$location, array('position' => $param1)); break;
             case 'worldmap_iso': $this->load->view('sidebox/'.$location, array('x' => $param1, 'y' => $param2)); break;
             case 'researchDetail':
+            case 'wonderDetail':
             case 'buildingDetail':
+            case 'pedia': $this->load->view('sidebox/'.$location, array('id' => $param1)); break;
             case 'informations': $this->load->view('sidebox/'.$location, array('id' => $param1)); break;
-            case 'cityMilitary':
-                $this->load->view('sidebox/cityMilitary', array('type' => $param1)); break;
+            case 'cityMilitary': $this->load->view('sidebox/cityMilitary', array('type' => $param1)); break;
             case 'academy':
             case 'barracks':
             case 'shipyard':
@@ -158,8 +149,7 @@ class View_Model extends Model
             case 'glassblowing':
             case 'stonemason':
             case 'winegrower':
-            case 'alchemist':
-                $this->load->view('sidebox/update', array('type' => $this->Data_Model->building_type_by_class($location), 'position' => $param1));
+            case 'alchemist': $this->load->view('sidebox/update', array('type' => $this->Data_Model->building_type_by_class($location), 'position' => $param1));
             case 'city':
             case 'island':
             case 'resource':
@@ -181,30 +171,24 @@ class View_Model extends Model
             case 'safehouseMissions':
             case 'safehouseReports':
             case 'diplomacyAdvisor':
-            case 'highscore':
-                $this->load->view('sidebox/'.$location);
-            break;
+            case 'highscore': $this->load->view('sidebox/'.$location); break;
             case 'plunder':
             case 'colonize':
             case 'transport':
-            case 'sendSpy':
-                $this->load->view('sidebox/back_to_island');
+            case 'sendSpy': $this->load->view('sidebox/back_to_island');
             default: break;
         }
     }
 
-    function show_bread($location = 'city', $param1, $param2, $param3)
-    {
-        switch($location)
-        {
+    function show_bread($location = 'city', $param1, $param2, $param3) {
+        switch($location) {
             case 'armyGarrisonEdit': $location = 'barracks'; break;
             case 'fleetGarrisonEdit': $location = 'shipyard'; break;
         }
         $caption = $this->Data_Model->building_name_by_type($this->Data_Model->building_type_by_class($location));
         @$pos_text = 'pos'.$param1.'_type';
         @$type = ($param1 > 0 and $param1 <= 15) ? $this->Player_Model->now_town->$pos_text : $this->Data_Model->building_type_by_class($location);
-        switch($location)
-        {
+        switch($location) {
             case 'demolition': $caption = $this->lang->line('confirm'); $file = 'building';break;
             case 'renameCity': $caption = $this->lang->line('rename_city'); $file = 'building'; $type = 1; break;
             case 'abolishColony': $caption = $this->lang->line('leave_colony'); $file = 'building'; $type = 1; break;
@@ -247,6 +231,7 @@ class View_Model extends Model
             case 'premiumDetails':
             case 'premiumPayment': $caption = $this->lang->line('ikariam_plus'); $file = 'null'; break;
             case 'researchDetail': $caption = $this->lang->line('research_detail'); $file = 'null'; break;
+            case 'wonderDetail': $caption = $this->lang->line('wonder_info'); $file = 'world'; break;
             case 'merchantNavy': $caption = $this->lang->line('merchant_navy'); $file = 'null'; break;
             case 'transport': $caption = $this->lang->line('transport'); $file = '_island'; break;
             case 'sendSpy': $caption = $this->lang->line('send_spy'); $file = '_island'; break;
@@ -259,8 +244,6 @@ class View_Model extends Model
         }
         $this->load->view('bread/'.$file, array('caption' => $caption, 'type' => $type));
     }
-
 }
-
 /* End of file view_model.php */
-/* Location: ./system/application/models/view_model.php */
+/* Location: ./application/models/view_model.php */

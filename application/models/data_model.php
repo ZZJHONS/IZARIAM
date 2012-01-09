@@ -1473,6 +1473,129 @@ class Data_Model extends Model
         return $return;
     }
 
+
+    /**
+     * Wonder name by type
+     * @param <int> $type
+     * @return <string>
+     */
+    function wonder_name_by_type($type) {
+        switch($type) {
+            case 1: return $this->lang->line('wonder_1'); break;
+            case 2: return $this->lang->line('wonder_2'); break;
+            case 3: return $this->lang->line('wonder_3'); break;
+            case 4: return $this->lang->line('wonder_4'); break;
+            case 5: return $this->lang->line('wonder_5'); break;
+            case 6: return $this->lang->line('wonder_6'); break;
+            case 7: return $this->lang->line('wonder_7'); break;
+            case 8: return $this->lang->line('wonder_8'); break;
+            default: return $this->lang->line('wonder_1'); break;
+        }
+    }
+
+    /**
+     * Wonder effect by type
+     * @param <int> $type
+     * @return <string>
+     */
+    function wonder_effect_by_type($type, $level = 1)
+    {
+        switch($type) {
+            case 1:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder1_level1');
+                    case 2: return $this->lang->line('wonder1_level2');
+                    case 3: return $this->lang->line('wonder1_level3');
+                    case 4: return $this->lang->line('wonder1_level4');
+                    case 5: return $this->lang->line('wonder1_level5');
+                }
+                break;
+            case 2:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder2_level1');
+                    case 2: return $this->lang->line('wonder2_level2');
+                    case 3: return $this->lang->line('wonder2_level3');
+                    case 4: return $this->lang->line('wonder2_level4');
+                    case 5: return $this->lang->line('wonder2_level5');
+                }
+                break;
+            case 3:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder3_level1');
+                    case 2: return $this->lang->line('wonder3_level2');
+                    case 3: return $this->lang->line('wonder3_level3');
+                    case 4: return $this->lang->line('wonder3_level4');
+                    case 5: return $this->lang->line('wonder3_level5');
+                }
+                break;
+            case 4:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder4_level1');
+                    case 2: return $this->lang->line('wonder4_level2');
+                    case 3: return $this->lang->line('wonder4_level3');
+                    case 4: return $this->lang->line('wonder4_level4');
+                    case 5: return $this->lang->line('wonder4_level5');
+                }
+                break;
+            case 5:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder5_level1');
+                    case 2: return $this->lang->line('wonder5_level2');
+                    case 3: return $this->lang->line('wonder5_level3');
+                    case 4: return $this->lang->line('wonder5_level4');
+                    case 5: return $this->lang->line('wonder5_level5');
+                }
+                break;
+            case 6:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder6_level1');
+                    case 2: return $this->lang->line('wonder6_level2');
+                    case 3: return $this->lang->line('wonder6_level3');
+                    case 4: return $this->lang->line('wonder6_level4');
+                    case 5: return $this->lang->line('wonder6_level5');
+                }
+                break;
+            case 7:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder7_level1');
+                    case 2: return $this->lang->line('wonder7_level2');
+                    case 3: return $this->lang->line('wonder7_level3');
+                    case 4: return $this->lang->line('wonder7_level4');
+                    case 5: return $this->lang->line('wonder7_level5');
+                }
+                break;
+            case 8:
+                switch($level) {
+                    case 1: return $this->lang->line('wonder8_level1');
+                    case 2: return $this->lang->line('wonder8_level2');
+                    case 3: return $this->lang->line('wonder8_level3');
+                    case 4: return $this->lang->line('wonder8_level4');
+                    case 5: return $this->lang->line('wonder8_level5');
+                }
+                break;
+        }
+    }
+
+    /**
+     * Wonder description by type
+     * @param <int> $type
+     * @return <string>
+     */
+    function wonder_desc_by_type($type)
+    {
+        switch($type)
+        {
+            case 1: return $this->lang->line('wonder1_desc');
+            case 2: return $this->lang->line('wonder2_desc');
+            case 3: return $this->lang->line('wonder3_desc');
+            case 4: return $this->lang->line('wonder4_desc');
+            case 5: return $this->lang->line('wonder5_desc');
+            case 6: return $this->lang->line('wonder6_desc');
+            case 7: return $this->lang->line('wonder7_desc');
+            case 8: return $this->lang->line('wonder8_desc');
+        }
+    }
+
     /**
      * Название чуда по типу
      * @param <int> $type
