@@ -2,14 +2,23 @@ IZARIAM - Ikariam Developement Project
 ======================================
 
 * Ikariam Developement Forum: http://ikariam.zzjhons.com/
-* Ikariam beta server: http://izariam.zzjhons.com/
+* IZARIAM Beta Server: http://izariam.zzjhons.com/
 
-INSTALACIÓN
+INSTALL:
+========
+
+* Tutorial (Spanish): http://ikariam.zzjhons.com/guias-y-tutoriales/instalacion-del-juegego/
+
+DEVELOPERS:
 ===========
 
-* Guia: http://ikariam.zzjhons.com/guias-y-tutoriales/instalacion-del-juegego/
-
-DESAROLLADORES:
-===============
-
 * ZZJHONS
+
+LANGS:
+======
+
+* English
+* Spanish
+* Russian
+
+PD: Langs isn't finished
