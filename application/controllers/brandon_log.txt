@@ -1,2 +1,0 @@
-Outside the if statement
-ZZLANDA test.Inside the if statement
