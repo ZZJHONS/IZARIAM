@@ -4,8 +4,12 @@
         <p>Выберите тип и кол-во транспортируемых товаров.</p>
     </div>
 
-					
-    <form id="transport" action="<?=$this->config->item('base_url')?>actions/transport/<?=$this->Island_Model->island->id?>/<?=$param1?>/" method="POST">		                    
+
+	<?php
+	$this->load->helper('form');
+	$attributes = array('id' => 'transport');
+	echo form_open('actions/transport/'.$this->Island_Model->island->id.'/'.$param1, $attributes);
+	?>
         <div id="setPremiumTransports" class="contentBox">
             <h3 class="header">Наемный транспорт</h3>
             <div class="content">
@@ -37,7 +41,15 @@
                             <a id="slider_wood_min" class="setMin" href="#reset" title="Сбросить ввод"><span class="textLabel">мин.</span></a>
                             <a id="slider_wood_max" class="setMax" href="#max" title="отправить все"><span class="textLabel">макс.</span></a>
                         </div>
-                        <input class="textfield" id="textfield_wood" type="text" name="cargo_resource"  value="0" size="4" maxlength="9">
+						<?php $data = array(
+									  'name'        => 'cargo_resource',
+									  'id'          => 'textfield_wood',
+									  'class'   => 'textfield',
+									  'value'        => '0',
+									  'size'        => '4',
+									  'maxlength'        => '9',
+									);
+						echo form_input($data); ?>
                     </li>
 <?}?>
 <?if($this->Player_Model->now_town->wine > 0){?>
@@ -51,7 +63,15 @@
                             <a id="slider_wine_min" class="setMin" href="#reset" title="Сбросить ввод"><span class="textLabel">мин.</span></a>
                             <a id="slider_wine_max" class="setMax" href="#max" title="отправить все"><span class="textLabel">макс.</span></a>
                         </div>
-                        <input class="textfield" id="textfield_wine" type="text" name="cargo_tradegood1"  value="0" size="4" maxlength="9">
+						<?php $data = array(
+									  'name'        => 'cargo_tradegood1',
+									  'id'          => 'textfield_wine',
+									  'class'   => 'textfield',
+									  'value'        => '0',
+									  'size'        => '4',
+									  'maxlength'        => '9',
+									);
+						echo form_input($data); ?>
                     </li>
 <?}?>
 <?if($this->Player_Model->now_town->marble > 0){?>
@@ -65,7 +85,15 @@
                             <a id="slider_marble_min" class="setMin" href="#reset" title="Сбросить ввод"><span class="textLabel">мин.</span></a>
                             <a id="slider_marble_max" class="setMax" href="#max" title="отправить все"><span class="textLabel">макс.</span></a>
                         </div>
-                        <input class="textfield" id="textfield_marble" type="text" name="cargo_tradegood2"  value="0" size="4" maxlength="9">
+						<?php $data = array(
+									  'name'        => 'cargo_tradegood2',
+									  'id'          => 'textfield_marble',
+									  'class'   => 'textfield',
+									  'value'        => '0',
+									  'size'        => '4',
+									  'maxlength'        => '9',
+									);
+						echo form_input($data); ?>
                     </li>
 <?}?>
 <?if($this->Player_Model->now_town->crystal > 0){?>
@@ -79,7 +107,15 @@
                             <a id="slider_glass_min" class="setMin" href="#reset" title="Сбросить ввод"><span class="textLabel">мин.</span></a>
                             <a id="slider_glass_max" class="setMax" href="#max" title="отправить все"><span class="textLabel">макс.</span></a>
                         </div>
-                        <input class="textfield" id="textfield_glass" type="text" name="cargo_tradegood3"  value="0" size="4" maxlength="9">
+						<?php $data = array(
+									  'name'        => 'cargo_tradegood3',
+									  'id'          => 'textfield_glass',
+									  'class'   => 'textfield',
+									  'value'        => '0',
+									  'size'        => '4',
+									  'maxlength'        => '9',
+									);
+						echo form_input($data); ?>
                     </li>
 <?}?>
 <?if($this->Player_Model->now_town->sulfur > 0){?>
@@ -93,7 +129,15 @@
                             <a id="slider_sulfur_min" class="setMin" href="#reset" title="Сбросить ввод"><span class="textLabel">мин.</span></a>
                             <a id="slider_sulfur_max" class="setMax" href="#max" title="отправить все"><span class="textLabel">макс.</span></a>
                         </div>
-                        <input class="textfield" id="textfield_sulfur" type="text" name="cargo_tradegood4"  value="0" size="4" maxlength="9">
+						<?php $data = array(
+									  'name'        => 'cargo_tradegood4',
+									  'id'          => 'textfield_sulfur',
+									  'class'   => 'textfield',
+									  'value'        => '0',
+									  'size'        => '4',
+									  'maxlength'        => '9',
+									);
+						echo form_input($data); ?>
                     </li>
 <?}?>
                 </ul>
@@ -117,11 +161,26 @@
                     </div>
                     <div class="transporters">
                         <span class="textLabel"> </span>
-                        <span><input id="transporterCount" name="transporters" size="3" maxlength="3" readonly="readonly" value="0" /> / <span id="totalTansporters"><?=$this->Player_Model->user->transports?></span></span>
+                        <span>
+						<?php $data = array(
+									  'name'        => 'transporters',
+									  'id'          => 'transporterCount',
+									  'value'        => '0',
+									  'size'        => '3',
+									  'maxlength'        => '3',
+									  'readonly'        => 'readonly',
+									);
+						echo form_input($data); ?> / <span id="totalTansporters"><?=$this->Player_Model->user->transports?></span>
+						</span>
                     </div>
                 </div>
                 <div class="centerButton">
-                    <input id="submit" class="button" type="submit" value="Транспортировать!">
+					<?php $data = array(
+								'id'        => 'submit',
+								'class'        => 'button',
+								'value'        => 'Транспортировать!',
+							);
+					echo form_submit($data); ?>
                 </div>
                 </form>
 <!--

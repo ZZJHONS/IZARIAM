@@ -1,7 +1,11 @@
 <div id="mainview">
 <?include_once('building_description.php')?>
-    <form id="buildForm"  action="<?=$this->config->item('base_url')?>actions/army/<?=$position?>/" method="POST">
-        <input type=hidden name="action" value="buildUnits">
+	<?php
+	$this->load->helper('form');
+	$attributes = array('id' => 'buildForm');
+	echo form_open("actions/army/$position", $attributes);
+	?>
+		<?php form_hidden('action', 'buildUnits'); ?>
         <div class="contentBox01h">
             <h3 class="header"><?=$this->lang->line('recruit_units')?></h3>
             <div class="content">
@@ -98,11 +102,23 @@
                         <div class="forminput"><?=$this->lang->line('building_low')?></div>
 <?}else{?>
                         <div class="forminput">
-                            <input class="textfield" id="textfield_<?=$this->Data_Model->army_class_by_type($i)?>" type="text" name="<?=$i?>"  value="0" size="4" maxlength="4">
+							<?php $data = array(
+									  'name'        => $i,
+									  'id'          => 'textfield_'.$this->Data_Model->army_class_by_type($i),
+									  'value'        => '0',
+									  'class'   => 'textfield',
+									  'maxlength'        => '4',
+									  'size'        => '4',
+									);
+							echo form_input($data); ?>
                             <a class="setMax" href="#max" onClick="sliders['slider_<?=$this->Data_Model->army_class_by_type($i)?>'].setActualValue(<?=$max?>); return false;" title="<?=$this->lang->line('recruit_max')?>">
                                 <span class="textLabel"><?=$this->lang->line('max')?></span>
                             </a>
-                            <input class="button" type=submit value="<?=$this->lang->line('recruit')?>!">
+							<?php $data = array(
+										'class'        => 'button',
+										'value'        => $this->lang->line('recruit').'!',
+									);
+							echo form_submit($data); ?>
                         </div>
 <?}}?>
 

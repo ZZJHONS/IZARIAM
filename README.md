@@ -13,6 +13,7 @@ DEVELOPERS:
 ===========
 
 * ZZJHONS
+* Haku
 
 LANGS:
 ======

@@ -9,7 +9,12 @@ $max = floor($max);
 $add_research = $this->Player_Model->now_town->scientists * $this->Player_Model->plus_research;
 $gold_need = $this->Player_Model->scientists_gold_need+3;
 ?>
-    <form id="setScientists" action="<?=$this->config->item('base_url')?>actions/workers/academy/<?=$position?>/" method="POST">
+
+	<?php
+	$this->load->helper('form');
+	$attributes = array('id' => 'setScientists');
+	echo form_open("actions/workers/academy/$position", $attributes);
+	?>
         <div class="contentBox01h">
             <h3 class="header"><span class="textLabel"><?=$this->lang->line('assign_workers')?></span></h3>
             <div class="content">
@@ -36,9 +41,21 @@ $gold_need = $this->Player_Model->scientists_gold_need+3;
                 </div>
                 <a class="setMin" href="#reset" onClick="sliders['default'].setActualValue(0); return false;" title="<?=$this->lang->line('no_scientists')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
                 <a class="setMax" href="#max" onClick="sliders['default'].setActualValue(<?=$max?>); return false;" title="<?=$this->lang->line('max_scientists')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
-                <input autocomplete="off" id="inputScientists" name="s" class="textfield" type="text" maxlength="4">
+				<?php $data = array(
+						  'name'        => 's',
+						  'id'          => 'inputScientists',
+						  'class'   => 'textfield',
+						  'maxlength'        => '4',
+						  'autocomplete'        => 'off',
+						);
+				echo form_input($data); ?>
                 <div class="centerButton">
-                    <input type="submit" id="inputWorkersSubmit" class="button" value="<?=$this->lang->line('confirm')?>">
+					<?php $data = array(
+								'id'        => 'inputWorkersSubmit',
+								'class'        => 'button',
+								'value'        => $this->lang->line('confirm'),
+							);
+					echo form_submit($data); ?>
                 </div>
             </div>
             <div class="footer"></div>

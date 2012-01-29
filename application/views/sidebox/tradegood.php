@@ -75,17 +75,31 @@
             </ul>
         </div>
 
-        <form id="donateForm" action="<?=$this->config->item('base_url')?>actions/resources/tradegood/<?=$this->Island_Model->island->id?>/"  method="POST">
+		<?php
+			$this->load->helper('form');
+			$attributes = array('id' => 'donateForm');
+			echo form_open('actions/resources/tradegood/'.$this->Island_Model->island->id, $attributes);
+		?>
             <div id="donate">
                 <label for="donateWood"><?=$this->lang->line('donate')?>:</label>
-                <input type="hidden" name="id" value="<?=$this->Island_Model->island->id?>">
-                <input type="hidden" name="type" value="resource">
-                <input type="hidden" name="action" value="IslandScreen">
-                <input type="hidden" name="function" value="donate">
-                <input id="donateWood" name="donation" type="text" autocomplete="off" class="textfield">
+				<?php form_hidden('id', $this->Island_Model->island->id); ?>
+				<?php form_hidden('type', 'resource'); ?>
+				<?php form_hidden('action', 'IslandScreen'); ?>
+				<?php form_hidden('function', 'donate'); ?>
+				<?php $data = array(
+						  'name'        => 'donation',
+						  'id'          => 'donateWood',
+						  'class'   => 'textfield',
+						  'autocomplete'        => 'off',
+						);
+				echo form_input($data); ?>
                 <a href="#setmax" title="<?=$this->lang->line('donate_max')?>" onClick="Dom.get('donateWood').value=<?=$max?>;">max</a>
                 <div class="centerButton">
-                    <input type="submit" class="button" value="<?=$this->lang->line('donate_upgrade')?>">
+					<?php $data = array(
+								'class'        => 'button',
+								'value'        => $this->lang->line('donate_upgrade'),
+							);
+					echo form_submit($data); ?>
                 </div>
             </div>
         </form>

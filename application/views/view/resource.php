@@ -19,7 +19,11 @@
         <p>Древесина поступает на лесопилку из соседнего леса. После обработки она превращается в стройматериалы, необходимые для постройки зданий.
 Лесопилка улучшается всеми жителями острова. Чем больше лесопилка, тем больше рабочих Вы можете на ней использовать.</p>      
     </div>
-    <form id="setWorkers" action="<?=$this->config->item('base_url')?>actions/workers/resource/<?=$this->Island_Model->island->id?>"  method="POST">
+	<?php
+	$this->load->helper('form');
+	$attributes = array('id' => 'setWorkers');
+	echo form_open('actions/workers/resource/'.$this->Island_Model->island->id, $attributes);
+	?>
         <div id="setWorkersBox" class="contentBox">
             <h3 class="header"><span class="textLabel">Назначить рабочих</span></h3>
             <div class="content">
@@ -53,8 +57,21 @@
                 <a class="setMin" href="#reset" onClick="sliders['default'].setActualValue(0); return false;" title="нет рабочих"><span class="textLabel">мин.</span></a>
                 <a class="setMax" href="#max" onClick="sliders['default'].setActualValue(<?=$max?>); return false;" title="макс. число рабочих"><span class="textLabel">макс.</span></a>
 
-                <input class="textfield" id="inputWorkers" type="text" name="rw" maxlength="4" autocomplete="off">
-                <input class="button" id="inputWorkersSubmit" type="submit" value="Подтверждение">
+				<?php $data = array(
+						  'name'        => 'rw',
+						  'id'          => 'inputWorkers',
+						  'class'   => 'textfield',
+						  'maxlength'        => '4',
+						  'autocomplete'        => 'off',
+						);
+				echo form_input($data);
+				
+				$data = array(
+						'id'        => 'inputWorkersSubmit',
+						'class'        => 'button',
+						'value'        => 'Подтверждение',
+					);
+				echo form_submit($data); ?>
             </div>
             <div class="footer"></div>
         </div>
@@ -107,7 +124,7 @@
         dir : 'ltr',
         id : "default",
         maxValue : <?=floor($max)?>,
-        overcharge : <?=$over_max-$max?>,
+        overcharge : <?=(($over_max-$max >= 0) ? $over_max-$max : 0)?>,
         iniValue : <?=floor($this->Player_Model->now_town->workers)?>,
         bg : "sliderbg",
         thumb : "sliderthumb",

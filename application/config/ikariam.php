@@ -11,11 +11,11 @@ $config['game_version'] = '0.0.1';
 /**
  * URLs
  */
-$config['style_url'] = 'http://izariam.zzjhons.com/design/';   // URL - skin
+$config['style_url'] = 'http://localhost/design/';   // URL - skin
 $config['style_version'] = $config['game_version'];  // Skin version
-$config['script_url'] = 'http://izariam.zzjhons.com/design/';  // URL - scripts
+$config['script_url'] = 'http://localhost/design/';  // URL - scripts
 $config['script_version'] = $config['game_version']; // Scripts version
-$config['forum_url'] = 'http://ikariam.zzjhons.com/';    // URL - forum
+$config['forum_url'] = 'http://localhost/';    // URL - forum
 
 /**
  * Designs

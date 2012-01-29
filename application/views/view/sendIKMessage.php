@@ -3,7 +3,10 @@
     <p>Вы можете написать сообщение другим игрокам или предложить им какой-либо договор - по мере того как Вы исследовали различные типы договоров.</p>
 
     <div id="notice">
-        <form action="<?=$this->config->item('base_url')?>actions/messages/send/<?=$param1?>/" method="post">
+		<?php
+		$this->load->helper('form');
+		echo form_open("actions/messages/send/$param1");
+		?>
             <div id="mailRecipient">
                 <span class="maillabels"><label>Получатель:</label></span>
                 <span><?=$this->Data_Model->temp_users_db[$param1]->login?></span>
@@ -17,10 +20,23 @@
                 </span>
             </div>
             <span class="maillabels"><label for="text">Сообщение:</label></span><br />
-            <span><textarea id="text" class="textfield" name="content" ></textarea></span><br />
+            <span>
+			<?php $data = array(
+						  'name'        => 'content',
+						  'id'          => 'text',
+						  'class'   => 'textfield',
+						);
+			echo form_textarea($data); ?>
+			</span><br />
             <div id="nr_chars_div" style="display:none">Доступно  <span id="nr_chars"></span>&nbsp;  символов.</div>
             <div class="centerButton">
-                <input type="submit" class="button" onclick="return confirmIfNeccessary(document.getElementById('treaties').value,'Вы уверены?')" title="Отправить" value="Отправить">
+				<?php $data = array(
+							'class'        => 'button',
+							'onclick'        => "return confirmIfNeccessary(document.getElementById('treaties').value,'Вы уверены?')",
+							'title'        => 'Отправить',
+							'value'        => 'Отправить',
+						);
+				echo form_submit($data); ?>
             </div>
         </form>
     </div>

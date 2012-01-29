@@ -74,13 +74,27 @@
             </ul>
         </div>
 
-        <form id="donateForm" action="<?=$this->config->item('base_url')?>actions/resources/resource/<?=$this->Island_Model->island->id?>/"  method="POST">
+		<?php
+		$this->load->helper('form');
+		$attributes = array('id' => 'donateForm');
+		echo form_open('actions/resources/resource/'.$this->Island_Model->island->id, $attributes);
+		?>
             <div id="donate">
                 <label for="donateWood"><?=$this->lang->line('donate')?>:</label>
-                <input id="donateWood" name="donation" type="text" autocomplete="off" class="textfield">
+				<?php $data = array(
+						  'name'        => 'donation',
+						  'id'          => 'donateWood',
+						  'class'   => 'textfield',
+						  'autocomplete'        => 'off',
+						);
+				echo form_input($data); ?>
                 <a href="#setmax" title="<?=$this->lang->line('donate_max')?>" onClick="Dom.get('donateWood').value=<?=$max?>;">max</a>
                 <div class="centerButton">
-                    <input type="submit" class="button" value="<?=$this->lang->line('donate_upgrade')?>">
+					<?php $data = array(
+								'class'        => 'button',
+								'value'        => $this->lang->line('donate_upgrade'),
+							);
+					echo form_submit($data); ?>
                 </div>
             </div>
         </form>

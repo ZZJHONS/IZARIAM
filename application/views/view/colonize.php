@@ -8,13 +8,16 @@
         <div class="content" id="relatedCities">
             <p><?=$this->lang->line('move_town_text')?></p>
             <div style="padding:5px 10px 10px 10px;">
-                <form action="<?=$this->config->item('base_url')?>actions/colonize/<?=$id?>/<?=$position?>/" method="post">
+				<?php
+					$this->load->helper('form');
+					echo form_open('actions/colonize/'.$id.'/'.$position);
+				?>
                     <div style="height:100px">
                         <img src="<?=$this->config->item('style_url')?>skin/premium/movecity.jpg" style="float:left;">
                         <table style="width:400px;background-color:#FFFBEC;border:1px solid #FBE7C0;margin-top:45px;">
                             <tr>
                                 <td  style="width:250px;">
-                                    <select id="moveCitySelect" class="citySpecialSelect smallFont" name="cityId" tabindex="1" >
+									<select id="moveCitySelect" class="citySpecialSelect smallFont" name="cityId" tabindex="1" >
                                         <option>-- <?=$this->lang->line('choose_town')?> --</option>
 <?foreach($this->Player_Model->towns as $town){?>
 <?$island = $this->Player_Model->islands[$town->island]?>
@@ -29,7 +32,12 @@
                                     <a class="notenough" style="color:#999;font-weight:normal;font-size:11px;text-decoration:none" href="<?=$this->config->item('base_url')?>game/premium/">200 <?=$this->lang->line('ambrosy_missing')?><br><span class="buyNow" style="text-decoration:underline"><?=$this->lang->line('acquire_now')?></span></a>
 <?}else{?>
             <div class="centerButton">
-                <input class="button" name="action" type=submit value="<?=$this->lang->line('move')?>">
+				<?php $data = array(
+								'name'        => 'action',
+								'class'        => 'button',
+								'value'        => $this->lang->line('move'),
+							);
+					echo form_submit($data); ?>
             </div>
 <?}?>
                                 </td>
@@ -99,7 +107,10 @@ var transporterDisplay;
 Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$this->Player_Model->user->transports?>, <?=$this->config->item('transport_capacity')?>, Dom.get("transporterCount"), 40+1250);});
 </script>
 <p><?=$this->lang->line('more_resources')?></p>
-<form action="<?=$this->config->item('base_url')?>actions/colonize/<?=$id?>/<?=$position?>/" method="post">
+<?php
+	$this->load->helper('form');
+	echo form_open('actions/colonize/'.$id.'/'.$position);
+?>
 <ul class="resourceAssign">
     <li class="wood">
         <label for="textfield_resource"><?=$this->lang->line('send')?> <?=$this->lang->line('wood')?>:</label>
@@ -112,7 +123,7 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
 		create_slider({
                     dir : 'ltr',
                     id : "slider_resource",
-                    maxValue : <?if($capacity < $this->Player_Model->now_town->wood){?><?=$capacity?><?}else{?><?=$this->Player_Model->now_town->wood?><?}?>,
+                    maxValue : <?if($capacity < $this->Player_Model->now_town->wood - 1250){?><?=$capacity?><?}else{?><?=$this->Player_Model->now_town->wood - 1250?><?}?>,
                     overcharge : 0,
                     iniValue : 0,
                     bg : "sliderbg_resource",
@@ -137,7 +148,15 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
             <a class="setMin" href="#reset" onClick="setColonizeMinValue('slider_resource'); return false;" title="<?=$this->lang->line('reset_entry')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
             <a class="setMax" href="#max" onClick="setColonizeMaxValue('slider_resource'); return false;" title="<?=$this->lang->line('send_all')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
         </div>
-        <input class="textfield" id="textfield_resource" type="text" name="sendresource" value="0" size="4" maxlength="9">
+		<?php $data = array(
+				  'name'        => 'sendresource',
+				  'id'          => 'textfield_resource',
+				  'class'   => 'textfield',
+				  'value'   => '0',
+				  'size'   => '4',
+				  'maxlength'        => '9',
+				);
+		echo form_input($data); ?>
     </li>
     <li class="wine">					
         <label for="textfield_wine"><?=$this->lang->line('send')?> <?=$this->lang->line('wine')?>:</label>
@@ -175,7 +194,15 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
             <a class="setMin" href="#reset" onClick="setColonizeMinValue('slider_wine'); return false;" title="<?=$this->lang->line('reset_entry')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
             <a class="setMax" href="#max" onClick="setColonizeMaxValue('slider_wine'); return false;" title="<?=$this->lang->line('send_all')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
         </div>
-        <input class="textfield" id="textfield_wine" type="text" name="sendwine"  value="0" size="4" maxlength="9">
+		<?php $data = array(
+				  'name'        => 'sendwine',
+				  'id'          => 'textfield_wine',
+				  'class'   => 'textfield',
+				  'value'   => '0',
+				  'size'   => '4',
+				  'maxlength'        => '9',
+				);
+		echo form_input($data); ?>
     </li>
     <li class="marble">
         <label for="textfield_marble"><?=$this->lang->line('send')?> <?=$this->lang->line('marble')?>:</label>
@@ -213,7 +240,15 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
             <a class="setMin" href="#reset" onClick="setColonizeMinValue('slider_marble'); return false;" title="<?=$this->lang->line('reset_entry')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
             <a class="setMax" href="#max" onClick="setColonizeMaxValue('slider_marble'); return false;" title="<?=$this->lang->line('send_all')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
         </div>
-        <input class="textfield" id="textfield_marble" type="text" name="sendmarble"  value="0" size="4" maxlength="9">
+		<?php $data = array(
+				  'name'        => 'sendmarble',
+				  'id'          => 'textfield_marble',
+				  'class'   => 'textfield',
+				  'value'   => '0',
+				  'size'   => '4',
+				  'maxlength'        => '9',
+				);
+		echo form_input($data); ?>
     </li>
     <li class="glass">
         <label for="textfield_crystal"><?=$this->lang->line('send')?> <?=$this->lang->line('crystal')?>:</label>
@@ -251,7 +286,15 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
             <a class="setMin" href="#reset" onClick="setColonizeMinValue('slider_crystal'); return false;" title="<?=$this->lang->line('reset_entry')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
             <a class="setMax" href="#max" onClick="setColonizeMaxValue('slider_crystal'); return false;" title="<?=$this->lang->line('send_all')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
         </div>
-        <input class="textfield" id="textfield_crystal" type="text" name="sendcrystal"  value="0" size="4" maxlength="9">
+		<?php $data = array(
+				  'name'        => 'sendcrystal',
+				  'id'          => 'textfield_crystal',
+				  'class'   => 'textfield',
+				  'value'   => '0',
+				  'size'   => '4',
+				  'maxlength'        => '9',
+				);
+		echo form_input($data); ?>
     </li>
     <li class="sulfur">
         <label for="textfield_sulfur"><?=$this->lang->line('send')?> <?=$this->lang->line('sulfur')?>:</label>
@@ -289,7 +332,15 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
             <a class="setMin" href="#reset" onClick="setColonizeMinValue('slider_sulfur'); return false;" title="<?=$this->lang->line('reset_entry')?>"><span class="textLabel"><?=$this->lang->line('min')?></span></a>
             <a class="setMax" href="#max" onClick="setColonizeMaxValue('slider_sulfur'); return false;" title="<?=$this->lang->line('send_all')?>"><span class="textLabel"><?=$this->lang->line('max')?></span></a>
         </div>
-        <input class="textfield" id="textfield_sulfur" type="text" name="sendsulfur"  value="0" size="4" maxlength="9">
+		<?php $data = array(
+				  'name'        => 'sendsulfur',
+				  'id'          => 'textfield_sulfur',
+				  'class'   => 'textfield',
+				  'value'   => '0',
+				  'size'   => '4',
+				  'maxlength'        => '9',
+				);
+		echo form_input($data); ?>
     </li>
     <li>
         <script type="text/javascript">
@@ -330,11 +381,27 @@ Event.onDOMReady(function() {transporterDisplay = new transportController(<?=$th
     </div>
     <div class="transporters">
         <span class="textLabel"><?=$this->lang->line('button_transporters_name')?>: </span>
-        <span><input id="transporterCount" name="transporters" size="3" maxlength="3" readonly="readonly" value="3" /> / <?=number_format($this->Player_Model->user->transports)?></span>
+        <span>
+		<?php $data = array(
+				  'name'        => 'transporters',
+				  'id'          => 'transporterCount',
+				  'value'   => '3',
+				  'size'   => '3',
+				  'maxlength'   => '3',
+				  'readonly'        => 'readonly',
+				);
+		echo form_input($data); ?> / <?=number_format($this->Player_Model->user->transports)?>
+		</span>
     </div>
 </div>
-<div class="centerButton">			 
-    <input id="colonizeBtn" name="action" class="button" type="submit" value="<?=$this->lang->line('base_colony')?>">
+<div class="centerButton">
+	<?php $data = array(
+				'id'        => 'colonizeBtn',
+				'name'        => 'action',
+				'class'        => 'button',
+				'value'        => $this->lang->line('base_colony'),
+			);
+	echo form_submit($data); ?>
 </div>
 </form>
 <?}?>
