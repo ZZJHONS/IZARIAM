@@ -92,6 +92,14 @@ class Game extends Controller {
     }
 
     /**
+     * Version page
+     * @param <int> $id
+     */
+    function version() {
+        $this->load->view('view/version');
+    }
+
+    /**
      * Forest
      * @param <int> $id
      */
