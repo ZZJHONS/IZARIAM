@@ -102,16 +102,16 @@
 <div id="arrow">
 </div>
 <div id="tutorialAdvisor">
-    <div id="advisorImage" class="allAdvisors"><a href="javascript:;" id="tutorialAdvisorLink" title="Обучение"></a></div>
+    <div id="advisorImage" class="allAdvisors"><a href="javascript:;" id="tutorialAdvisorLink" title="Tutorial"></a></div>
 </div>
 <div id="tutorialMessage">
-    <h3>Обучение</h3>
+    <h3>Tutorial</h3>
     <a href="javascript:;" id="tutorialAdvisorCloseLink"></a>
     <div class="content">
-    <p>Добро пожаловать в островное королевство,<br />
-Мы твои советники и мы расскажем тебе обо всех важных событиях, связанных с городами, военными действиями, исследованиями и дипломатией.<br />
+    <p>Welcome to the relm of Ikaria,<br />
+We are your advisers and we will describe to you about all outstanding events, connected with your cities, military actions, research and diplomacy.<br />
 <br />
-Также мы появимся в начале игры и расскажем о первых важных шагах в игре. Если вам нужна наша помощь, нажмите на символах в верхней левой части игрового окна. </p>
+We will appear at the beginning of every game and will describe about the first major steps into the game. If our help is necessary to you, press on the symbols in the upper left side of the play window. </p>
 
         <div class="centerButton"><a href="javascript:;" id="okButton" class="button">ОК</a></div>
     <div class="footer"></div>
