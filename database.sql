@@ -1,17 +1,9 @@
 /*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 50133
-Source Host           : localhost:3306
-Source Database       : ikariam
-
-Target Server Type    : MYSQL
-Target Server Version : 50133
-File Encoding         : 65001
-
-Date: 2010-12-10 07:51:12
-*/
+ * Project: iZariam
+ * Edited: 31/01/2012
+ * By: ZZJHONS
+ * Info: zzjhosn@gmail.com
+ */
 
 SET FOREIGN_KEY_CHECKS=0;
 

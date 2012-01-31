@@ -1,12 +1,16 @@
+
+ # Project: iZariam
+ # Edited: 31/01/2012
+ # By: ZZJHONS
+ # Info: zzjhosn@gmail.com
+
 <IfModule mod_rewrite.c>
  
     RewriteEngine On
     RewriteBase /
  
-    ### Canonicalize codeigniter URLs
+    ## Canonicalize codeigniter URLs
  
-    # If your default controller is something other than
-    # "welcome" you should probably change this
     RewriteRule ^(default_controller(/index)?|index(\.php)?)/?$ / [L,R=301]
     RewriteRule ^(.*)/index/?$ $1 [L,R=301]
  
@@ -15,27 +19,19 @@
     RewriteRule ^(.+)/$ $1 [L,R=301]
  
     # Enforce www
-    # If you have subdomains, you can add them to 
-    # the list using the "|" (OR) regex operator
+    # If you have subdomains, you can add them to the list using the "|" (OR) regex operator
     RewriteCond %{HTTP_HOST} !^(www|sub1|sub2|sub3|beta|izariam) [NC]
-    RewriteRule ^(.*)$ http://izariam.zzjhons.com/$1 [L,R=301]
+    RewriteRule ^(.*)$ http://localhost/$1 [L,R=301]
  
     # Enforce NO www
     #RewriteCond %{HTTP_HOST} ^www [NC]
-    #RewriteRule ^(.*)$ http://izariam.zzjhons.com/$1 [L,R=301]
- 
-    ###
- 
-    # Removes access to the system folder by users.
-    # Additionally this will allow you to create a System.php controller,
-    # previously this would not have been possible.
+    #RewriteRule ^(.*)$ http://localhost/$1 [L,R=301]
+
     # 'system' can be replaced if you have renamed your system folder.
     RewriteCond %{REQUEST_URI} ^system.*
     RewriteRule ^(.*)$ /index.php/$1 [L]
  
-    # Checks to see if the user is attempting to access a valid file,
-    # such as an image or css document, if this isn't true it sends the
-    # request to index.php
+    # Checks to see if the user is attempting to access a valid file, such as an image or css document, if this isn't true it sends the request to index.php
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php/$1 [L]
