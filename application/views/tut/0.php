@@ -19,6 +19,7 @@
         z-index: 10000;
     }
 
+<<<<<<< HEAD
     #tutorialAdvisor
     { 
         left: 260px;
@@ -26,6 +27,21 @@
         top: 185px;
         z-index: 50;
     }
+=======
+<div id="arrow">
+</div>
+<div id="tutorialAdvisor">
+    <div id="advisorImage" class="allAdvisors"><a href="javascript:;" id="tutorialAdvisorLink" title="Tutorial"></a></div>
+</div>
+<div id="tutorialMessage">
+    <h3>Tutorial</h3>
+    <a href="javascript:;" id="tutorialAdvisorCloseLink"></a>
+    <div class="content">
+    <p>Welcome to the relm of Ikaria,<br />
+We are your advisers and we will describe to you about all outstanding events, connected with your cities, military actions, research and diplomacy.<br />
+<br />
+We will appear at the beginning of every game and will describe about the first major steps into the game. If our help is necessary to you, press on the symbols in the upper left side of the play window. </p>
+>>>>>>> ed693a9180dcae13ef84bf85748626bce2806e15
 
     #tutorialAdvisor div
     {
