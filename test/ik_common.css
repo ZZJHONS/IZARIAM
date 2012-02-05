@@ -37,6 +37,8 @@ div.count{width:40px;text-align:center;margin:2px
 0 0 0;padding:3px;background-color:#fae0ae}
 .tooltip2
 table{margin:0px}
+.tooltip2.militaryAdvisor{right:50px}
+.tooltip2.unitTooltip{left:20px;top:20px}
 p{line-height:1.34em}
 #mainview
 p{margin:4px
@@ -48,6 +50,7 @@ hr{color:#bc575d;background-color:#bc575d;border:none;border-color:#bc575d;heigh
 a:hover{text-decoration:underline}
 *:focus{outline:none;border:none}
 strong{font-weight:bold}
+.bold{font-weight:bold}
 .accesshint{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #globalResources h3, #cityResources h3, #advisors h3, #GF_toolbar h3, #cityNav h3, #breadcrumbs
 h3{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -174,6 +177,13 @@ span.cityresource{float:left;width:30px;height:20px;background:url(resources/ico
 #cityNav .citySelect .tradegood4
 span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_sulfur.gif) no-repeat center}
 #container
+#facebook_button{z-index:5000;position:absolute;left:-5px;top:44px}
+#container #facebook_button
+a{display:block;width:42px;height:70px;background:url(layout/facebook_normal.gif) no-repeat 0px 0px}
+#container #facebook_button a:hover{background:url(layout/facebook_hover.gif) no-repeat 0px 0px}
+#container #facebook_button
+a.down{background:url(layout/facebook_push.gif) no-repeat 0px 0px}
+#container
 #cityResources{z-index:5000;position:absolute;left:146px;top:96px;width:450px;height:32px}
 #container #cityResources .resources
 .disabled{background-image:none;color:#999}
@@ -202,11 +212,13 @@ li.blockadedCities{width:420px;background-image:url(layout/resources_related_cit
 #container #cityResources
 .sulfur{left:370px}
 #container #cityResources li
-.tooltip{position:absolute;display:none;top:26px;left:0px;background-color:#f1d7ad;border:1px
+.tooltip{display:none;top:26px;left:0px;background-color:#f1d7ad;border:1px
 solid #be8d53;border-top-width:4px;font-size:11px;line-height:1em;color:#542c0f;width:auto;white-space:nowrap;padding:4px
 8px}
 #container #cityResources li .tooltip
 .textLabel{position:static;display:inline;left:0;height:auto;overflow:visible}
+#container #cityResources li .tooltip
+.researchNeededWarning{color:red;font-weight:bold;line-height:20px}
 #globalResources{position:absolute;top:36px;left:37px;width:111px;height:92px}
 #globalResources
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
@@ -215,42 +227,29 @@ li{position:absolute}
 #globalResources li
 a{position:absolute;font-weight:bold;color:#906646}
 #globalResources li a:hover{text-decoration:none}
-#globalResources .transporters
-a{top:2px;left:0px;width:98px;height:31px;background:url(layout/btn_ship.jpg) no-repeat 0px 0px;text-align:right;padding-right:12px;line-height:31px}
-#globalResources .transporters a:hover{background-position:0px -31px}
-#globalResources .transporters
-a.down{background-position:0px -62px}
-#globalResources .transporters .transSum, #globalResources .transporters
+#globalResources .ambrosiaNoSpin
+a{top:-36px;left:0px;width:98px;height:70px;background:url(premium/premiumsymbol_a_no_spin.gif) no-repeat 0px 0px;text-align:right;padding-right:12px;line-height:108px}
+#globalResources .ambrosia
+a{top:-36px;left:0px;width:98px;height:70px;background:url(premium/premiumsymbol_a.gif) no-repeat 0px 0px;text-align:right;padding-right:12px;line-height:108px}
+#globalResources .ambrosia a:hover, #globalResources .ambrosiaNoSpin a:hover{background:url(premium/premiumsymbol_b.gif) no-repeat 0px 0px}
+#globalResources .ambrosia a.down, #globalResources .ambrosiaNoSpin
+a.down{background:url(premium/premiumsymbol_c.gif) no-repeat 0px 0px}
+#globalResources .ambrosia .transSum, #globalResources .transporters
 .transAvail{display:block;margin-left:64px}
-#globalResources .transporters
+#globalResources .ambrosia
 .transAvail{margin-top:9px;font-size:18px}
 #globalResources .gold
 a{top:62px;width:98px;height:29px;background:url(layout/btn_gold.jpg) no-repeat 0px 0px;padding-right:12px;line-height:29px;text-align:right}
 #globalResources .gold a:hover{background-position:0px -29px}
 #globalResources .gold
 a.down{background-position:0px -58px}
-#globalResources .ambrosia
-a{top:33px;width:98px;height:29px;background:url(layout/btn_ambrosia.jpg) no-repeat 0px 0px;padding-right:12px;line-height:29px;text-align:right}
-#globalResources .ambrosia a:hover{background-position:0px -29px}
-#globalResources .ambrosia
+#globalResources .transporters
+a{top:33px;width:98px;height:29px;background:url(layout/btn_ship2.jpg) no-repeat 0px 0px;padding-right:12px;line-height:29px;text-align:right}
+#globalResources .transporters a:hover{background-position:0px -29px}
+#globalResources .transporters
 a.down{background-position:0px -58px}
 #globalResources
 .goldBalance{display:none}
-
-#globalResources
-li{position:absolute}#globalResources li
-a{position:absolute;font-weight:bold;color:#906646}#globalResources li a:hover{text-decoration:none}#globalResources .ambrosiaNoSpin
-a{top:-36px;left:0px;width:98px;height:70px;background:url(premium/premiumsymbol_a_no_spin.gif) no-repeat 0px 0px;text-align:right;padding-right:12px;line-height:108px}#globalResources .ambrosia
-a{top:-36px;left:0px;width:98px;height:70px;background:url(premium/premiumsymbol_a.gif) no-repeat 0px 0px;text-align:right;padding-right:12px;line-height:108px}#globalResources .ambrosia a:hover, #globalResources .ambrosiaNoSpin a:hover{background:url(premium/premiumsymbol_b.gif) no-repeat 0px 0px}#globalResources .ambrosia a.down, #globalResources .ambrosiaNoSpin
-a.down{background:url(premium/premiumsymbol_c.gif) no-repeat 0px 0px}#globalResources .ambrosia .transSum, #globalResources .transporters
-.transAvail{display:block;margin-left:64px}#globalResources .ambrosia
-.transAvail{margin-top:9px;font-size:18px}#globalResources .gold
-a{top:62px;width:98px;height:29px;background:url(layout/btn_gold.jpg) no-repeat 0px 0px;padding-right:12px;line-height:29px;text-align:right}#globalResources .gold a:hover{background-position:0px -29px}#globalResources .gold
-a.down{background-position:0px -58px}#globalResources .transporters
-a{top:33px;width:98px;height:29px;background:url(layout/btn_ship2.jpg) no-repeat 0px 0px;padding-right:12px;line-height:29px;text-align:right}#globalResources .transporters a:hover{background-position:0px -29px}#globalResources .transporters
-a.down{background-position:0px -58px}#globalResources
-.goldBalance{display:none}
-
 #advisors
 li{position:absolute}
 #advisors
@@ -314,8 +313,8 @@ a.premiumactive{background-image:url(layout/advisors/diplomat_premium_active.gif
 #mainview{position:relative;margin:0px
 29px -18px 251px;z-index:30;padding:0px
 18px}
-#footer{clear:both;position:relative;width:560px;height:33px;padding:47px
-120px 0px 340px;margin:0
+#footer{clear:both;position:relative;width:788px;height:33px;padding:47px
+120px 0px 115px;margin:0
 -10px;background-image:url(layout/bg_footer2.jpg);font-size:11px;font-weight:bold;color:#edd090;text-align:right}
 #footer
 .copyright{float:left}
@@ -350,6 +349,11 @@ p{margin:5px
 #container .dynamic
 img{display:block;margin:0
 auto}
+#container .dynamic .content
+.sideboxLink{cursor:pointer}
+#container .dynamic .content .sideboxLink
+p{font-weight:700;text-align:center}
+#container .dynamic .content .sideboxLink:hover{text-decoration:underline}
 .contentBox{background-image:url(layout/bg_contentBox01.gif);position:relative;width:680px;margin-bottom:10px}
 .contentBox
 h3.header{background-image:url(layout/bg_contentBox01h_header.gif);background-repeat:no-repeat;height:20px;line-height:20px;padding:10px
@@ -359,6 +363,10 @@ div.content{position:relative;margin:0px
 3px}
 .contentBox
 div.footer{background:url(layout/bg_contentBox01_footer.gif) no-repeat;overflow:hidden;height:3px}
+#container #mainview
+h4{font-size:14px;font-weight:bold;line-height:22px;margin-bottom:2px;margin-left:30px;text-align:left}
+#mainview
+h4.innerHeader{font-size:12px !important;font-weight:bold;text-align:center !important}
 .contentBox01,.contentBox01h{background-image:url(layout/bg_contentBox01.gif);position:relative;width:680px;margin-bottom:10px}
 .contentBox01 div.content,
 .contentBox01h
@@ -406,8 +414,17 @@ solid #e4b873;background-color:#fdf7dd}
 tr{font-weight:normal}
 #container #mainview table.TableHoriMax
 tr.alt{background-color:#fdf1d4}
+#container #mainview table.TableHoriMax th,
 #container #mainview table.TableHoriMax
-th{text-align:center;height:24px;padding:4px;font-weight:bold;background-color:#faeac6}
+td.headline{text-align:center;height:24px;padding:4px;font-weight:bold;background-color:#faeac6}
+#container #mainview table.TableHoriMax
+td.headline{height:24px !important}
+#container #mainview table.TableHoriMax
+th.event{text-align:center;height:24px;padding:4px;font-weight:bold;background-color:#da2323;color:#fff}
+#container #mainview table.TableHoriMax
+td.eventCost{color:#da2323;font-weight:bold;width:60px;vertical-align:top}
+#container #mainview table.TableHoriMax .eventCost
+img{vertical-align:middle}
 #container
 ul.resources{text-align:left}
 #container ul.resources
@@ -436,6 +453,137 @@ li{width:100px;height:26px;padding-left:32px;line-height:26px;background-repeat:
 .upkeep{background-image:url(resources/icon_upkeep.gif);background-position:2px 0px}
 #container ul.resources
 .time{background-image:url(resources/icon_time.gif);background-position:4px 2px}
+#container ul.resources
+.ambrosia{background-image:url(premium/ambrosia_icon.gif);background-position:4px 2px}
+#container
+ul.unitlist{list-style:none;margin:2px
+0;padding:0}
+#container ul.unitlist
+li{background-image:url(combatreport/unitsprites.gif);background-repeat:no-repeat;width:36px;height:15px;float:left;text-align:center;padding:34px
+0 0 0;margin:0
+4px 0 0}
+#container ul.fleets
+li{background-image:url(characters/fleet/unitfleets_x34_y34.gif)}
+#container ul.unitlist .s301, div#battlefield
+.s301{}
+#container ul.unitlist .s302, div#battlefield
+.s302{background-position: -36px 0}
+#container ul.unitlist .s303, div#battlefield
+.s303{background-position: -72px 0}
+#container ul.unitlist .s304, div#battlefield
+.s304{background-position: -144px 0}
+#container ul.unitlist .s305, div#battlefield
+.s305{background-position: -396px 0}
+#container ul.unitlist .s306, div#battlefield
+.s306{background-position: -360px 0}
+#container ul.unitlist .s307, div#battlefield
+.s307{background-position: -432px 0}
+#container ul.unitlist .s308, div#battlefield
+.s308{background-position: -252px 0}
+#container ul.unitlist .s309, div#battlefield
+.s309{background-position: -324px 0}
+#container ul.unitlist .s310, div#battlefield
+.s310{background-position: -216px 0}
+#container ul.unitlist .s311, div#battlefield
+.s311{background-position: -180px 0}
+#container ul.unitlist .s312, div#battlefield
+.s312{background-position: -288px 0}
+#container ul.unitlist .s313, div#battlefield
+.s313{background-position: -108px 0}
+#container ul.unitlist .s314, div#battlefield
+.s314{background-position: -468px 0px}
+#container ul.unitlist .s315, div#battlefield
+.s315{background-position: -540px 0px}
+#container ul.unitlist .s316, div#battlefield
+.s316{background-position: -504px 0px}
+#container ul.unitlist .s317, div#battlefield
+.s317{background-position: -576px 0px}
+#container ul.unitlist .s318, div#battlefield
+.s318{background-position: -576px 0px}
+#container ul.unitlist .s301d, div#battlefield
+.s301d{background-position:0 -36px}
+#container ul.unitlist .s302d, div#battlefield
+.s302d{background-position: -36px -36px}
+#container ul.unitlist .s303d, div#battlefield
+.s303d{background-position: -72px -36px}
+#container ul.unitlist .s304d, div#battlefield
+.s304d{background-position: -144px -36px}
+#container ul.unitlist .s305d, div#battlefield
+.s305d{background-position: -396px -36px}
+#container ul.unitlist .s306d, div#battlefield
+.s306d{background-position: -360px -36px}
+#container ul.unitlist .s307d, div#battlefield
+.s307d{background-position: -432px -36px}
+#container ul.unitlist .s308d, div#battlefield
+.s308d{background-position: -252px -36px}
+#container ul.unitlist .s309d, div#battlefield
+.s309d{background-position: -324px -36px}
+#container ul.unitlist .s310d, div#battlefield
+.s310d{background-position: -216px -36px}
+#container ul.unitlist .s311d, div#battlefield
+.s311d{background-position: -180px -36px}
+#container ul.unitlist .s312d, div#battlefield
+.s312d{background-position: -288px -36px}
+#container ul.unitlist .s313d, div#battlefield
+.s313d{background-position: -108px -36px}
+#container ul.unitlist .s314d, div#battlefield
+.s314d{background-position: -468px -36px}
+#container ul.unitlist .s315d, div#battlefield
+.s315d{background-position: -540px -36px}
+#container ul.unitlist .s316d, div#battlefield
+.s316d{background-position: -504px -36px}
+#container ul.unitlist .s317d, div#battlefield
+.s317d{background-position: -576px -36px}
+#container ul.unitlist .s318d, div#battlefield
+.s318d{background-position: -576px -36px}
+#container ul.unitlist .s201, div#battlefield
+.s201{}
+#container ul.unitlist .s210, div#battlefield
+.s210{background-position: -36px 0}
+#container ul.unitlist .s211, div#battlefield
+.s211{background-position: -108px 0}
+#container ul.unitlist .s212, div#battlefield
+.s212{background-position: -252px 0}
+#container ul.unitlist .s213, div#battlefield
+.s213{background-position: -72px 0}
+#container ul.unitlist .s214, div#battlefield
+.s214{background-position: -144px 0}
+#container ul.unitlist .s215, div#battlefield
+.s215{background-position: -216px 0}
+#container ul.unitlist .s216, div#battlefield
+.s216{background-position: -180px 0}
+#container ul.unitlist .s217, div#battlefield
+.s217{background-position: -396px 0}
+#container ul.unitlist .s218, div#battlefield
+.s218{background-position: -360px 0}
+#container ul.unitlist .s219, div#battlefield
+.s219{background-position: -324px 0}
+#container ul.unitlist .s220, div#battlefield
+.s220{background-position: -288px 0}
+#container ul.unitlist .s201d, div#battlefield
+.s201d{}
+#container ul.unitlist .s210d, div#battlefield
+.s210d{background-position: -36px 0}
+#container ul.unitlist .s211d, div#battlefield
+.s211d{background-position: -108px 0}
+#container ul.unitlist .s212d, div#battlefield
+.s212d{background-position: -252px 0}
+#container ul.unitlist .s213d, div#battlefield
+.s213d{background-position: -72px 0}
+#container ul.unitlist .s214d, div#battlefield
+.s214d{background-position: -144px 0}
+#container ul.unitlist .s215d, div#battlefield
+.s215d{background-position: -216px 0}
+#container ul.unitlist .s216d, div#battlefield
+.s216d{background-position: -180px 0}
+#container ul.unitlist .s217d, div#battlefield
+.s217d{background-position: -396px 0}
+#container ul.unitlist .s218d, div#battlefield
+.s218d{background-position: -360px 0}
+#container ul.unitlist .s219d, div#battlefield
+.s219d{background-position: -324px 0}
+#container ul.unitlist .s220d, div#battlefield
+.s220d{background-position: -288px 0}
 *.button_inactive{display:inline;margin:auto;border:3px
 double #5d4c2f;border-top-color:#c9a584;border-left-color:#c9a584;padding:2px
 4px;background:#eccf8e url(input/button.gif) repeat-x;font-weight:bold;font-size:12px;text-align:center;color:#542c0f;filter:alpha(opacity=50);-moz-opacity:.5;opacity:.5;cursor:default;width:150px}
@@ -447,9 +595,26 @@ double #5d4c2f;border-top-color:#c9a584;border-left-color:#c9a584;padding:2px
 *.button:active{border:3px
 double #c9a584;border-top-color:#5d4c2f;border-left-color:#5d4c2f;padding:3px
 10px 1px 10px}
+*.button_disabled,*.button:disabled{background-color:#DDD !important;background-image:none !important;border-color:#EEE #AAAAAA #AAA #EEEEEE !important;color:#999 !important;cursor:default !important;padding:3px
+10px 1px}
 *.bigButton{display:block;white-space:normal;display:block;margin:0px}
 .centerButton{text-align:center;margin-top:10px;margin-bottom:10px}
 .leftButton{text-align:left;margin-top:10px;margin-bottom:10px}
+*.cityMoveButton{display:inline;margin:0px
+auto;width:auto;white-space:nowrap;border:3px
+double #5d4c2f;border-top-color:#c9a584;border-left-color:#c9a584;padding:2px
+10px;background:#eccf8e url(input/button.gif) repeat-x;font-weight:bold;font-size:12px;text-align:center;color:#542c0f;white-space:nowrap;width:auto;cursor:pointer}
+*.cityMoveDiv{padding:5px
+10px 10px 125px;background-image:url(premium/movecity.jpg);background-repeat:no-repeat}
+html #moveCity
+.cityMoveCitySelectionTable{width:400px;background-color:#FFFBEC;border:1px
+solid #FBE7C0;margin-top:45px;position:relative}
+html #moveCity
+.cityMoveCitySelect{width:175px;padding-right:75px}
+html #moveCity
+.notenough{color:#999;font-weight:normal;font-size:11px;text-decoration:none}
+html #moveCity
+.moveCityPic{float:left}
 *.buttonChanged{border:3px
 double #5d4c2f;border-top-color:#c9a584;border-left-color:#c9a584;padding:2px
 0px;background:#eccf8e url(input/button.gif) repeat-x;font-weight:bold;font-size:12px;text-align:center;color:#b03937}
@@ -466,9 +631,17 @@ select{border:1px
 solid #c9a584;border-top-color:#5d4c2f;border-left-color:#5d4c2f;padding:1px;margin:2px;font:normal 12px Arial,Helvetica,sans-serif}
 option{margin:4px
 2px}
-input,input.textfield,textarea,textarea.textfield{border:1px
-solid #c9a584;border-top-color:#5d4c2f;border-left-color:#5d4c2f;padding:2px;background:#fff7e1 url(input/textfield.gif) repeat-x;font:normal 14px Arial,Helvetica,sans-serif}
-select:focus,textarea:focus,input:focus,input.textfield:focus{background-image:none;background-color:#fff;border:1px
+input, input.textfield,
+textarea, textarea.textfield,
+select, select.textfield,
+html
+.message_chat{border:1px
+solid #c9a584;border-top-color:#5d4c2f;border-left-color:#5d4c2f;padding:2px;background:#fff7e1 url(input/textfield.gif) repeat-x;font:normal 14px Arial, Helvetica, sans-serif}
+select:focus,
+textarea:focus,
+input:focus,
+input.textfield:focus,
+html .message_chat:focus{border:1px
 solid #c9a584;border-top-color:#5d4c2f;border-left-color:#5d4c2f}
 .displayframe1{width:304px;border:1px
 solid #f3ddb2;padding:1px}
@@ -483,10 +656,17 @@ auto 0 375px;font-weight:bold;font-size:18px;line-height:40px;color:#b03937}
 #mainview
 .buildingDescription{position:relative;height:auto;min-height:120px;margin:0px
 10px 10px 10px}
+#mainview
+.heightLessBuildingDescription{position:relative;height:auto;margin:0px
+10px 10px 10px}
 #mainview .buildingDescription
 p{margin-right:160px}
 #barracks
 .buildingDescription{background:url(buildings/y100/barracks.gif) no-repeat right 10px}
+#port
+.buildingDescription{background:url(buildings/y100/port.gif) no-repeat right 10px}
+#tradeAdvisor
+.buildingDescription{height:auto;background:none}
 #container
 #diplomacyDescription{background:url(layout/diplomacy_logo.gif) no-repeat right 20px}
 #buildingUpgrade{text-align:center}
@@ -555,6 +735,13 @@ solid #f1d198;padding:3px
 5px 5px 5px;background:#fcddd2 url(icons/occupation_warning.gif) no-repeat 5px 5px;min-heigght:30px}
 #container .occupation_warning .messageSend
 img{display:inline;vertical-align:middle}
+#city #container #mainview #locations
+#position0{left:356px;top:182px}
+#port #container #mainview table.stuff
+td.amount{text-align:right;padding:0px}
+#wall #container #mainview
+.contentBox01{margin:10px
+0px 10px 10px}
 #container #mainview
 .contentBox03{background-image:url(layout/bg_contentBox03.gif);position:relative;width:450px;margin-bottom:10px}
 #container #mainview .contentBox03
@@ -590,7 +777,12 @@ h3.header{background-image:url(layout/bg_contentBox05h_header.gif);height:20px;p
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #container #mainview .contentBox05h
 div.footer{background-image:url(layout/bg_contentBox05_footer.gif);overflow:hidden;height:3px}
+#tradeAdvisor #mainview
+table.table01{border:0px;margin:0px
+auto 10px auto;width:100%}
 a.allyLink{color:#542c0f;font-weight:bold}
+#researchAdvisor #mainview #mainview
+tr.pgnt{border-top:1px solid #E4B873}
 #mainview tr.pgnt
 div.last{float:left;width:10%}
 #mainview tr.pgnt
@@ -626,7 +818,7 @@ solid #F00}
 a{color:#542c0f}
 .researchInfo
 .leftBranch{position:absolute;top:13px;left:13px}
-.researchTypeLabel{text-align:center;position:relative;width:150px;height:50px;top:0px;left:0px}
+.researchTypeLabel{text-align:center;position:relative;width:150px;height:36px;top:0px;left:0px}
 #container #mainview
 .unitcount{background-image:url(layout/scroll_bg.gif);color:#50110A;display:block;font-size:10px;height:23px;left:-4px;line-height:23px;padding:0
 16px;text-align:center;top:60px;white-space:nowrap;margin:0
@@ -659,13 +851,23 @@ p.cannotbuild{position:absolute;margin:0;top:42px;left:550px;width:100px;text-al
 .cannotbuild
 a{}
 #container ul.resources
-.researchPoints{background-image:url(resources/icon_research.gif);background-position:10px 2px;font-size:14px}
+.researchPoints{background-image:url(resources/icon_research.gif);background-position:10px 2px;font-size:14px;display:block}
+#container #mainview .researchType ul.resources
+li.researchPointsDiff{display:block;color:red}
+#container
+.researchProgressbar{width:149px;height:10px;border:1px
+solid #775726;background-color:#fefbe8;overflow:hidden;background-image:url(input/textfield.gif);background-position:bottom}
+#container .researchProgressbar
+.bar{height:100%;background-color:#73443e;background-image:url(interface/progressbar_anim.gif);background-position:bottom}
+#container
+.researchTime{font-size:10px;font-weight:bold;padding-bottom:20px}
 .researchButton{position:absolute;top: -14px;left:0px}
 .researchButton2{position:absolute;top:38px;left:550px;width:115px}
+.researchButton3{color:#B03937;font-weight:bold}
 .researchType
 .costs{position:absolute;top:75px;left:360px;width:100px}
 .researchLeftMenu
-li{position:relative;padding-left:32px;margin-left:5px;height:26px;line-height:26px}
+li{position:relative;padding-left:32px;margin-left:5px;line-height:26px}
 .researchLeftMenu
 .scientists{background:url(resources/icon_scientist.gif) no-repeat top left}
 .researchLeftMenu
@@ -679,9 +881,6 @@ html #diplomacyAdvisorOutBox #container #mainview
 table.table01{margin:0px
 auto 10px auto;border-bottom:1px dotted #E4B873;width:100%}
 html #diplomacyAdvisorTreaty #container #mainview
-table.table01{margin:0px
-auto 10px auto;border-bottom:1px dotted #E4B873;width:100%}
-html #diplomacyAdvisorAlly #container #mainview
 table.table01{margin:0px
 auto 10px auto;border-bottom:1px dotted #E4B873;width:100%}
 html #diplomacyAdvisorArchive #container #mainview
@@ -726,7 +925,7 @@ html #diplomacyAdvisorArchiveOutBox #container #mainview .table01 a:link,
 html #diplomacyAdvisorArchiveOutBox #container #mainview .table01 a:visited,
 html #diplomacyAdvisorArchiveOutBox #container #mainview .table01 a:active{text-decoration:none;color:#542c0f}
 div.diplomacyAdvisorTabs
-table#tabz{margin-top:5px;width:100%}
+table#tabz{margin-top:8px;width:100%}
 div.diplomacyAdvisorTabs table#tabz
 td{width:25%;text-align:center}
 div.diplomacyAdvisorTabs #tabz td
@@ -735,10 +934,92 @@ auto;padding:5px
 0px 10px}
 div.diplomacyAdvisorTabs{background:transparent url(layout/bg_tabs.jpg) no-repeat scroll 0% 50%;height:36px;margin-bottom:5px;width:680px}
 div.diplomacyAdvisorTabs a
-em{font-weight:bold}
+em{font-weight:bold;font-size:12px}
 div.diplomacyAdvisorTabs #tabz td.selected a, div.diplomacyAdvisorTabs #tabz td a:hover{background:transparent url(layout/bg_tabs_diplomacy_single2.jpg) no-repeat scroll center -5px}
+#wonder #wonderOtherPlayers
+a{color:#542C0F;font-size:11px;font-weight:bold}
+#wonder #container #mainview #wonderbox
+div{}
 #cityMilitary #container #mainview .contentBox01h
 .table01{margin-top:10px}
+#warehouse
+.buildingDescription{height:auto}
+#container #mainview
+span.secure{font-weight:bold;color:#090}
+#container #mainview
+span.insecure{font-weight:bold;color:#F00}
+#container #mainview
+.table01{border:0px;margin-top:10px;margin-bottom:10px}
+#container .dynamic
+table.safeinnextlevel{margin:0px
+auto}
+#container .dynamic .safeinnextlevel th,
+#container .dynamic .safeinnextlevel
+td{padding-left:10px}
+#container .dynamic .safeinnextlevel
+th{background-color:#FAEAC6;color:#906646;font-weight:bold;text-align:center}
+#container #mainview .table01
+td{text-align:right;vertical-align:middle}
+#container #mainview .table01  tr.capacitiesTableRow
+td.image{text-align:right;border-right:0px dotted #C49873;width:20px;padding:4px
+4px 4px 20px}
+#container #mainview .table01  tr.capacitiesTableBonus
+td.image{text-align:right;border-right:0px dotted #C49873;width:20px;padding:4px
+4px 4px 20px}
+#container #mainview .table01
+td.alignLeft{text-align:left}
+#container #mainview .table01 tr.capacitiesTableResult
+td{border-top:1px solid #C49873;border-right:1px dotted #C49873;font-weight:bold;padding:8px
+20px}
+#container #mainview .table01 tr.capacitiesTableBonus
+td{border-top:1px dotted #C49873;border-right:1px dotted #C49873;padding:4px
+20px}
+#container #mainview .table01 tr.capacitiesTableRow
+td{padding:4px
+20px;border-right:1px dotted #C49873}
+#container #mainview .table01 tr
+a{color:#542C0F}
+#container #mainview .table01 tr a:hover{color:#df5843;text-decoration:underline}
+#container #mainview .table01
+span.active{font-weight:bold;color:#090}
+#container #mainview .table01
+span.inactive{font-weight:bold;color:#FF00000}
+#container #mainview .table01
+span.right{display:block;float:right}
+#container #mainview
+.premiumFeature{background-color:#FDF1D4;border:1px
+solid #E4B873;color:#612D04;margin:0
+auto 10px;text-align:center;width:400px;height:55px;position:relative;font:10px Arial,Helvetica,sans-serif}
+#container #mainview .premiumFeature
+div{position:absolute;height:55px;top:0px;padding:5px}
+#container #mainview .premiumFeature
+.image{left:0px;top:5px}
+#container #mainview .premiumFeature
+.number{left:40px;top:5px;font:bold 28px Arial,Helvetica,sans-serif}
+#container #mainview .premiumFeature
+.content{left:150px;text-align:left}
+#container #mainview .premiumFeature
+.headline{font:bold 12px Arial,Helvetica,sans-serif}
+#container #mainview .premiumFeature
+.feature{width:225px;height:25px;text-align:left;position:absolute}
+#container #mainview .premiumFeature
+.text{top:32px;width:225px;text-align:left;position:absolute}
+#container #mainview .premiumFeature
+span.active{font-weight:bold;color:#090}
+#container #mainview .premiumFeature
+span.inactive{font-weight:bold;color:#FF00000}
+#container #mainview .premiumFeature
+.right{width:225px;top:19px;text-align:right;float:right}
+#container #mainview .premiumFeature a
+img{margin-top:3px}
+#container #mainview .premiumFeature
+a{color:#542C0F}
+#container #mainview .premiumFeature a:hover{color:#df5843;text-decoration:underline}
+#container #mainview
+.tradegoodTooltip{width:auto;padding:0
+5px}
+#palaceColony #moveCapital
+.prerequisite{font-style:italic}
 .cityTT{padding:0;margin:0;border:0;font:11px Arial, Helvetica, sans-serif;width:175px}
 .cityTT
 th{}
@@ -785,6 +1066,10 @@ a{color:#542c0f;text-decoration:underline}
 #cityMilitary  #container #mainview table#overall td.ships,
 #cityMilitary  #container #mainview table#overall
 td.units{text-align:center}
+#embassyGeneralTroops  .contentBox01h
+div.content{background-color:#faeac6}
+#container2 #mainview #memberList tr th
+a.unicode{color:#434A93}
 html #allyHighscore #mainview table.table01 th,
 html #highscore #mainview table.table01
 th{background-color:#FAE0AE;color:#906646;font-weight:bold;text-align:center;font-size:15px;border-top:1px solid #906646;border-bottom:1px solid #909696;padding:5px}
@@ -837,14 +1122,13 @@ html #allyHighscore #mainview div.content table.table01 tr.third.ownally,
 html #allyHighscore #mainview div.content table.table01 tr.ownally,
 html #highscore #mainview div.content table.table01
 tr.ownally{background-color:#FAE877}
-a.notenough{color:#999;font-weight:normal;font-size:11px;text-decoration:none}
-a.notenough
-.buyNow{text-decoration:underline}
-a.notenough:hover{color:#BBB}
-#mainview .unit .sliderinput,
-#mainview .unit
-.sliderinput{margin:10px
-0pt 8px 130px;position:relative}
+html #highscore #mainview div.content table.table01 td.name,
+html #highscore #mainview div.content table.table01
+td.allytag{text-align:left}
+html #highscore #mainview div.content table.table01
+td.inactive{color:#999}
+#mainview .sliderinput
+.readonly{background:url(interface/bg_count.gif) no-repeat scroll left top transparent;display:block;font-size:10px;height:24px;line-height:24px;width:72px !important;left:410px  !important}
 .fnone{float:none}
 .fright{float:right}
 .fleft{float:left;margin-right:8px}
@@ -869,26 +1153,24 @@ a{color:#542c0f;text-decoration:none}
 #resource .stuff,
 #port .stuff,
 #academy
-.stuff{margin-left:1px;border:2px
-solid #e4b873}
-#resource .stuff th,
-#port .stuff th,
-#academy .stuff
+.stuff{width:100px;padding:0;margin:0}
+#container #mainview .stuff
 th{background-color:#fbe2b5;color:#7e4a21;font-weight:bold;padding:1px
 2px}
-#resource .stuff td,
-#port .stuff td,
-#academy .stuff
+#container #mainview .stuff
 td{padding:1px
 2px}
+#container #mainview .stuff
+.unit{min-height:auto !important}
 tr.pgnt
 td{font-weight:bold}
 #container #mainview
-div.informations{margin-top:45px;margin-bottom:10px}
+div.informations{margin-top:45px;margin-bottom:10px;margin-right:20px}
 #container #mainview div.informations
 h2{color:#B03937;font-weight:bold;padding:5px
 0px}
-#container #mainview div.informations
+#container #mainview div.informations div.hint,
+#container2 #dailyActivityBonus
 div.hint{padding:20px
 10px 20px 60px;margin:10px
 0px;border:3px
@@ -906,6 +1188,8 @@ ul{margin:15px
 #container #mainview div.informations ul
 li{list-style-type:disc}
 #container #mainview div.informations div.navigation a:hover{text-decoration:none;color:#B03937}
+#container #mainview div.informations
+div.imageWithTitle{margin-top:10px;margin-bottom:2px;text-align:center;font-weight:bold}
 #container #civilopedia_menu
 div.main{font-size:11px}
 #container #civilopedia_menu div.main
@@ -918,6 +1202,11 @@ li{font-weight:normal;margin:0;padding:0}
 #container #civilopedia_menu div.main ul li ul li
 a{}
 #container #civilopedia_menu div.main ul li ul li a:hover{}
+#rules #container #mainview
+h2{color:#B03937;font-weight:bold;padding:5px
+0px}
+#city #actions
+ul{position:relative}
 #container #mainview .unit .att-icon{left:459px;position:absolute;top:12px}
 #container #mainview .unit .def-icon{left:493px;position:absolute;top:12px}
 #unitdescription #mainview div.costs table#upgrades,
@@ -996,14 +1285,6 @@ td.units{text-align:center}
 #cityMilitary-fleet #container #mainview table tr.count td,
 #cityMilitary-army #container #mainview table tr.count
 td{background-color:#FDF7DD}
-#container #mainview #premiumOffers table.TableHoriMax
-td.active{vertical-align:top;text-align:left;color:green;font-weight:bold;font-size:16px}
-#container #mainview #premiumOffers table.TableHoriMax
-td.inactive{vertical-align:top;text-align:left;color:red;font-weight:bold;font-size:16px}
-#ambrosia
-.content{text-align:center}
-#ambrosia
-.ambrosiaCount{padding-top:100px;background:url(premium/ambrosia.gif) no-repeat top center;color:#906646;font-weight:bold;font-size:24px}
 #mainview
 ul#premiumResourceAssign{width:650px;margin-top:20px}
 #container #premiumResourceAssign
@@ -1087,30 +1368,30 @@ html #annotationBox
 #information table th.center,
 #information table
 td.center{text-align:center}
-#information table
-td{padding:2px}
+html
+#upgradeInProgress{position:relative;height:95px}
 html #upgradeInProgress
-.isUpgrading{font-weight:bold;width:320px;text-align:center;margin:8px
-auto 4px 80px}
-html #upgradeInProgress
-.buildingLevel{position:absolute;left:10px;top:40px;width:60px;background:url(upgrade/nextlevelarrow.gif) no-repeat 6px 45px;text-align:center;font-size:24px;height:70px}
+.buildingLevel{position:absolute;left:10px;top:5px;width:60px;height:90px;background:url(upgrade/nextlevelarrow.gif) no-repeat 6px 45px;text-align:center;font-size:24px}
 html #upgradeInProgress .buildingLevel
 .textLabel{display:block;margin-bottom:46px;font-size:12px}
 html #upgradeInProgress
-.nextLevel{position:absolute;left:10px;top:55px;width:60px;font-size:24px;font-weight:bold;text-align:center}
+.nextLevel{position:absolute;left:10px;top:20px;width:60px;font-size:24px;font-weight:bold;text-align:center}
 html #upgradeInProgress .nextLevel
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 html #upgradeInProgress
-.progressBar{width:320px;margin:12px
+.isUpgrading{position:absolute;top:5px;left:0px;font-weight:bold;width:320px;text-align:center;margin:8px
+auto 4px 80px}
+html #upgradeInProgress
+.progressBar{position:absolute;top:25px;width:320px;margin:12px
 auto 2px 80px;height:24px;border:1px
 solid #775726;background-color:#fefbe8;text-align:left}
 html #upgradeInProgress  .progressBar
 .bar{height:100%;background-color:#73443e}
 html #upgradeInProgress
-.time{display:block;font-weight:bold;width:320px;margin:4px
+.time{position:absolute;top:63px;display:block;font-weight:bold;width:320px;margin:4px
 auto 4px 80px;text-align:center}
 html #upgradeInProgress
-.cancelUpgrade{display:block;position:absolute;width:80px;margin: -25px 0px 0px 330px}
+.cancelUpgrade{position:absolute;left:405px;top:38px;display:block;width:80px}
 html #constructionList
 li{border-bottom:1px dotted #EBC185;padding-bottom:5px}
 html #constructionList
@@ -1127,6 +1408,16 @@ html #constructionList
 0px;padding-left:5px;display:inline}
 html #constructionList
 .time{padding-left:18px}
+#relatedCities #container #mainview .content
+table.army{width:100%;padding:0px;color:#612d04;font:bold 12px Arial, Helvetica, sans-serif;background-color:#fdf7dd;margin:0px}
+#container #mainview .content .army
+div.troops{padding-left:11px;padding-right:19px}
+#container #mainview .content .army div.troops
+div{background-image:url(layout/button_47x47.gif);background-repeat:no-repeat;text-align:center;font-weight:bold;float:left;margin-top:2px;margin-bottom:16px}
+#container #mainview .content .army div.troops
+.armybutton{background-image:url(characters/military/buttons_sprite.gif);width:50px;height:15px;background-repeat:none;padding-top:50px;margin-right:1px}
+#container #mainview .content .army div.troops
+.fleetbutton{background-image:url(characters/fleet/buttons_sprite.gif);width:50px;height:15px;background-repeat:none;padding-top:50px;margin-right:1px}
 .armybutton.swordsman{background-position:-50px 0px}
 .armybutton.phalanx{background-position:-100px 0px}
 .armybutton.archer{background-position:-150px 0px}
@@ -1147,7 +1438,13 @@ html #constructionList
 .fleetbutton.ship_steamboat{background-position:-250px 0px}
 .fleetbutton.ship_mortar{background-position:-300px 0px}
 .fleetbutton.ship_submarine{background-position:-350px 0px}
-.citySpecialSelect{font-size:12px;text-align:left;position:relative;display:block;left:12px;width:175px;height:25px}
+.fleetbutton.ship_rocketship{background-position:-550px 0}
+.fleetbutton.ship_paddlespeedship{background-position:-500px 0}
+.fleetbutton.ship_ballooncarrier{background-position:-450px 0px}
+.fleetbutton.ship_tender{background-position:-400px 0px}
+#relatedCities
+div.flagL{width:16px;height:36px;left:12px;top:-17px;overflow:visible;position:absolute;z-index:1000}
+.citySpecialSelect{font-size:12px;text-align:left;position:relative;display:block;left:12px;top:0px;height:25px;z-index:1001}
 .smallFont{font-size:11px}
 .citySpecialSelect
 *{background:url(relatedCities/cityselect_dropdown.gif) no-repeat 0px 0px}
@@ -1185,9 +1482,9 @@ li.last.hover{background:#fff5b0;z-index:1000}
 .occupiedCities{background-image:url(layout/select_citynav_occupation.jpg)}
 .citySpecialSelect  .optionList li.tradegood
 span.cityresource{float:left;width:30px;height:20px;background:none}
+.citySpecialSelect .optionList
+li.occupied{color:#bda898}
 .replaced{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.citySpecialSelect
-span.cityresource{}
 .citySpecialSelect .tradegood1
 span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_wine.gif) no-repeat center}
 .citySpecialSelect .tradegood2
@@ -1228,10 +1525,12 @@ div.tooltip2{position:absolute;left:-25px;top:35px;width:230px !important}
 .wld4{margin-left:430px}
 .wld5{margin-left:530px}
 .warningFont{font-weight:bold;color:#f00}
+#informations #container #container2 #mainview
+.contentWithImage{padding-bottom:15px}
 html #relatedCities .citySpecialSelect .resource
 span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_wood.gif) no-repeat center}
 html
-.dropdown{font-size:12px;text-align:left;position:relative;display:block;top:0px;left:12px;height:25px}
+.dropdown{font-size:12px;text-align:left;position:relative;display:block;top:0px;left:12px;height:25px;line-height:25px}
 html .dropdown.size175 ul.optionList,
 html
 .dropdown.size175{width:175px}
@@ -1260,6 +1559,12 @@ html .dropdown.size135
 html .dropdown.size125 ul.optionList,
 html
 .dropdown.size125{width:125px}
+html .shortenText
+ul.optionList{min-width:125px;width:auto !important;white-space:nowrap}
+html .shortenText ul.optionList
+li{min-width:125px;padding-right:5px;position:relative;text-align:left;width:auto !important}
+html .shortenText ul.optionList
+li{padding-right:30px}
 html .dropdown.size125
 *{background:url(layout/dropdown_125px.gif) no-repeat 0px 0px}
 html .dropdown.size115 ul.optionList,
@@ -1287,59 +1592,571 @@ html
 html .dropdown
 li{position:static;line-height:25px;padding-left:8px}
 html .dropdown .optionList
-li.first{border-top:1px solid #cd9e6f;background:#fff7e2;z-index:1000}
+li{border-left:1px solid #cd9e6f;border-right:1px solid #cd9e6f;background:#fff7e2;height:25px;cursor:pointer;display:block}
 html .dropdown .optionList
-li{border-left:1px solid #cd9e6f;border-right:1px solid #cd9e6f;background:#fff7e2;height:25px;z-index:1000;cursor:pointer}
+li.first{border-top:1px solid #cd9e6f;background:#fff7e2}
 html .dropdown .optionList
-li.last{border-bottom:1px solid #cd9e6f;background:#fff7e2;z-index:1000}
+li.last{border-bottom:1px solid #cd9e6f;background:#fff7e2}
 html .dropdown .optionList
-li.first.hover{background:#fff5b0;z-index:1000}
+li.active{background:#FAEAC6}
 html .dropdown .optionList
-.hover{background:#fff5b0;z-index:1000}
+li.first.hover{background:#fff5b0}
 html .dropdown .optionList
-li.last.hover{background:#fff5b0;z-index:1000}
+.hover{background:#fff5b0}
+html .dropdown .optionList
+li.last.hover{background:#fff5b0}
 html .dropdown
-.optionList{background:#fcf6dc;position:absolute;display:none;top:25px;left:0px;z-index:1000;width:175px}
+.optionList{background:#fcf6dc;position:absolute;display:none;top:25px;left:0px;;width:175px}
 html .dropdown
-.optionList_expanded{background:#fcf6dc;display:block;z-index:1000}
+.optionList_expanded{background:#fcf6dc;display:block !important}
 html .dropdown
-.dropbutton{background-position:0px -0px;padding-left:8px;height:25px;line-height:25px;cursor:default;overflow:hidden}
+.dropbutton{background-position:0px -0px;padding-left:8px;height:25px;line-height:25px;cursor:default;overflow:hidden;z-index:1000}
 html .dropdown
 .dropbutton.hover{background-position:0px -25px;padding-left:8px;height:25px;line-height:25px;cursor:default}
 html .dropdown
 .dropbutton_expanded{background-position:0px -50px;padding-left:8px}
 html .dropdown
 .dropbutton_expanded.hover{background-position:0px -50px;padding-left:8px}
-html .dropdown .optionList li.tradegood
-span.cityresource{float:left;width:30px;height:20px;background:none}
 html
 select.replaced{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-html .dropdown
-span.cityresource{}
+html .dropdown .optionList li.tradegood
+span.cityresource{background:none}
 html .dropdown .tradegood1
-span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_wine.gif) no-repeat center}
+span.cityresource{background:url(resources/icon_worldmap_wine.gif) no-repeat center;float:left;height:20px;width:30px}
 html .dropdown .tradegood2
-span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_marble.gif) no-repeat center}
+span.cityresource{background:url(resources/icon_worldmap_marble.gif) no-repeat center;float:left;height:20px;width:30px}
 html .dropdown .tradegood3
-span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_glass.gif) no-repeat center}
+span.cityresource{background:url(resources/icon_worldmap_glass.gif) no-repeat center;float:left;height:20px;width:30px}
 html .dropdown .tradegood4
-span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_sulfur.gif) no-repeat center}
+span.cityresource{background:url(resources/icon_worldmap_sulfur.gif) no-repeat center;float:left;height:20px;width:30px}
 html .dropdown .resource
-span.cityresource{float:left;width:30px;height:20px;background:url(resources/icon_worldmap_wood.gif) no-repeat center}
+span.cityresource{background:url(resources/icon_worldmap_wood.gif) no-repeat center;float:left;height:20px;width:30px}
+#culturalPossessions_search tr
+th.empty{width:150px}
+#city
+.close_city_bg_notice{background-image:url(interface/notice_close.gif);float:right;width:16px;height:16px;margin:4px
+10px;display:block}
+#colonize_moveCity html #relatedCities
+.citySpecialSelect{top:0px}
+#tradeAdvisorTradeRoute
+ul.tradeRoute{position:relative;top:-5px;height:42px;background-image:url(transport/bgCitiesFromTo.gif);background-repeat:no-repeat;margin-left:8px}
+#wonder #resUpgrade
+li.marble{background-image:url(wonder2/multi_marble.gif)}
 div#goToResearch
-img.iconResearch{margin: -5px 9px}
+img.iconResearch{margin: -4px 5px;float:left}
 div#goToResearch
-div.centerButton{margin:25px
+.researchPoints{padding-left:43px;padding-top:15px}
+div#goToResearch
+div.centerButton{margin:10px
 0 25px 0}
 #cityMilitary-army
 .allied{background-color:#caf9b1}
 #cityMilitary-army
 .treaty{background-color:#fefa85}
+#cityMilitary-fleet
+.allied{background-color:#caf9b1}
+#cityMilitary-fleet
+.treaty{background-color:#fefa85}
+#worldmap_iso #container
+#mapShortcutInput{background-image:url(layout/bg_mapnav_coord.jpg);background-repeat:repeat;height:28px;padding-top:3px;position:relative;padding-left:18px}
+#mainview
+.fbBtn{display:block;height:29px;margin:0px
+auto 0px;width:auto}
+#mainview .fbBtn .btn-fb .btn-fb-text{display:block;position:absolute;bottom:0px;text-align:center;height:29px;line-height:28px;color:#FFF;font-weight:700;background-image:url(buttons/fb-connect-btn_mitte.gif);padding-left:30px;padding-right:15px;white-space:nowrap}
+#mainview .fbBtn .btn-fb{position:relative;min-height:40px}
+#mainview .fbBtn .btn-fb
+.before{display:block;position:absolute;top:0;left:0;width:25px;height:29px;background-image:url(buttons/fb-connect-btn_links.gif)}
+#mainview .fbBtn .btn-fb
+.after{display:block;position:absolute;top:0;right:0;width:10px;height:29px;background-image:url(buttons/fb-connect-btn_rechts.gif)}
+.fbNotice{background-color:#f3ddb5;font-size:11px;border:1px
+solid;background-image:url(img/facebookLogo.gif);background-repeat:no-repeat;background-position:10px 10px;margin:5px
+auto;padding:0
+0 0 45px;width:450px}
+.friendInviteWarning{background:url("townhall_warning.gif") no-repeat scroll 10px 4px #FCDDD2;border:1px
+solid #F1D198;margin:10px
+20px;min-height:50px;padding:3px
+10px 3px 80px}
+.friendInviteSuccess{background:url("friends/email_ok.jpg") no-repeat scroll 10px 6px #e2fcd2;border:1px
+solid #F1D198;margin:10px
+20px;min-height:50px;padding:3px
+10px 3px 80px}
+#mainview
+#fbInviteForm{padding:20px}
+#mainview .form-default-text{color:#ccc}
+#mainview fieldset.option-group{border:1px
+solid #f3ddb2;margin:15px;padding:15px}
+#mainview fieldset.option-group
+legend{font-weight:bold;color:#612D04}
+.paymentFrameDiv{width:820px;margin:0
+auto 20px}
+#premium   #premiumOffers tr.halloweenProlong
+td.feature{background-image:url(specials/halloween/premium/halloween_decoration_shopsymbol.jpg)}
+.winterInfoButton{z-index:50000;display:block;position:absolute;height:18px;width:18px;background-image:url(specials/winter/winter_info.gif);background-position:0 18px;top:3px;left:696px}
+.winterInfoButton:hover{background-position:0 35px}
+.winterInfoButton.down{background-position:0 1px}
+.winterActivationButton{z-index:50000;disply:block;position:absolute;height:34px;width:34px;background-image:url(specials/winter/winter_off.gif);background-position:0 34px;top:6px;left:673px}
+.winterActivationButton:hover{background-position:0 69px}
+.winterActivationButton.down{background-position:0 0px}
+.winterDeactivationButton{z-index:50000;disply:block;position:absolute;height:34px;width:34px;background-image:url(specials/winter/winter_on.gif);background-position:0 34px;top:6px;left:673px}
+.winterDeactivationButton:hover{background-position:0 69px}
+.winterDeactivationButton.down{background-position:0 0px}
+.easterInfoButton{z-index:50000;display:block;position:absolute;height:18px;width:18px;background-image:url(specials/winter/winter_info.gif);background-position:0 18px;top:3px;left:696px}
+.easterInfoButton:hover{background-position:0 35px}
+.easterInfoButton.down{background-position:0 1px}
+.easterActivationButton{z-index:50000;disply:block;position:absolute;height:34px;width:34px;background-image:url(specials/easter/easter_off_blue.gif);background-position:0 34px;top:6px;left:673px}
+.easterActivationButton:hover{background-position:0 69px}
+.easterActivationButton.down{background-position:0 0px}
+.easterDeactivationButton{z-index:50000;disply:block;position:absolute;height:34px;width:34px;background-image:url(specials/easter/easter_on_blue.gif);background-position:0 34px;top:6px;left:673px}
+.easterDeactivationButton:hover{background-position:0 69px}
+.easterDeactivationButton.down{background-position:0 0px}
+.halloweenInfoButton{z-index:50000;display:block;position:absolute;height:18px;width:18px;background-image:url(specials/winter/winter_info.gif);background-position:0 18px;top:3px;left:696px}
+.halloweenInfoButton:hover{background-position:0 35px}
+.halloweenInfoButton.down{background-position:0 1px}
+.halloweenActivationButton{z-index:50000;display:block;position:absolute;height:34px;width:34px;background-image:url(specials/halloween/halloween_off.gif);background-position:0 34px;top:6px;left:673px}
+.halloweenActivationButton:hover{background-position:0 69px}
+.halloweenActivationButton.down{background-position:0 0px}
+.halloweenDeactivationButton{z-index:50000;display:block;position:absolute;height:34px;width:34px;background-image:url(specials/halloween/halloween_on.gif);background-position:0 34px;top:6px;left:673px}
+.halloweenDeactivationButton:hover{background-position:0 69px}
+.halloweenDeactivationButton.down{background-position:0 0px}
+#container
+.tooltip{display:none;background-color:#FAE0AE;border:1px
+solid #E4B873;font-weight:400;font-size:12px;line-height:18px;margin:5px
+0 0;position:absolute;text-align:left;width:200px;padding-left:5px;z-index:7000;color:#542C0F}
+#container
+#btnHappyHour{background:url(premium/bg_happyhour.gif) no-repeat 0 0 transparent;position:absolute;display:none;height:52px;width:134px;top: -1px;left:586px;text-align:center;color:#542C0F;font-weight:700;padding-top:12px;z-index:50010}
+#container #btnHappyHour:hover{background-position:0 -68px}
+#container
+#happyHourCountdown{color:#090;font-size:14px;text-decoration:none;position:absolute;padding-top:17px;line-height:50px;width:134px;top:0;left:0}
+#container #btnHappyHour
+.happyHourText{color:#542C0F;text-decoration:none}
+#container
+.orderBtn{color:#6F4729;cursor:pointer;display:block;height:44px;overflow:hidden;text-decoration:none;text-align:left;width:131px;line-height:22px}
+#container
+.orderBtnSmallCitizen{background:url(premium/premium-order-btn-small-citizen.gif) no-repeat left top}
+#container
+.orderBtnSmallDouble{background:url(premium/premium-order-btn-small.gif) no-repeat left top}
+#container
+.orderBtnSmall{background:url(premium/premium-order-btn-small.gif) no-repeat left top;width:103px}
+#container
+.orderBtnLarge{background:url(premium/premium-order-btn-large.gif) no-repeat left top;height:57px;width:120px;font-weight:700;margin:0
+auto;padding:4px
+2px 2px 40px}
+#container .orderBtnSmallCitizen:hover,
+#container .orderBtnSmall:hover,
+#container .orderBtnSmallDouble:hover{background-position:left -44px}
+#container .orderBtnLarge:hover{background-position:left -63px}
+#container .orderBtnSmallCitizen:active,
+#container .orderBtnSmall:active,
+#container .orderBtnSmallDouble:active{background-position:left -88px}
+#container .orderBtnLarge:active{background-position:left -126px}
+#container .orderBtn .ambrosiaAmount,
+#container .orderBtn .goldAmount,
+#container .orderBtn .ambrosiaAmountText,
+#container .orderBtn
+.goldAmountText{color:#f00;font-weight:700}
+#container .orderBtnSmallCitizenDisabled,
+#container .orderBtnSmallDisabled,
+#container
+.orderBtnLargeDisabled{cursor:default;color:#ccc !important}
+#container
+.orderBtnLargeDisabled{background-position:left -189px !important}
+#container .orderBtnSmallCitizenDisabled,
+#container
+.orderBtnSmallDisabled{background-position:left -132px !important}
+#container .orderBtnSmallCitizenDisabled .ambrosiaAmount,
+#container .orderBtnSmallCitizenDisabled .goldAmount,
+#container .orderBtnLargeDisabled .ambrosiaAmountText,
+#container .orderBtnLargeDisabled .goldAmountText,
+#container .orderBtnLargeDisabled .productText,
+#container .orderBtnSmallDisabled .ambrosiaAmount,
+#container .orderBtnSmallDisabled
+.productText{color:#ccc !important}
+#container
+.ambrosiaIcon{background:url(premium/ambrosia_sprite.gif) no-repeat right top;height:22px;min-width:20px;padding:6px
+20px 0 0}
+#container .costsDisabled
+.ambrosiaIcon{background-position:right -22px}
+#container
+.costsDisabled{color:#999 !important}
+#container .orderBtnSmall
+.orderTable{background-color:transparent;width:83px !important;margin-left:20px;margin-top:7px}
+#container .orderBtnLarge
+table{background-color:transparent;width:100%}
+#container .orderBtnSmallCitizen .productText,
+#container .orderBtnSmallCitizen .ambrosiaAmount,
+#container .orderBtnSmallCitizen .goldAmount,
+#container .orderBtnSmallDouble .productText,
+#container .orderBtnSmallDouble .ambrosiaAmount,
+#container .orderBtnSmallDouble .goldAmount,
+#container .orderBtn
+.productText{float:left;font-weight:700;text-align:center;width:33px}
+#container .orderBtnSmallDouble
+.product{height:20px;margin:5px
+0 0px 36px}
+#container .orderBtnLarge .productAmount,
+#container .orderBtnLarge .productTime,
+#container .orderBtnLarge
+.goldAmount{width:44px}
+#container .orderBtnLarge
+.ambrosiaAmount{width:31px}
+#container .orderBtnSmall
+.product{width:70px}
+#container .orderBtnSmallCitizen .ambrosiaAmount,
+#container .orderBtnSmallCitizen
+.goldAmount{width:30px}
+#container .orderBtnSmallDouble .product
+img{position:inherit !important}
+#container .orderBtnSmallDouble
+.productAmount{line-height:16px}
+#container .orderBtnSmallDouble
+.productText{margin-left:32px}
+#container .orderBtnSmallDouble
+.ambrosiaAmount{margin-left:14px}
+#container .orderBtnSmall
+.productText{margin-left:8px;width:40px}
+#container .orderBtnSmall
+.ambrosiaAmount{width:34px}
+#container .orderBtnSmall .orderTable
+td{padding:0}
+#container .orderBtnSmallCitizen
+.productAmount{margin:22px
+0 0 30px}
+#container .orderBtnSmallCitizen
+.productText{margin-right:6px;width:34px}
+#container .orderBtnLarge
+td{text-align:center}
+#container .orderBtnLarge .orderIcons
+td{padding:5px
+0 0}
+#container .orderBtnLarge .orderText
+td{padding:0}
+#container .orderBtnLarge
+.product{background:url(premium/premium-order-btn-large-sep.gif) repeat-y right top}
+#container .orderBtnLargeDisabled
+.product{background:url(premium/premium-order-btn-large-sep-sw.gif) repeat-y right top !important}
+#container .orderBtnLargeDisabled
+.product{background-position:left top}
+#container .premiumJet:hover
+.jetBtn{display:block;margin:10px
+0 0 -104px}
+#container
+.orderIcon{background:url(premium/premium-order-icons-sprite.gif) no-repeat 0 0 transparent;height:35px;width:32px;margin:0
+auto}
+#container
+.orderIconSmall{background:url(premium/premium_jet_sprite.gif) no-repeat 0 0 transparent;height:18px;width:36px;margin:0
+auto}
+#container
+.orderIconSmall.ambrosiaSmall{height:21px !important;line-height:21px;width:15px !important;padding-left:15px}
+#container
+.schloss{background-position:0px 0px}
+#container
+.marbleIcon{background-position:-32px 0px}
+#container
+.woodIcon{background-position:-66px 0px}
+#container
+.sulfurIcon{background-position:-98px 0px}
+#container
+.wineIcon{background-position:-128px 0px}
+#container
+.crystalIcon{background-position:-162px 0px}
+#container
+.ambrosia{background-position:-191px 0px}
+#container
+.gold{background-position:-220px 0px}
+#container
+.clock{background-position:-254px 0px}
+#container
+.citizen{background-position:-286px 0px}
+#container
+.jet{background-position:0px 0px}
+#container
+.ambrosiaSmall{background-position:-37px 0px;}
+#container .orderBtnLargeDisabled
+.schloss{background-position:0px -35px}
+#container .orderBtnLargeDisabled
+.marbleIcon{background-position:-33px -35px}
+#container .orderBtnLargeDisabled
+.woodIcon{background-position:-66px -35px}
+#container .orderBtnLargeDisabled
+.sulfurIcon{background-position:-98px -35px}
+#container .orderBtnLargeDisabled
+.wineIcon{background-position:-128px -35px}
+#container .orderBtnLargeDisabled
+.crystalIcon{background-position:-162px -35px}
+#container .orderBtnLargeDisabled
+.ambrosia{background-position:-191px -35px}
+#container .orderBtnLargeDisabled
+.gold{background-position:-220px -35px}
+#container .orderBtnLargeDisabled
+.clock{background-position:-254px -35px}
+#container .orderBtnLargeDisabled
+.citizen{background-position:-286px -35px}
+#container .orderBtnSmallDisabled
+.jet{background-position:0px -22px}
+#container .orderBtnSmallDisabled
+.ambrosiaSmall{background-position:-37px -22px}
+#container
+#banner_skyscraper{width:120px;height:600px;position:absolute;left:505px;z-index:25}
+#container
+#banner_container{top:20px;position:absolute;width:120px;left:50%;z-index:25}
+#container .premiumOffer
+h4{text-align:center;font-weight:700;margin-bottom:6px}
+#container .premiumOffer
+.buy{text-align:center;font-size:11px}
+#container .premiumOffer td.first,
+#container .premiumOffer
+td.second{padding:0
+6px;vertical-align:top;width:50%}
+#container .premiumOffer
+td.first{border-right:2px solid #E4B773}
+#container .premiumOffer
+.featureWrapper{margin:0
+auto}
+#container
+.orderBtnLarge{height:57px;font-weight:700;margin:0
+auto;padding:4px
+2px 2px 40px;width:120px;position:relative;overflow:visible}
+#container
+.orderBtnLarge.onlyAmbrosia{padding-left:50px;width:110px}
+#container .orderBtnLarge.onlyAmbrosia
+.ambrosiaAmount{width:44px;padding-left:5px}
+#container .orderBtnLarge:hover{background-position:left -63px}
+#container .orderBtnLarge:active{background-position:left -126px}
+#container .orderBtnLarge
+table{background-color:transparent;width:100%}
+#container .orderBtnLarge
+td{text-align:center}
+#container .orderBtnLarge.onlyAmbrosia .orderIcons
+td{padding-right:10px !important}
+#container .orderBtnLarge .orderIcons
+td{padding:5px
+0 0}
+#container .orderBtnLarge .orderText
+td{padding:0}
+#container .orderBtnLarge
+.product{background:url(premium/premium-order-btn-large-sep.gif) repeat-y right top}
+#container .orderBtnLargeDisabled
+.product{background:url(premium/premium-order-btn-large-sep-sw.gif) repeat-y right top !important}
+#container .orderBtnLargeDisabled
+.product{background-position:left top}
+#container .premiumOffer .feature .feature-icon{float:left;margin-left:3px;position:relative}
+#mainview .contentBox01h .content .pulldown table td,
+#mainview div.pulldown,
+#mainview div.pulldown table
+td{padding:0}
+#mainview div.pulldown
+table{background:none;width:100%;margin:0
+auto}
+#mainview div.pulldown
+div.content{text-align:left;margin:0;background:url(interface/pulldown_bg.gif) repeat-x top left}
+#mainview div.pulldown
+div.btn{width:674;height:7px;background:url(interface/pulldown_contentbox.gif) no-repeat}
+#mainview #transportGoods
+.smk_warning{border:1px
+solid #f1d198;padding:3px
+10px 3px 40px;margin:5px
+5px 5px 5px;background:#fcddd2}
+#mainview
+.smk_warning{border:1px
+solid #f1d198;padding:3px
+10px 3px 40px;margin:5px
+5px 5px 5px;background:#fcddd2}
+#mainview #transportGoods
+.content{width:100%}
+#mainview #setPremiumJetPropulsion
+.sliderBox{position:relative}
+#mainview
+.summaryBox{background-image:url(transport/summarybox_bg.gif);margin:0
+auto;position:relative;width:635px}
+#mainview .summaryBox
+h3.header{background:url(transport/summarybox_header.gif) no-repeat scroll 0 0 transparent;color:#7E4A21;font-weight:bold;height:20px;line-height:20px;margin-top:0;padding:10px
+6px 0;text-align:center}
+#mainview .summaryBox
+div.footer{background:url(transport/summarybox_footer.gif) no-repeat scroll 0 0 transparent;height:3px;overflow:hidden}
+#mainview .summaryBox
+ul{border-bottom:1px dotted #E4B873}
+#mainview .summaryBox
+ul.routeInfo{font-weight:700;font-size:14px}
+#mainview .summaryBox ul
+li{float:left;margin-left:30px}
+#mainview .summaryBox ul
+li.rowTitle{width:110px;font-weight:700}
+#mainview .summaryBox .total input,
+#mainview .summaryBox .gold
+input{font-weight:700}
+#mainview .summaryBox ul.routeInfo
+li{margin-top:6px;line-height:40px !important;background-position:left center !important}
+#mainview .summaryBox ul.cargoInfo li,
+#mainview .summaryBox ul.speedInfo li,
+#mainview .summaryBox ul.costsInfo
+li{height:24px;line-height:24px;margin-left:5px;background-repeat:no-repeat;width:90px}
+#mainview .summaryBox ul.routeInfo
+li.journeyTransporters{background:url(characters/fleet/60x60/ship_transport_r_60x60.gif) no-repeat top left transparent;height:60px;padding-left:30px;margin-top: -50px}
+#mainview .summaryBox
+input{background:none;border:none;width:48px;font-size:12px;margin-left:40px}
+#mainview .summaryBox .journeyTransporters input#transporterCount,
+#mainview .summaryBox .journeyTransporters
+span{font-weight:700;color:#906646;font-size:14px;margin-left:7px;vertical-align:middle}
+#mainview .summaryBox
+.journeyTransporters{position:relative;top:30px}
+#mainview .summaryBox .journeyTransporters
+span{line-height:80px}
+#mainview .summaryBox ul
+li.rowTitle{margin-left:20px !important}
+#mainview .summaryBox ul.cargoInfo li
+input{margin-left:40px}
+#mainview .summaryBox .routeInfo
+input{text-align:right}
+#mainview .summaryBox
+.pulldown{margin:0
+3px}
+#mainview .summaryBox .speedInfo
+.capacity{background:url(layout/crate.gif) no-repeat 8px center transparent}
+#mainview .summaryBox .speedInfo
+.wonder{background:url(wonder2/wonder7_small.gif) no-repeat 4px center transparent}
+#mainview .summaryBox .speedInfo
+.triton{background:url(premium/premium_jet_s.gif) no-repeat 4px center transparent}
+#mainview .summaryBox .speedInfo
+.total{background:url(layout/sigma.gif) no-repeat 20px center transparent}
+#mainview .summaryBox .costsInfo
+.gold{background:url(resources/icon_gold.gif) no-repeat 4px center}
+#mainview .summaryBox .cargoInfo
+.wood{background:url(resources/icon_wood.gif) no-repeat 4px center}
+#mainview .summaryBox .cargoInfo
+.wine{background:url(resources/icon_wine.gif) no-repeat 4px center}
+#mainview .summaryBox .cargoInfo
+.marble{background:url(resources/icon_marble.gif) no-repeat 2px center}
+#mainview .summaryBox .cargoInfo
+.sulfur{background:url(resources/icon_sulfur.gif) no-repeat 2px center}
+#mainview .summaryBox .cargoInfo .glass, #mainview .summaryBox .cargoInfo
+.crystal{background:url(resources/icon_glass.gif) no-repeat  4px center}
+#container #armyPreview
+#battlefield{background-position:-150px -4px;height:192px;left:0;margin:10px
+auto;position:relative;top:0;width:654px}
+#container #armyPreview
+#battlefield.battlefield_city{background-image:url("combatreport/battlefield_city_A_D.jpg")}
+#container #armyPreview
+#battlefield.battlefield_sea{background-image:url("combatreport/battlefield_sea_A_D.jpg")}
+#container #armyPreview #battlefield
+ul{position:absolute;list-style:none outside none;max-width:400px;text-align:left}
+#container #armyPreview #battlefield
+#loc_mainline{top:130px;left:169px}
+#container #armyPreview #battlefield
+#loc_ranged{top:70px;left:169px}
+#container #armyPreview #battlefield
+#loc_artillery{top:10px;left:169px}
+#container #armyPreview #battlefield
+#loc_left_flank{top:130px;left:10px}
+#container #armyPreview #battlefield
+#loc_right_flank{top:130px;left:509px}
+#container #armyPreview #battlefield
+#loc_air{top:10px;left:10px}
+#container #armyPreview #battlefield
+#loc_air_fighter{top:10px;left:507px}
+#container #armyPreview
+.slot{float:left;width:45px}
+#container #armyPreview
+.image{margin:0px
+auto 2px auto;width:35px;height:35px}
+#container #armyPreview
+.image.empty{background-image:url(combatreport/empty.gif)}
+#container #armyPreview
+.image.army{background-image:url(combatreport/unitsprites.gif)}
+#container #armyPreview
+.image.fleet{background-image:url(characters/fleet/unitfleets_x34_y34.gif)}
+#container #armyPreview
+.image.slinger{background-position:0px 0px}
+#container #armyPreview
+.image.swordsman{background-position: -36px 0px}
+#container #armyPreview
+.image.phalanx{background-position: -72px 0px}
+#container #armyPreview
+.image.marksman{background-position: -144px 0px}
+#container #armyPreview
+.image.mortar{background-position: -396px 0px}
+#container #armyPreview
+.image.catapult{background-position: -360px 0px}
+#container #armyPreview
+.image.ram{background-position: -432px 0px}
+#container #armyPreview
+.image.steamgiant{background-position: -252px 0px}
+#container #armyPreview
+.image.bombardier{background-position: -324px 0px}
+#container #armyPreview
+.image.cook{background-position: -216px 0px}
+#container #armyPreview
+.image.medic{background-position: -180px 0px}
+#container #armyPreview
+.image.gyrocopter{background-position: -288px 0px}
+#container #armyPreview
+.image.archer{background-position: -108px 0px}
+#container #armyPreview
+.image.wall{background-position: -468px 0px}
+#container #armyPreview
+.image.spearman{background-position: -540px 0px}
+#container #armyPreview
+.image.barbarian{background-position: -504px 0px}
+#container #armyPreview .image.ship_transport,
+#container #armyPreview
+.image.ship_premium_transport{background-position:0px 0px}
+#container #armyPreview
+.image.ship_ram{background-position: -36px 0}
+#container #armyPreview
+.image.ship_flamethrower{background-position: -108px 0}
+#container #armyPreview
+.image.ship_submarine{background-position: -252px 0}
+#container #armyPreview
+.image.ship_ballista{background-position: -72px 0}
+#container #armyPreview
+.image.ship_catapult{background-position: -144px 0}
+#container #armyPreview
+.image.ship_mortar{background-position: -216px 0}
+#container #armyPreview
+.image.ship_steamboat{background-position: -180px 0}
+#container #armyPreview
+.image.ship_rocketship{background-position: -396px 0}
+#container #armyPreview
+.image.ship_paddlespeedship{background-position: -360px 0}
+#container #armyPreview
+.image.ship_ballooncarrier{background-position: -324px 0}
+#container #armyPreview
+.image.ship_tender{background-position: -288px 0}
+#container #armyPreview
+.text{text-align:center;border:1px
+solid #e4b873;background-color:#fdf7dd;padding:0px}
+#container #armyPreview
+.reserve{display:none;margin:10px;height:70px}
+#container #mainview
+div.ikihint{padding:20px
+10px 20px 60px;margin:10px
+20px;border:3px
+solid #E4B873;font-size:12px;background-color:#F3D49F;background-image:url(layout/exclamation.jpg);background-repeat:no-repeat;background-position:5px 5px}
+.clearfloat{clear:both;height:0}
+.clearfix:after{clear:both;content:".";display:block;height:0;visibility:hidden}
+.clearfix{display:inline-block}
+/*\*/* html
+.clearfix{height:1%}
+.clearfix{display:block}
+#notices
+.warning_small{background:none #FCDDD2 !important;min-height:inherit !important}
+/**/#worldmap_iso #container #navigation
+.content{margin-top:0px;margin-bottom:0px}
+#worldmap_iso #container #mapControls
+.visibility{position:absolute;top:0px;left:0px;width:50px;height:170px;background-color:#f7eccc}
+#worldmap_iso #container
+#mapControls{position:relative;padding:1px}
+#worldmap_iso #worldmap .island1,
+#worldmap_iso #worldmap
+.island6{background-image:url(world/_1.gif)}
+#worldmap_iso
+.islandLink{display:block;position:absolute;top:20px;left:55px;width:130px;height:80px;cursor:pointer;z-index:20001;margin:0px}
 #container
 #resUpgrade{color:#580404}
 #container #resUpgrade
 img{display:block;margin:6px
 auto}
+#container #resUpgrade .donate
+img{display:inline;margin:0}
 #container #resUpgrade
 .buildingLevel{text-align:center;font:bold 36px Arial, Helvetica, sans-serif;height:70px}
 #container #resUpgrade .buildingLevel
@@ -1350,22 +2167,38 @@ h4{font-weight:normal;text-align:center;margin:6px
 #container #resUpgrade
 .resources{margin:0
 0 0 30px}
+#container #resUpgrade .donate
+.inputSymbolLeft{margin:0
+5px -7px 5px}
+#container #resUpgrade .donate
+.inputSymbolRight{margin:0
+-5px -7px 5px}
+#container #resUpgrade
+.result{text-align:left;padding-left:20px;padding-top:10px}
+#container #resUpgrade
+.hint{background:url("layout/help_smaller.gif");position:absolute;left:198px;width:9px;height:15px}
+#container #resUpgrade
+.inputs{padding-top:5px}
 #container #resUpgrade
 #donateForm{border:1px
 solid #fffbdb;border-bottom-color:#dfcea2;border-right-color:#dfcea2;background-color:#fcf1d2;margin:10px
 8px}
 #resUpgrade
-#donate{text-align:center}
-#container #resUpgrade #donate
-label{display:block;text-align:center;margin:2px
+.donate{text-align:center}
+#container #resUpgrade
+#donateMouseover.tooltip{right:15px}
+#container #resUpgrade .donate
+.label{display:block;text-align:center;margin:2px
 0px;padding:4px
 2px}
-#container #resUpgrade #donate
+#container #resUpgrade .donate
 input.textfield{width:120px;text-align:center;vertical-align:middle}
-#container #resUpgrade #donate
+#container #resUpgrade .donate
+input.textfield#donateWood2{width:80px;text-align:center;vertical-align:middle}
+#container #resUpgrade .donate
 a{margin-left:4px;padding:0px
 4px;line-height:26px;font-weight:bold;text-decoration:none}
-#container #resUpgrade #donate a:hover{text-decoration:underline}
+#container #resUpgrade .donate a:hover{text-decoration:underline}
 #container #resUpgrade.upgrading
 .content{height:200px}
 #container #resUpgrade.upgrading
@@ -1389,9 +2222,11 @@ solid #775726;background-color:#fefbe8}
 .time{display:block;font-weight:bold;width:140px;margin:4px
 auto 4px 70px;text-align:center}
 #mainview #setWorkers
-div.content{height:178px;color:#612d04}
+#workersWrapper{height:180px}
 #mainview #setWorkers
-ul{position:relative;height:50px;background-image:url(layout/assignworkers_bg_stats.gif)}
+div.content{min-height:258px;color:#612d04}
+#mainview #setWorkers
+ul{position:relative;height:120px;background:url(layout/assignworkers_bg_stats.gif) repeat-x;background-position:left 3px}
 #mainview #setWorkers
 .citizens{position:absolute;top:16px;left:12px;width:100px;height:120px;background:url(characters/y100_citizen_faceright.gif) no-repeat 30px 16px}
 #mainview #setWorkers .citizens
@@ -1449,11 +2284,11 @@ ul{position:relative;height:50px;background-image:url(layout/assignworkers_bg_st
 #sliderthumb{position:absolute;width:16px;height:35px;background-image:url(img/resource/bg_slider_thumb.gif)}
 #setWorkers
 input.textfield{width:90px;height:20px;text-align:center;margin:0;padding:2px
-0;position:absolute;top:130px;left:260px}
+0;position:absolute;top:136px;left:229px}
 #setWorkers input.button,
 #setWorkers
 input.buttonChanged{height:26px;margin:0;padding:0
-10px;position:absolute;top:130px;left:360px}
+10px;position:absolute;top:136px;left:329px}
 .contentBox01h
 table{width:100%;margin:0px
 auto 10px auto;color:#612d04;font:bold 12px Arial, Helvetica, sans-serif;border:0px
@@ -1497,14 +2332,30 @@ td.ownerDonation{text-align:right}
 img{vertical-align:middle}
 #resourceUsers
 td.actions{border-left:2px solid #faeac6}
+#mainview .premiumOfferBox
+#orderRightMouseover{left:400px;bottom:90px}
+#mainview .premiumOfferBox
+#orderLeftMouseover{left:75px;bottom:90px}
+#merchantNavy #mainview
+table{width:100%}
+#port #mainview
+strong{font-weight:bold}
+#port #container #mainview table.stuff
+td.amount{text-align:right;padding:0px}
+#port #mainview
+.contentBox01h{position:static !important}
+#port .buyTransporter .content
+.unitcount{width:72px;height:24px;line-height:24px;text-align:center;background:url(interface/bg_count.gif) no-repeat;margin:0
+auto 0;position:absolute;left:108px;top:27px}
 .happiness_ecstatic{background:url(smilies/ecstatic.gif) no-repeat center center}
 .happiness_happy{background:url(smilies/happy.gif) no-repeat center center}
 .happiness_neutral{background:url(smilies/neutral.gif) no-repeat center center}
 .happiness_sad{background:url(smilies/sad.gif) no-repeat center center}
 .happiness_outraged{background:url(smilies/outraged.gif) no-repeat center center}
-#notices{height:100%}
-#notices h4, #SatisfactionOverview .negatives
-h4{background:url(interface/bg_subheading_h4.gif) repeat-x;height:23px;line-height:22px;text-align:center;font-weight:bold;font-size:11px}
+#townHall   #CityOverview h3
+a{display:block;position:absolute;top:8px;right:20px;width:148px;height:20px;line-height:18px;background-image:url(buttons/btn_heading.gif);font-size:11px;color:#9d8e74}
+#townHall  #PopulationGraph
+.citizens{left:20px;width:160px;background-image:url(bars/bg_24px_lightviolet.gif)}
 #notices div
 p{margin:0px}
 #notices div
@@ -1519,10 +2370,23 @@ solid #f1d198;padding:3px
 solid #f1d198;padding:3px
 10px 3px 80px;margin:2px
 0px}
+#townHall  #SatisfactionOverview div.cat
+div{position:absolute;top:0px;height:24px;border:1px
+solid #c99868;text-align:center;min-width:60px}
+#academy
+.buildingDescription{height:auto}
+#academy
+#researchFocus.dynamic{text-align:center}
+#academy
+#researchLibrary.dynamic{text-align:center}
+#academy #mainview #setScientists
+div.content{color:#612d04;height:230px}
+#temple
+#friends{z-index:29 !important}
 #unitConstructionList
 li{border-bottom:1px dotted #EBC185;padding-bottom:5px}
 #unitConstructionList
-h4{background-color:#ebc185;color:#580404;line-height:20px;font-weight:bold;text-align:center}
+h4{background-color:#ebc185;color:#580404;line-height:20px;font-weight:bold;text-align:center;margin-bottom:7px}
 #unitConstructionList .currentUnit, #unitConstructionList.dynamic .content ul
 li{position:relative;margin:4px
 0px;height:52px;padding-left:52px;border-bottom:1px solid #fffbdb}
@@ -1543,6 +2407,22 @@ solid #775726;background-color:#fefbe8;overflow:hidden;background-image:url(inpu
 .time{position:absolute;font-weight:bold;top:25px;left:160px;font-size:11px}
 #unitConstructionList .currentUnit .time
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#unitConstructionList
+.results{margin-top:10px;border-bottom:1px solid #FFFBDB;padding-bottom:5px;margin-bottom:7px}
+#unitConstructionList .results
+.progressbar{width:178px;height:10px;margin:4px
+0px 4px 20px;border:1px
+solid #775726;background-color:#fefbe8;overflow:hidden;background-image:url(input/textfield.gif);background-position:bottom}
+#unitConstructionList .results .progressbar
+.bar{height:100%;background-color:#73443e;background-image:url(interface/progressbar_anim.gif);background-position:bottom}
+#unitConstructionList .results
+.time{font-weight:bold;text-align:center;font-size:11px}
+#unitConstructionList .results .time
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#unitConstructionList
+.constructionBlock{background:rgb(254, 224, 170);padding-bottom:5px}
+#unitConstructionList .constructionBlock
+.time{font-weight:bold;font-size:11px;text-align:center;margin-top:5px;padding-bottom:7px;border-bottom:1px solid #FFFBDB}
 #unitConstructionList
 .swordsman{background:url(characters/military/x40_y40/y40_swordsman_faceright.gif) no-repeat 6px 6px}
 #unitConstructionList
@@ -1585,6 +2465,14 @@ solid #775726;background-color:#fefbe8;overflow:hidden;background-image:url(inpu
 .ship_steamboat{background:url(characters/fleet/40x40/ship_steamboat_r_40x40.gif) no-repeat 6px 6px}
 #unitConstructionList
 .ship_submarine{background:url(characters/fleet/40x40/ship_submarine_r_40x40.gif) no-repeat 6px 6px}
+#unitConstructionList
+.ship_rocketship{background:url(characters/fleet/40x40/ship_rocketship_r_40x40.gif) no-repeat 6px 6px}
+#unitConstructionList
+.ship_paddlespeedship{background:url(characters/fleet/40x40/ship_paddlespeedship_r_40x40.gif) no-repeat 6px 6px}
+#unitConstructionList
+.ship_ballooncarrier{background:url(characters/fleet/40x40/ship_ballooncarrier_r_40x40.gif) no-repeat 6px 6px}
+#unitConstructionList
+.ship_tender{background:url(characters/fleet/40x40/ship_tender_r_40x40.gif) no-repeat 6px 6px}
 #unitConstructionList
 .ship_transport{background:url(characters/fleet/40x40/ship_transport_r_40x40.gif) no-repeat 6px 6px}
 #unitConstructionList
@@ -1639,21 +2527,35 @@ solid #775726;background-color:#fefbe8;overflow:hidden;background-image:url(inpu
 .shipyard{background:url(buildings/x40_y40/shipyard.gif) no-repeat 6px 6px}
 #unitConstructionList
 .temple{background:url(buildings/x40_y40/temple.gif) no-repeat 6px 6px}
+#unitConstructionList
+.dump{background:url(buildings/x40_y40/dump.gif) no-repeat 6px 6px}
+#unitConstructionList
+.buttonAbort{text-align:center;padding:10px
+0 10px 0;clear:left}
+#unitConstructionList
+.buttonAbort.first{padding-bottom:15px}
+#container #unitConstructionList .dynamic
+.content{margin-bottom:0px}
 #container #mainview #units
 hr{margin-left:130px;margin-right:160px;color:#bc575d;background-color:#bc575d;border:none;border-color:#bc575d;height:1px}
+#container #mainview .premiumTbl
+td{padding:10px
+20px 0 0}
+#container #mainview .premiumTbl
+td.left{padding-left:27px;padding-right:10px}
 #container #mainview
 #units{position:relative}
 #container #mainview
 .unit{position:relative;padding:10px
 0px;background:url(interface/bg_build.gif) repeat-y top right;min-height:140px}
 #container #mainview .unit
-h4{font-size:14px;font-weight:bold;line-height:22px;margin-bottom:2px;margin-left:130px;width:400px}
+h4{margin-left:130px;width:400px}
 #container #mainview .unitinfo
 img{position:absolute;top:10px;left:5px}
 #container #mainview #units .unit
 p{margin-left:130px;width:400px}
 #container #mainview .unit
-.unitcount{position:absolute;width:72px;height:24px;line-height:24px;text-align:center;top:110px;left:30px;background:url(interface/bg_count.gif) no-repeat}
+.unitcount{position:absolute;width:72px;height:24px;line-height:24px;text-align:center;top:110px;left:15px;background:url(interface/bg_count.gif) no-repeat 14px 0}
 #container #mainview .unit .unitcount
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #mainview .unit
@@ -1661,25 +2563,26 @@ label{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #mainview .costs
 h5{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #container #mainview .unit
-.resources{margin-left:130px;margin-right:160px;text-align:right;margin-bottom:10px}
+.resources{margin-left:130px;margin-right:160px;text-align:right;margin-bottom:10px;height:24px}
 #container #mainview .unit .resources
 li{display:inline;width:auto;padding-top:3px;padding-bottom:3px;margin:0px
 8px;line-height:22px}
 #container #mainview .unit .resources
 li.citizens{position:absolute;left:125px}
 #container #mainview .unit .resources
-li.wood{position:absolute;left:190px}
+li.wood{position:absolute;left:182px}
 #container #mainview .unit .resources li.wine,
 #container #mainview .unit .resources li.marble,
-#container #mainview .unit .resources li.glass,
 #container #mainview .unit .resources
-li.sulfur{position:absolute;left:255px}
+li.glass{position:absolute;left:247px}
 #container #mainview .unit .resources
-li.upkeep{float:none;margin-left:22px}
+li.sulfur{position:absolute;left:308px}
 #container #mainview .unit .resources
-li.time{float:none}
+li.upkeep{position:absolute;left:372px}
+#container #mainview .unit .resources
+li.time{position:absolute;left:430px}
 #mainview .unit
-.forminput{position:absolute;top:32px;left:550px;width:100px}
+.forminput{position:absolute;bottom:55px;left:550px;width:100px}
 #mainview .unit .forminput
 .textfield{width:60px;text-align:center}
 #mainview .unit .forminput
@@ -1689,14 +2592,183 @@ li.time{float:none}
 0 8px 130px}
 #barracks
 .buildingDescription{height:auto;margin-bottom:15px}
+#mainview .contentBox01h .content
+#unitCountIcons{margin:10px
+0 0 0;width:634px}
+#mainview #selected_units.contentBox01h .content
+.divider{background-color:#bc575d;width:634px;height:1px;overflow:hidden;margin-left:20px}
+#mainview .contentBox01h .content
+#unit_basket{margin-top:10px;margin-left:20px;border-collapse:collapse;margin-top:0;margin-bottom:0}
+#mainview .contentBox01h .content #unit_basket
+td{padding:0}
+#barracks .army span.textLabel, #shipyard .army
+span.textLabel{display:none}
+#mainview #unit_basket .army
+div.unitcounttextlabel{text-align:center}
+#mainview #unit_basket
+div.army.nobckrd{background-image:none}
+#mainview
+#button_purchase{margin-left:20px}
+#mainview #button_purchase
+input.button{margin-top:0px}
+#mainview #button_purchase
+input.button_inactive{width:auto;padding:2px
+10px;margin-top:0px;margin-bottom:10px}
+#mainview
+#cost_wrapper{text-align:right;margin-right:20px;margin-top:10px}
+#mainview #cost_wrapper
+.orderBtn{margin:0
+0 10px 16px}
+#mainview
+#accumulatedUnitCosts{text-align:right;margin-right:20px}
+#mainview #accumulatedUnitCosts
+#accumulatedResourcesCosts{display:inline}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li{text-align:left;padding:3px
+0 0 28px;margin-top:5px;background-repeat:no-repeat;height:26px;display:inline;position:absolute}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts li
+.textLabel{display:none}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.citizens{background-image:url(resources/icon_citizen.gif);padding-left:25px;left:20px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.wood{background-image:url(resources/icon_wood.gif);left:85px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.wine{background-image:url(resources/icon_wine.gif);left:155px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.crystal{background-image:url(resources/icon_crystal.gif);left:225px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.sulfur{background-image:url(resources/icon_sulfur.gif);left:295px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.upkeep{background-image:url(resources/icon_upkeep.gif);left:365px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.time{background-image:url(resources/icon_time.gif);padding-left:23px;left:435px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.citizens_inactive{background-image:url(resources/icon_citizen_inactive.gif);padding-left:25px;left:20px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.wood_inactive{background-image:url(resources/icon_wood_inactive.gif);left:85px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.wine_inactive{background-image:url(resources/icon_wine_inactive.gif);left:155px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.crystal_inactive{background-image:url(resources/icon_crystal_inactive.gif);left:225px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.sulfur_inactive{background-image:url(resources/icon_sulfur_inactive.gif);left:295px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.upkeep_inactive{background-image:url(resources/icon_upkeep_inactive.gif);left:365px}
+#mainview #accumulatedUnitCosts #accumulatedResourcesCosts
+li.time_inactive{background-image:url(resources/icon_time_inactive.gif);padding-left:23px;left:435px}
+#mainview #unitCountIcons
+.nounitsselected{width:634px;text-align:center;height:60px;margin-left:20px}
+#barracks .army, #shipyard
+.army{background-repeat:no-repeat;text-align:center;background-image:url(characters/military/unitsprites_x34_y35.gif);width:35px;margin:0
+0 0 0px;padding-top:36px;height:24px}
+#barracks #unitConstructionList .army_wrapper, #shipyard #unitConstructionList
+.army_wrapper{float:left;margin-left:7px;margin-top:5px}
+#mainview #unit_basket
+.s317{background-position: -576px 0px}
+#barracks #unitConstructionList .army, #shipyard #unitConstructionList
+.army{height:auto}
+#barracks .army .unitcounttextlabel, #shipyard .army
+.unitcounttextlabel{font-size:10px}
+#barracks
+.s301{}
+#barracks
+.s302{background-position: -36px 0}
+#barracks
+.s303{background-position: -72px 0}
+#barracks
+.s304{background-position: -144px 0}
+#barracks
+.s305{background-position: -396px 0}
+#barracks
+.s306{background-position: -360px 0}
+#barracks
+.s307{background-position: -432px 0}
+#barracks
+.s308{background-position: -252px 0}
+#barracks
+.s309{background-position: -324px 0}
+#barracks
+.s310{background-position: -216px 0}
+#barracks
+.s311{background-position: -180px 0}
+#barracks
+.s312{background-position: -288px 0}
+#barracks
+.s313{background-position: -108px 0}
+#barracks
+.s314{background-position: -468px 0px}
+#barracks
+.s315{background-position: -540px 0px}
+#barracks
+.s316{background-position: -504px 0px}
+#barracks .premiumTbl
+.tooltip{bottom:55px;right:20px}
+#buildingGround #container #mainview
+#buildings{position:relative}
 th.col1{color:#612d04}
 td.col1{color:#612d04}
+#militaryAdvisorReportView
+.s318{background-position: -850px 0px}
+#militaryAdvisorReportView
+.s201{}
+#militaryAdvisorMilitaryMovements
+#friends{z-index:29 !important}
+#militaryAdvisorMilitaryMovements #mainview
+.contentBox01h{position:static !important}
+#culturalPossessions_assign
+#moveCulturalGoods{margin-bottom:40px}
 html #assignCulturalGoods
 .totalCulturalGoods{font-size:18px;font-weight:bold;color:#906646;text-align:center}
 html #assignCulturalGoods .totalCulturalGoods
 .textLabel{display:block;margin:10px;font-size:12px;font-weight:normal}
-@charset "utf-8";#safehouseMissions #mainview
-a{color:#542c0f;text-decoration:underline}
+#mainview .content .government_table
+h3{font-size:14px;font-weight:bold;height:30px;line-height:22px;margin:10px
+0}
+#mainview .content
+.government_table{background-color:#FFF5D6;border:1px
+solid #F4DDB5;margin:15px;text-align:center;width:95%}
+#mainview .content .government_table
+.government_pic{padding:10px;width:283px}
+#mainview .content .government_table
+.government_desc{height:88px;padding:10px
+10px 0 10px;width:100%}
+#mainview .content .government_table .government_desc
+.description_text{min-height:79px}
+#mainview .content .government_table .government_desc
+p{margin:0
+0 10px 0}
+#mainview .content .government_table .government_desc
+h3{margin:0}
+#mainview .content .government_table
+td{text-align:left;vertical-align:top}
+#mainview .content .government_table
+.government_effects{background-color:#FAEAC6;border:1px
+solid #F4DCB2;text-align:left;width:95%}
+#mainview .content .government_table .government_effects
+td{border:1px
+solid #F4DCB2;padding:7px;width:50%}
+#mainview .content .government_table
+.revolution_wrapper{padding-top:0}
+#mainview .content .government_table
+.government_confirm{background-color:#FAEAC6;border:1px
+solid #F4DCB2;font-size:14px;font-weight:700;text-align:left;padding:5px
+20px}
+#mainview .content .government_table  .government_effects
+li{margin-left:15px}
+#mainview .content .government_table
+.revolution_button{margin:15px;text-align:center}
+#mainview .content .government_table
+.center_button{text-align:center}
+#mainview .content
+.confirm_buttons{margin-bottom:30px}
+#mainview .content .revolution_button
+.zepter_icon{vertical-align:middle}
+#mainview .content .revolution_button
+.button{padding:7px}
+#mainview .content
+.left_button{float:left}
+#mainview .content
+.right_button{float:right}
 html #safehouse #container #mainview ul li.risk .statusBar,
 html #safehouseMissions #mainview
 .statusBar{width:205px;height:10px;border:1px
@@ -1704,32 +2776,43 @@ solid #775726;background-color:#fefbe8;overflow:hidden}
 html #safehouse #container #mainview ul li.risk .statusBar .bar,
 html #safehouseMissions #mainview .statusBar
 .bar{height:100%;background-color:#deaf64;border-right:1px solid #960;background:url(layout/bg-spy-detection-bar-205.gif) no-repeat;overflow:hidden}
+html #safehouse #container #mainview
+div.noReport{background-color:#FAEAC6;color:#906646;font-weight:bold;text-align:center;margin:10px
+0px;padding:4px
+4px 4px 4px;width:290px}
 html #safehouseReports #container #mainview
 td.job{font-weight:bold;width:120px}
 html #safehouseReports #container #mainview
-td.report{padding-top:10px}
-html #safehouseReports #container #mainview td.report
-a{color:#542c0f;font-weight:bold;text-decoration:underline}
+td.report{padding:10px
+0}
+html #container #mainview table.spyMessages
+td.reportText{background:#FAEAC6}
 html #safehouseReports #container #mainview td.report a:hover{color:#542c0f;font-weight:bold}
-html #safehouseReports #container #mainview
-table.reportTable{margin:10px
-0px;width:300px;border:1px
-solid #FAEAC6}
-html #safehouseReports #container #mainview table.reportTable
-th{background-color:#FAEAC6;color:#906646;font-weight:bold;text-align:center}
+html #container #mainview table.reportTable
+td.count{text-align:center}
+html #container #mainview table.reportTable
+th{background-color:#F2D9AB;color:#906646;font-weight:bold;text-align:center}
 html #safehouseReports #container #mainview table.reportTable th,
 html #safehouseReports #container #mainview table.reportTable
 td{padding:3px
 6px}
-html #safehouseReports #container #mainview table.reportTable
+html #container #mainview table.reportTable tr
+.category{text-align:left;width:300px}
+html #container #mainview table.reportTable tr
+td{background-color:#FDF7DD;border:2px
+solid #FAEAC6;height:32px}
+html #container #mainview table.reportTable tr.alt
+td{background-color:#F2D9AB}
+html #container #mainview table.reportTable
 td.count{text-align:center}
-html #safehouseReports #container #mainview
-tr.status{border-bottom:2px dotted #e4b873}
+html #container #mainview
+tr.status{border-bottom:2px dotted #e4b873;text-align:left}
 html #safehouseReports #container #mainview .contentBox01h
-.content{margin-button:10px}
+.content{margin-bottom:10px}
 html #safehouseReports #container #mainview
-table.record{margin:3px
-6px 10px 6px;width:500px}
+table.record{width:90%}
+html  #container #mainview table.record
+td{text-align:left}
 html #safehouseReports #container #mainview
 table#resources{width:200px}
 html #safehouseReports #container #mainview table#resources
@@ -1737,6 +2820,44 @@ td.unitname{text-align:center}
 html #safehouseReports #container #mainview table#resources
 td.count{text-align:right;padding-right:20px}
 html #safehouseReports #container .dynamic
+.content{text-align:center}
+.reportText
+td.job{font-weight:bold;width:120px}
+.reportText
+td.report{padding-top:10px}
+.reportText td.report
+a{color:#542c0f;font-weight:bold;text-decoration:underline}
+.reportText td.report a:hover{color:#542c0f;font-weight:bold}
+#container #mainview .reportText
+table.reportTable{border:1px
+solid #FAEAC6;margin:10px
+0px;width:100%}
+#container #mainview .reportText table.reportTable
+th{color:#906646;font-weight:bold;text-align:left}
+#container #mainview .reportText table.reportTable th,
+#container #mainview .reportText table.reportTable
+td{padding:0
+6px}
+#container #mainview .reportText table.reportTable
+td.count{text-align:center}
+#container #mainview .reportText table.record tr.status
+td{padding:3px
+6px}
+#container #mainview .reportText
+tr.status{border-bottom:2px dotted #e4b873;border-collapse:separate;padding:3px
+6px}
+#container #mainview .reportText .contentBox01h
+.content{margin-bottom:10px}
+.reportText
+table.record{margin:3px
+auto 10px auto;width:100%}
+.reportText
+table#resources{width:200px}
+.reportText table#resources
+td.unitname{text-align:center}
+.reportText table#resources
+td.count{text-align:right;padding-right:20px}
+.reportText .dynamic
 .content{text-align:center}
 @charset "utf-8";#tavern #mainview
 div.buildingDescription{height:auto;padding-bottom:20px}
@@ -1754,29 +2875,131 @@ div.buildingDescription{height:auto;padding-bottom:20px}
 .outraged{background:url(smilies/outraged.gif) no-repeat center center}
 #mainview #createColony
 label{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.missionWrapper{padding:10px
+10px 0}
+#mainview .missionWrapper
+p{margin:4px
+0px}
+.missionWrapper
+.missionImg{border:1px
+solid #E4B873;height:200px;margin:10px
+0;padding:1px}
+.missionWrapper
+.realMission{float:left;width:284px}
+.missionWrapper
+.decoyMission{float:right;width:284px}
+.missionWrapper .spyImg-big{margin:50px
+8px}
+.missionWrapper
+h3{font-size:14px;font-weight:bold;height:30px;line-height:22px;margin:10px
+0;text-align:center}
+.missionWrapper h3
+img{margin: -15px 10px;font-weight:700}
+.spyCity .realMission,
+.spyCity
+.decoyMission{width:258px}
+#mainview .missionWrapper .sliderinput
+.sliderbg{background:url(spy/slider_build_bg.gif) no-repeat;height:28px;width:110px}
+#mainview .missionWrapper .sliderinput .sliderbg
+.sliderthumb{background-image:url(spy/slider_build_thumb.gif);height:25px;width:15px;top:3px}
+#mainview .missionWrapper .sliderinput .sliderbg
+.actualValue{background-image:url(spy/slider_build_red.gif)}
+#mainview .missionWrapper .sliderinput
+.setMin{top:0px}
+#mainview .missionWrapper .sliderinput
+.setMax{left:154px;top:0px}
+#container #mainview .missionWrapper
+.spycount{background:url(spy/bg_count.gif) no-repeat;color:#50110A;font-size:10px;float:left;height:23px;line-height:23px;margin:0;padding:0
+12px 0 0;text-align:right;width:30px}
+#container #mainview .missionWrapper
+.forminput{eft:40px;osition:relative}
+#container #mainview .missionWrapper .forminput
+input{width:30px;height:16px}
+#container #mainview .missionWrapper .spyCity
+li{height:35px}
+#container #mainview .missionWrapper .spycount
+.textLabel{height:1px;left: -9999px;overflow:hidden;position:absolute;width:1px}
+#mainview .missionWrapper
+.cityName{color:#906646;float:left;overflow:hidden;text-align:center;width:138px}
+#container .missionWrapper
+.contentBox06{background-image:url(spy/bg_contentBox06.gif);margin-bottom:10px;position:relative;width:280px}
+#container .missionWrapper .contentBox06
+h3.header{background:url(spy/bg_contentBox06_header.gif) no-repeat;color:#7E4A21;font-weight:bold;height:20px;line-height:20px;margin-top:0;padding:10px
+6px 0;text-align:center}
+#container .missionWrapper .contentBox06
+div.footer{background:url(spy/bg_contentBox06_footer.gif) no-repeat scroll 0 0 transparent;height:3px;overflow:hidden}
+#container .missionWrapper .contentBox06
+.infoList{padding:0
+8px}
+#container .missionWrapper .infoList
+li{border-bottom:1px dotted #fae1b0;margin-bottom:2px;height:16px;padding-bottom:3px}
+#container .missionWrapper .infoList
+label{float:left;width:210px}
+#container .missionWrapper .infoList
+div{float:right}
+#container .missionWrapper .infoList
+div.questionMark{background-image:url(layout/help_smaller.gif);cursor:help;width:9px;height:15px;text-align:center;vertical-align:middle;margin-left:2px;background-repeat:no-repeat}
+#container .missionWrapper .infoList
+.progbar_field{font-weight:700;border-bottom:1px dotted #8F7647;height:25px;padding-top:5px}
+#container .missionWrapper .infoList
+.progbarWrapper{background-color:#FFF1CF;border:1px
+solid #EDD8A8;clear:both;float:none;height:5px;margin-top:2px;width:100%}
+#container .missionWrapper .infoList
+.progbar{background:url(spy/spy-progbar.gif) repeat-y left top;float:none;line-height:5px;font-size:1px !important;height:5px;width:0}
+#container .missionWrapper .infoList
+.progbar_right{background-position:left bottom}
+#container
+div.fadeableHelpDisplay{position:absolute;background-color:#FFF3C9;display:none;width:300px}
+#container div.fadeableHelpDisplay
+div{border:2px
+outset black;padding:5px}
+.missionWrapper
+#chooseCity{float:left;margin-top:13px;width:285px}
+.missionWrapper #chooseCity
+select{height:25px;width:175px}
+#missionSummary
+.summary{background:url(spy/bg-spy-box.gif) no-repeat left top;height:35px;float:left;margin-left:10px;margin-right:20px;padding:5px
+0 5px;width:197px}
+#missionSummary .summary-time{background:url(spy/bg-spy2-box.gif) no-repeat left top;width:300px}
+#missionSummary .summary
+.total{display:inline;float:left;margin:16px
+0 0 38px;text-align:right;width:50px}
+#mainview #missionSummary.missionWrapper
+.submit{left:505px;position:absolute;text-align:center;top:20px;width:50px}
+#mainview #missionSummary.missionWrapper .submit-time{left:610px}
+.spyCity
+li{height:25px;position:relative}
+#takeOffer
+.offerTable{position:relative}
+#colonize
+#mainview{padding-bottom:40px}
 #mainview #transportGoods label,
 #colonize #mainview #createColony
 label{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#setPremiumTransports
-.content{background:url(characters/fleet/60x60/ship_trans_prem_r_60x60.gif) no-repeat 30px 0px;padding-left:80px}
-#setPremiumTransports
-label{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#setPremiumTransports
-.sliderinput{margin-left:40px}
-#setPremiumTransports
-#textfield_premium{left:400px;position:absolute;text-align:center;top:4px;width:60px}
-#setPremiumTransports
-p.costs{font-weight:bold;text-align:center;margin-right:60px}
-#setPremiumTransports
-#ambrosiaCosts{font-size:1.1em}
-#setPremiumTransports
-p.PremiumTransportsButton{text-align:center;margin-top:20px;margin-bottom:20px}
+#colonize #mainview #createColony
+.noPalace{position:relative;margin:16px
+100px;padding:4px;background-color:#fffbec;border:1px
+solid #fbe7c0}
 #mainview
-ul.resourceAssign{position:relative;width:500px;margin:0
-auto}
-#mainview .resourceAssign
-li{position:relative;background-repeat:no-repeat;height:30px;padding:4px
-0px}
+#setPremiumJetPropulsion{width:100%;position:relative;background:url(premium/premium_jet.gif) 30px top no-repeat transparent}
+#mainview
+.transportersCapacity{background:url(transport/transportCapacity.gif) 30px top no-repeat transparent}
+#mainview #setPremiumJetPropulsion .arrival,
+#mainview #missionSummary
+.arrival{padding-left:44px;line-height:26px;background:url(img/icon_arrival.gif) no-repeat top left}
+#mainview
+.sliderinput{border:none !important;margin:0
+auto;position:relative;width:400px}
+#mainview #setPremiumJetPropulsion .sliderBox .sliderinput,
+#mainview .transportersCapacity .sliderBox .sliderinput,
+#mainview #setPremiumTransports
+.sliderinput{top:20px}
+#mainview .missionWrapper
+.sliderinput{float:left;width:178px}
+#container .assignUnits
+.sliderinput{margin-left:155px}
+#mainview #missionSummary
+.right{float:right;width:140px}
 #container .resourceAssign
 li.gold{background-image:url(resources/icon_gold.gif);background-position:4px center}
 #container .resourceAssign
@@ -1789,12 +3012,45 @@ li.marble{background-image:url(resources/icon_marble.gif);background-position:2p
 li.glass{background-image:url(resources/icon_glass.gif);background-position:4px center}
 #container .resourceAssign
 li.sulfur{background-image:url(resources/icon_sulfur.gif);background-position:2px center}
+#mainview #setPremiumJetPropulsion
+.costs{text-align:center;vertical-align:middle;font-weight:700;line-height:28px}
+#mainview #setPremiumJetPropulsion .costs
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#mainview .content
+p.benefits{text-align:center}
+#mainview .content p.benefits
+span{font-weight:700}
+#setPremiumTransports
+.content{background:url(characters/fleet/60x60/ship_trans_prem_r_60x60.gif) no-repeat top left;min-height:60px;margin:10px
+0 0 20px}
+#setPremiumTransports .content
+.description{padding-left:50px}
+#setPremiumTransports
+label{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#setPremiumTransports
+.costs{font-weight:bold;text-align:center}
+#setPremiumTransports
+#ambrosiaCosts{font-size:1.1em}
+#setPremiumTransports
+p.PremiumTransportsButton{text-align:center;margin-top:20px;margin-bottom:20px}
+#mainview
+ul.resourceAssign{position:relative;width:500px;margin:0
+auto}
+#container .resourceAssign .capacitySummaryText,
 #container .resourceAssign
-.sliderinput{margin-left:40px}
+.capacitySummary{float:right;line-height:40px}
+#container .resourceAssign .capacitySummary
+span{display:inline-block;min-width:90px;text-align:right}
+#mainview .resourceAssign
+li{position:relative;background-repeat:no-repeat;height:30px}
+#container .resourceAssign
+.sliderinput{margin:0
+50px;width:400px;height:30px}
 #container .resourceAssign li
 .notAvailable{line-height:24px;color:#960;margin-left:60px}
-#container .resourceAssign
-.textfield{position:absolute;top:4px;left:440px;width:60px;text-align:center}
+#container .resourceAssign .textfield,
+#container .sliderinput
+.textfield{position:relative;top:-26px;left:414px;width:60px;text-align:center}
 #container .resourceAssign
 .summary{position:absolute;top:4px;left:440px;width:60px;text-align:center}
 #container .resourceAssign
@@ -1856,24 +3112,41 @@ li.ship_ram{background-image:url(characters/fleet/40x40/ship_ram_r_40x40.gif)}
 .assignUnits
 li.ship_steamboat{background-image:url(characters/fleet/40x40/ship_steamboat_r_40x40.gif)}
 .assignUnits
+li.ship_rocketship{background-image:url(characters/fleet/40x40/ship_rocketship_r_40x40.gif)}
+.assignUnits
 li.ship_submarine{background-image:url(characters/fleet/40x40/ship_submarine_r_40x40.gif)}
-#mainview .assignUnits
-.sliderinput{margin-left:100px}
+.assignUnits
+li.ship_paddlespeedship{background-image:url(characters/fleet/40x40/ship_paddlespeedship_r_40x40.gif)}
+.assignUnits
+li.ship_ballooncarrier{background-image:url(characters/fleet/40x40/ship_ballooncarrier_r_40x40.gif)}
+.assignUnits
+li.ship_tender{background-image:url(characters/fleet/40x40/ship_tender_r_40x40.gif)}
 #container .assignUnits
 .weight{background-image:url(icons/weight.jpg);background-repeat:no-repeat;left:95px;position:absolute;text-align:right;top:12px;width:29px;height:24px;font-size:14px;color:#580404;padding-top:4px;padding-right:25px}
 #container .assignUnits
-.sliderinput{margin-left:160px}
+.textfield{left:587px}
 #container .assignUnits
-.textfield{left:577px}
+.button{position:absolute;text-align:center;top:0px;width:35px;font-size:12px}
+#container .assignUnits
+.button.minus{left:490px;width:18px}
+#container .assignUnits
+.button.plus{left:536px;width:18px}
 #container .assignUnits .weight
 .textLabel{height:1px;left:-9999px;overflow:hidden;position:absolute;width:1px}
-#mainview
-.sliderinput{position:relative}
 #mainview .sliderinput
 .sliderbg{position:relative;left:24px;width:332px;height:30px;padding:0px
 10px;background-image:url(interface/slider_build_bg.gif)}
+#mainview .sliderinput
+.sliderbg.withButtons{width:260px;background-image:url(interface/slider_build_bg_withButtons.gif)}
 #mainview .sliderinput .sliderbg
-.actualValue{position:absolute;left:0;top:0;width:100%;height:100%;clip:rect(0px 0px auto 0px);background:url(interface/slider_build_red.gif) no-repeat 17px 11px}
+.divider{background-image:url(interface/slider_build_divider.gif);height:12px;width:3px;top:11px;left:0;float:left;position:absolute}
+.third{margin-left:115px}
+.twothird{margin-left:230px}
+.fourth{margin-left:90px}
+.twofourth{margin-left:180px}
+.threefourth{margin-left:260px}
+#mainview .sliderinput .sliderbg
+.actualValue{position:absolute;left:0;top:0;overflow:hidden;width:100%;height:30px;clip:rect(0px 0px auto 0px);background:url(interface/slider_build_red.gif) no-repeat 17px 11px}
 #mainview .sliderinput .sliderbg
 .sliderthumb{position:absolute;width:16px;height:30px;background-image:url(interface/slider_build_thumb.gif);cursor:pointer}
 #mainview .sliderinput
@@ -1882,27 +3155,38 @@ li.ship_submarine{background-image:url(characters/fleet/40x40/ship_submarine_r_4
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #mainview .sliderinput
 .setMax{position:absolute;display:block;width:24px;height:24px;top:3px;left:376px;background-image:url(img/resource/btn_max.gif)}
+#mainview .sliderinput
+.setMax.withButtons{left:304px}
 #mainview .sliderinput .setMax
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#missionSummary{position:relative;padding-top:10px}
-#missionSummary
-.costs{position:relative;margin-left:170px;margin-bottom:10px}
+#missionSummary{position:relative}
+#mainview
+.costsTotal{position:relative;margin:10px
+0 10px 227px}
+#mainview
+.estMissionCosts{line-height:22px;background:url(resources/icon_gold.gif) no-repeat left top;padding-left:26px;font-weight:700}
 #missionSummary
 .common{position:relative;float:right;width:350px}
 #missionSummary
 .additionalUpkeep{line-height:22px;background:url(resources/icon_upkeep.gif) no-repeat top left;padding-left:26px}
 #missionSummary
-.estMissionCosts{line-height:22px;background:url(resources/icon_gold.gif) no-repeat 2px top;padding-left:26px}
+.missionData{position:absolute;width:350px;left:533px}
 #missionSummary
-.journeyTarget{padding-left:44px;line-height:24px;background:url(img/icon_target2.gif) no-repeat top left}
+.journeyTarget{padding-left:44px;line-height:26px;background:url(img/icon_target2.gif) no-repeat top left}
 #missionSummary .journeyTarget
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-#missionSummary
-.journeyTime{padding-left:44px;line-height:24px;background:url(img/icon_journeytime.gif) no-repeat top left}
+#missionSummary .journeyTime, #setPremiumJetPropulsion
+.journeyTime{padding-left:44px;line-height:26px;background:url(img/icon_journeytime.gif) no-repeat top left}
 #missionSummary .journeyTime
 .textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #missionSummary
-.transporters{width:110px;height:50px;margin-left:160px;padding-left:44px;background:url(characters/fleet/40x40/ship_transport_r_40x40.gif) no-repeat 4px 4px;font-size:18px;color:#906646;text-align:left}
+.transporters{background:url(characters/fleet/40x40/ship_transport_r_40x40.gif) no-repeat 4px 4px;height:50px;margin-left:20px;padding-left:44px;font-size:18px;color:#906646;text-align:left}
+#missionSummary .transporters
+.largeIcon{line-height:50px !important}
+#missionSummary .transporters .largeIcon
+strong{color:#906646;font-size:14px;font-weight:700}
+#missionSummary
+.transportersCapacity{left:235px;position:absolute}
 #missionSummary .transporters
 .textLabel{display:block;font-size:12px;color:#542c0f;height:22px;line-height:22px}
 #container #mainview #missionSummary .transporters
@@ -1910,9 +3194,17 @@ li.ship_submarine{background-image:url(characters/fleet/40x40/ship_submarine_r_4
 #missionSummary
 .newSummary{position:relative;background-image:url(layout/bg_plunder_boxes.jpg);background-repeat:no-repeat;background-position:left top;margin-left:10px;margin-right:20px;padding-top:5px;padding-bottom:3px;padding-left:40px;height:50px}
 #missionSummary
+.costs{margin:10px}
+#missionSummary
 .plunderInfo{position:relative;height:25px;width:640px;margin-left:15px;margin-right:20px}
+#missionSummary ul.plunderInfo
+li{float:left;list-style:none;position:relative}
 #missionSummary
 .targetName{position:absolute;background:transparent url(img/icon_target2.gif) no-repeat scroll left top;line-height:24px;padding-left:44px;height:25px;width:200px}
+#missionSummary ul.plunderInfo
+li.targetName{position:relative;width:auto;padding-right:30px}
+#missionSummary ul.plunderInfo  li.additionalUpkeep, #missionSummary ul.plunderInfo
+li.costs{float:right}
 #missionSummary
 .upkeep{line-height:22px;background:url(resources/icon_upkeep.gif) no-repeat top left;padding-left:26px;float:right}
 #missionSummary .newSummary
@@ -1955,8 +3247,9 @@ input{float:left;text-align:center;font-size:16px;font-weight:bold;color:#3e331f
 #returnTime{position:absolute;left:487px;width:60px;text-align:left;top:26px}
 #mainview #missionSummary
 .submit{position:absolute;left:595px;width:50px;top:10px;text-align:center}
+#mainview #missionSummary #plunderbutton,
 #mainview #missionSummary
-#plunderbutton{display:block;background-image:url(buttons/plunder_submit.jpg);width:50px;height:34px}
+#retreatButton{display:block;background-image:url(buttons/plunder_submit.jpg);width:50px;height:34px}
 #mainview #missionSummary
 .warning{background-position:0px 0px}
 #mainview #missionSummary .warning:hover{background-position:50px 0px}
@@ -1975,6 +3268,8 @@ label{display:block;padding:2px;font-weight:bold;text-align:center;color:#906646
 .timespan
 select{display:block;width:100px;height:20px;color:#906646;line-height:20px;margin:10px
 auto;font-weight:bold;text-align:center}
+#transport
+ul.tradeRoute{height:60px;position:relative}
 @charset "utf-8";#embassy #mainview
 .buildingDescription{height:auto}
 #container .dynamic
@@ -2002,6 +3297,8 @@ td.members{padding:0px
 span.score{font-size:11px;color:#7e7b6e}
 #container #mainview table#results
 a{color:#542c0f}
+#embassyTreaties #container #mainview
+table.table01{margin-top:10px}
 #container #mainview table.table01
 td.cities{text-align:left;width:170px;padding-left:5px}
 tr.alt2{background-color:#F2D9AB}
@@ -2020,8 +3317,6 @@ td.newRank_col2
 input{width:307px}
 #mainview .contentBox01h .content table
 .colIcon{width:25px;text-align:center}
-#mainview .contentBox01h .content table
-.colEmpty{width:40px}
 #mainview .contentBox01h .content table
 .colAction{text-align:center;width:115px;padding:5px
 8px 0 0}
@@ -2068,11 +3363,39 @@ ul{margin:10px;color:#542C0F}
 #container #container2 #islandBoardOverview
 a{color:#542C0F;display:block;width:190px;padding:4px}
 #container #container2 #islandBoardOverview a:hover{text-decoration:none}
+#diplomacyAdvisorAlly #container #mainview
+.board_header_table{border:none;margin:0px;width:100%}
+#diplomacyAdvisorAlly #container #mainview
+.topic_table{border:none;margin:0px
+1px;width:100%}
+#diplomacyAdvisorAlly #container #mainview
+.thread_table{border:none;border-bottom:1px solid #FBE7C0;margin-bottom:0;width:100%}
+#diplomacyAdvisorAlly #container #mainview
+.posting_table{margin:5px
+auto;width:650px}
+#diplomacyAdvisorAlly #container #mainview
+a.button{line-height:24px}
+#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.editor_button{background-image:url(board/board_buttons_editor_sprite.gif);cursor:pointer;float:left;height:24px;width:24px}
+#diplomacyAdvisorAlly #container #mainview
+.board_button{background-image:url(board/board_buttons_sprite.gif);cursor:pointer;display:block;float:left;height:18px;margin:0
+3px;width:18px}
+#diplomacyAdvisorAlly #container #mainview
+.new_topic_input{height:18px;margin:10px
+0}
 @charset "utf-8";#researchOverview #container #mainview div.contentBox01h
 div.content{padding-right:10px;margin:0px
 20px}
+#researchOverview #container #mainview div.contentBox01h div.content
+a{color:#542c0f}
+#researchOverview
+#researchFocus.dynamic{text-align:center}
 @charset "utf-8";#workshop
 .buildingDescription{height:auto}
+#workshop .yui-panel{left:5px;top:5px;z-index:9999}
+#workshop
+.buildingDescription{height:auto}
+#workshop .yui-panel{left:5px;top:5px;z-index:9999}
 #demolition
 h4{font-size:18px;margin:10px
 auto;text-align:center;color:#900;font-weight:bold}
@@ -2136,8 +3459,12 @@ html #militaryAdvisorReportView #lost td.ship_catapult,
 html #militaryAdvisorReportView #lost td.ship_mortar,
 html #militaryAdvisorReportView #lost td.ship_flamethrower,
 html #militaryAdvisorReportView #lost td.ship_steamboat,
+html #militaryAdvisorReportView #lost td.ship_submarine,
+html #militaryAdvisorReportView #lost td.ship_rocketship,
+html #militaryAdvisorReportView #lost td.ship_paddlespeedship,
+html #militaryAdvisorReportView #lost td.ship_ballooncarrier,
 html #militaryAdvisorReportView #lost
-td.ship_submarine{background-position:center 5px;background-repeat:no-repeat}
+td.ship_tender{background-position:center 5px;background-repeat:no-repeat}
 html #militaryAdvisorReportView #lost
 td.swordsman{background-image:url(characters/military/x60_y60/y60_swordsman_faceright.gif)}
 html #militaryAdvisorReportView #lost
@@ -2176,6 +3503,14 @@ html #militaryAdvisorReportView #lost
 td.ship_steamboat{background-image:url(characters/fleet/60x60/ship_steamboat_faceright.gif)}
 html #militaryAdvisorReportView #lost
 td.ship_submarine{background-image:url(characters/fleet/60x60/ship_submarine_faceright.gif)}
+html #militaryAdvisorReportView #lost
+td.ship_rocketship{background-image:url(characters/fleet/60x60/ship_rocketship_faceright.gif)}
+html #militaryAdvisorReportView #lost
+td.ship_paddlespeedship{background-image:url(characters/fleet/60x60/ship_paddlespeedship_faceright.gif)}
+html #militaryAdvisorReportView #lost
+td.ship_ballooncarrier{background-image:url(characters/fleet/60x60/ship_ballooncarrier_faceright.gif)}
+html #militaryAdvisorReportView #lost
+td.ship_tender{background-image:url(characters/fleet/60x60/ship_tender_faceright.gif)}
 html #militaryAdvisorReportView #lost
 td.ship_transport{background-image:url(characters/fleet/60x60/ship_transport_faceright.gif)}
 html #militaryAdvisorReportView #reportInboxLeft
@@ -2371,6 +3706,9 @@ html #militaryAdvisorReportView #mainview .content table#result ul.resources
 li{display:inline}
 @charset "utf-8";#branchOffice #container #mainview .tablekontor
 td{text-align:center;padding-top:0px}
+#branchOffice #container #mainview .content
+div{text-align:center;padding:0px
+0px}
 .iconimg{vertical-align:middle;padding-left:10px}
 #container #container2 #islandBoardOverview
 a{color:#542C0F;display:block;width:170px;padding:4px}
@@ -2402,6 +3740,7 @@ select{display:none}
 .yui-panel-container.matte{padding:3px;background-color:#fff}
 .yui-panel-container.shadow
 .underlay{*/}
+#port #container #mainview .yui-panel{width:120px}
 .yui-panel{visibility:hidden;border-collapse:separate;position:relative;left:0;top:0;background-color:#fdf7dd;background-color:transparent;border:1px
 solid #e4b783;z-index:1;overflow:hidden}
 .yui-panel
@@ -2504,47 +3843,91 @@ a{display:block;display:inline-block;vertical-align:bottom;zoom:1}
 .yui-navset-top .yui-nav li a em,
 .yui-navset-bottom .yui-nav li a
 em{display:block}
-@CHARSET "ISO-8859-1";html
-#avatarNotes{z-index:999999999999999999999999999;background-color:transparent}
-html #avatarNotes
-#messageBox{background-image:none;background-color:#f7e7c5;color:#000;margin:0
-6px 0 6px;height:100%;padding:0
-10px 0 10px}
-html #avatarNotes #messageBox
-textarea{border:1px
-dotted #C0C0C0;margin:0;padding:0;width:100%}
-html #avatarNotes
-.bd{background-color:transparent;background-image:url(layout/notes_left.gif);;background-position:left top;background-repeat:repeat-y;padding:0;margin:0;text-align:center}
-html #avatarNotes
-.ft{border:0;padding:0;margin:0;background-image:url(layout/notes_left.gif);;background-position:left top;background-repeat:repeat-y;height:20px}
-html #avatarNotes
-.rightborder{background-image:url(layout/notes_right.gif);;background-position:right top;background-repeat:repeat-y;width:100%;height:100%;padding:0;margin:0}
-html #avatarNotes
-#resizablepanel_h{background-color:transparent;height:39px;padding:0;margin:0}
-html #avatarNotes
-.div1{padding:0;margin:0;height:39px;background-image:url(layout/notes_top_left.gif);background-position:left top;background-repeat:no-repeat}
-html #avatarNotes
-.div2{padding:0;margin:0;height:39px;background-image:url(layout/notes_top_right.gif);background-position:right top;background-repeat:no-repeat}
-html #avatarNotes
-.bottom{border-bottom:3px solid #d2a860;border-left:2px solid #d2a860;background-color:#f7e7c5;padding:5px
-0 0 0;margin:0
-23px 0 3px}
-html #avatarNotes
-.chars{padding:0
-0 0 10px}
-html #avatarNotes .hd
-p{color:#811709;font-weight:bold;font-size:12px;padding:12px
-0 0 0;margin:0
-14px 0 38px;height:39px;background-image:url(layout/notes_top.gif);background-repeat:repeat-x;background-position:left top}
-html #avatarNotes .hd p
-span{text-align:right;display:block;padding:0;margin: -15px 0 0 0}
-html #avatarNotes
-.notice{position:absolute;bottom: -4px}
-html #avatarNotes
-.button2{text-align:center;display:inline-block;padding:0;margin:0;margin-left:0px}
+#options .yui-navset .yui-nav li,
+#options .yui-navset .yui-nav em,
+#options .yui-navset .yui-navset-top .yui-nav li,
+#options .yui-navset .yui-navset-bottom .yui-nav
+li{width:143px}
+html .yui-carousel{visibility:hidden;overflow:hidden;position:relative;text-align:left;zoom:1}
+html .yui-carousel.yui-carousel-visible{visibility:visible}
+html .yui-carousel-content{overflow:hidden;position:relative}
+html .yui-carousel-element{margin:5px
+0;overflow:hidden;padding:0;position:relative;width:32000px;z-index:1}
+html .yui-carousel-vertical .yui-carousel-element{margin:0
+5px}
+html #premiumAccountNav .yui-carousel-element
+.item{border:1px
+solid #ccc;float:left;list-style:none;margin:1px;overflow:hidden;padding:0;text-align:center;*float:none;*display:inline-block;*zoom:1;*display:inline}
+html #premiumAccountDetail .yui-carousel-element
+.item{border:1px
+solid #ccc;float:left;list-style:none;margin:1px;overflow:hidden;padding:0;text-align:center}
+html .yui-carousel .yui-carousel-item-selected{border:none;margin:1px}
+html .yui-carousel-vertical{height:32000px;margin:0
+5px;width:auto}
+html .yui-carousel-vertical .yui-carousel-element
+li{display:block;float:none}
+html .yui-log
+.carousel{background:#f2e886}
+html .yui-carousel-nav{zoom:1}
+.yui-carousel-nav:after{clear:both;content:"";display:block}
+html .yui-carousel-button-focus{outline:1px
+dotted #000}
+html .yui-carousel-min-width .yui-carousel-content{margin:0
+auto}
+html .yui-skin-sam .yui-carousel, .yui-skin-sam .yui-carousel-vertical{border:none}
+html .yui-skin-sam .yui-carousel-nav{padding:3px;text-align:right}
+html .yui-skin-sam .yui-carousel-button{background:url(interface/carousel_sprite.png) no-repeat 0 -600px;float:right;height:19px;margin:5px;overflow:hidden;width:40px}
+html .yui-skin-sam .yui-carousel-vertical .yui-carousel-button{background-position:0 -800px}
+html .yui-skin-sam .yui-carousel-button-disabled{background-position:0 -2000px}
+html .yui-skin-sam .yui-carousel-vertical .yui-carousel-button-disabled{background-position:0 -2100px}
+html .yui-skin-sam .yui-carousel-button input, html .yui-skin-sam .yui-carousel-button
+button{background-color:transparent;border:0;cursor:pointer;display:block;height:44px;margin:-2px 0 0 -2px;padding:0
+0 0 50px}
+html .yui-skin-sam span.yui-carousel-first-button{background-position:0 -550px;margin-left:-100px;margin-right:50px;*margin:5px
+5px 5px -90px}
+html .yui-skin-sam .yui-carousel-vertical span.yui-carousel-first-button{background-position:0 -750px}
+html .yui-skin-sam span.yui-carousel-first-button-disabled{background-position:0 -1950px}
+html .yui-skin-sam .yui-carousel-vertical span.yui-carousel-first-button-disabled{background-position:0 -2050px}
+html .yui-skin-sam .yui-carousel-nav
+ul{float:right;height:19px;margin:0
+100px 0 -220px !important;*margin-left:-160px;*margin-right:0;padding:0}
+html .yui-skin-sam .yui-carousel-min-width .yui-carousel-nav
+ul{*margin-left:-170px}
+html .yui-skin-sam .yui-carousel-nav
+select{position:relative;*right:50px;top:4px}
+html .yui-skin-sam .yui-carousel-vertical .yui-carousel-nav ul, html  .yui-skin-sam .yui-carousel-vertical .yui-carousel-nav
+select{float:none;margin:0;*zoom:1}
+html .yui-skin-sam .yui-carousel-nav ul
+li{background:url(interface/carousel_sprite.png) no-repeat 0 -650px;cursor:pointer;float:left;height:9px;list-style:none;margin:10px
+0 0 5px;overflow:hidden;padding:0;width:9px}
+html .yui-skin-sam .yui-carousel-nav ul:after{clear:both;content:"";display:block}
+html .yui-skin-sam .yui-carousel-nav ul li
+a{display:block;height:100%;overflow:hidden;text-align:left;text-indent: -10000px;width:100%}
+html .yui-skin-sam .yui-carousel-nav ul li.yui-carousel-nav-page-focus{outline:1px
+dotted #000}
+html .yui-skin-sam .yui-carousel-nav ul li.yui-carousel-nav-page-selected{background-position:0 -700px}
+html .yui-skin-sam .yui-carousel-item-loading{position:relative;text-indent:-150px}
 @charset "utf-8";#premiumTradeAdvisor #container #mainview
 table{margin:0px
 auto 1px auto;width:670px;border-collapse:collapse}
+#premiumTradeAdvisor #mainview #buildingsOverview
+a{color:#542c0f}
+#premiumTradeAdvisor
+#populationOverview{}
+#premiumMilitaryAdvisor .contentBox01h
+div.content{background-color:#faeac6}
+#premiumResearchAdvisor #container #mainview
+table{margin:0pt auto;width:672px;border-collapse:collapse;margin-bottom:1px;padding:0}
+#premiumTradeAdvisor #mainview .overview
+th.text{text-align:right;padding-right:5px;padding-top:10px}
+#premiumDiplomacyAdvisor #container .contentBox01h
+div.content{background-color:#F2D9AB}
+#premium  #mainview
+table.matrix{width:672px;margin-left:1px}
+#premium #mainview .contentBox01h .matrix div.tooltip
+table.payment{width:100%}
+#premium #mainview .contentBox01h .matrix div.tooltip table.payment
+td.buy{float:right;width:200px;text-align:right;font-weight:normal}
 @charset "utf-8";#unitdescription #mainview
 .description{background-color:#FFFBEC;border:1px
 solid #FBE7C0;margin:16px;margin-left:150px;padding:4px;position:relative}
@@ -2623,6 +4006,10 @@ solid #FBE7C0;left:50px;margin:16px
 auto;padding:4px;position:relative;width:300px}
 #unitdescription #mainview .costs
 img{left:-150px;position:absolute;top:0px}
+#shipdescription #mainview
+.costs{background-color:#FFFBEC;border:1px
+solid #FBE7C0;left:50px;margin:16px
+auto;padding:4px;position:relative;width:300px}
 #unitdescription
 #unit{width:255px;height:232px;float:left}
 #unitdescription
@@ -2697,6 +4084,8 @@ a{font-weight:bold;color:red}
 #unitdescription
 #unit.s316{background-image:url(ikipedia/316.gif)}
 #unitdescription
+#unit.s317{background-image:url(ikipedia/317.gif)}
+#unitdescription
 #unitRes{background-image:url(ikipedia/ressborder.gif);width:259px;height:71px;margin:284px
 0 0 15px}
 #unitdescription #mainview
@@ -2712,11 +4101,13 @@ li.thirdpos{left:128px;top:0px;width:33px}
 #unitdescription #mainview ul.resources
 li.fourthpos{left:186px;top:0px;width:33px}
 #unitdescription #mainview ul.resources
-li.fifthpos{left:11px;top:27px;width:33px;padding-left:26px}
+li.fifthpos{left:5px;top:27px;width:33px;padding-left:26px}
 #unitdescription #mainview ul.resources
-li.sixthpos{left:67px;top:27px;width:33px;padding-left:38px}
+li.sixthpos{left:42px;top:27px;width:33px;padding-left:38px}
 #unitdescription #mainview ul.resources
-li.seventhpos{left:136px;top:27px;width:60px}
+li.seventhpos{left:140px;top:27px;width:60px}
+#unitdescription #mainview ul.resources
+li.eighthpos{left:93px;top:32px;width:33px}
 #unitdescription #mainview ul.resources
 li{margin:3px
 8px 0 8px}
@@ -2731,6 +4122,8 @@ li.noData{width:250px;padding:0;margin:0;text-align:center}
 #unitdescription #container
 .shortdesc{padding:370px
 20px 30px 20px}
+#shipdescription
+#unit{width:255px;height:232px;float:left}
 #mainview #bonusBuilding
 div.green{background-image:url(bars/20px/bg_24px_lightgreen.gif);left:20px;border:1px
 solid #c99868;height:20px}
@@ -2925,31 +4318,769 @@ em{float:left;display:block;clear:both;padding:1px;text-align:center}
 .yui-skin-sam .yui-resize .yui-resize-handle-bl{background-image:url(layout_sprite.png);background-repeat:no-repeat;background-position: -22px -23px}
 .yui-skin-sam .yui-resize-knob .yui-resize-handle-t,.yui-skin-sam .yui-resize-knob .yui-resize-handle-r,.yui-skin-sam .yui-resize-knob .yui-resize-handle-b,.yui-skin-sam .yui-resize-knob .yui-resize-handle-l,.yui-skin-sam .yui-resize-knob .yui-resize-handle-tl,.yui-skin-sam .yui-resize-knob .yui-resize-handle-tr,.yui-skin-sam .yui-resize-knob .yui-resize-handle-bl,.yui-skin-sam .yui-resize-knob .yui-resize-handle-br,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-t,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-r,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-b,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-l,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-tl,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-tr,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-bl,.yui-skin-sam .yui-resize-knob .yui-resize-handle-inner-br{background-image:none}
 .yui-skin-sam .yui-resize-knob .yui-resize-handle-l,.yui-skin-sam .yui-resize-knob .yui-resize-handle-r,.yui-skin-sam .yui-resize-knob .yui-resize-handle-l-active,.yui-skin-sam .yui-resize-knob .yui-resize-handle-r-active{height:6px;width:6px}
+#island #mainview
+h3{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#information
+.cityinfo{width:95%;margin:0
+auto}
 #information
 li{margin:2px
-10px;line-height:1em}
+10px;line-height:1em;position:relative}
 #information
-.name{}
-#information .name
-.textLabel{float:left;width:80px}
+.layoutHelper{height:0}
+#information .layoutHelper
+.col1{width:80px}
+#information .layoutHelper
+.col2{width:40px}
+#information .layoutHelper
+.col3{width:51px}
+#information .layoutHelper
+.col4{width:36px}
 #information
 .owner{font-weight:bold}
 #information .owner
-.textLabel{float:left;width:80px}
-#information .owner .messageSend img, #information .owner .reportPlayer
-img{display:inline;vertical-align:middle}
+.sendMessage{background-image:url(interface/icon_send_message.gif)}
+#information .owner
+.reportPlayer{background-image:url(interface/icon_report.gif)}
 #information .ally
 a{color:#542c0f}
 #information .ally
-.textLabel{float:left;width:80px}
-#information .ally .messageSend
-img{display:inline;vertical-align:middle}
-#information
-.citylevel{}
-#information .citylevel
-.textLabel{float:left;width:80px}
+.sendMessage{background-image:url(interface/icon_send_message.gif)}
 #information
 .spy{text-align:center}
 #information
-.footer{clear:left}
-}
+.scoreValue{text-align:right;margin-right:2px}
+#information
+.nameValue{text-align:left;margin-left:2px}
+#information
+.score.sub{font-size:10px}
+#information .score.sub
+span{margin-left:8px}
+#information
+td.icons{padding:0}
+#information
+.icon{display:block;float:right;width:13px;height:9px;margin:1px
+0 1px 2px}
+#information .icon:hover{background-position:0 -9px}
+#information .icon
+.textLabel{position:absolute;height:1px;width:1px;left:-9999px;overflow:hidden}
+#information
+.alt{background-color:#FDF1D4}
+#island #actions
+.revolting{background:url(actions/defend_disabled.gif) no-repeat top center}
+#island
+.island1{background-image:url(img/island/island1.jpg)}
+#island .island1 #cities #cityLocation0
+.occupied{left:77px;bottom:5px}
+#island .island1 #cities #cityLocation0
+.fleetAction{left:-70px;bottom:-20px}
+#island
+.island2{background-image:url(img/island/island2.jpg)}
+#island .island2 #cities #cityLocation0
+.occupied{left:70px;bottom:5px}
+#island .island2 #cities #cityLocation0
+.fleetAction{left:-90px;bottom:8px}
+#island
+.island3{background-image:url(img/island/island3.jpg)}
+#island .island3 #cities #cityLocation0
+.occupied{left:70px;bottom:5px}
+#island .island3 #cities #cityLocation0
+.fleetAction{left:-30px;bottom:-58px}
+#island
+.island4{background-image:url(img/island/island4.jpg)}
+#island .island4 #cities #cityLocation0
+.occupied{left:70px;bottom:5px}
+#island .island4 #cities #cityLocation0
+.fleetAction{left:-45px;bottom:25px}
+#island
+.island5{background-image:url(img/island/island5.jpg)}
+#island .island5 #cities #cityLocation0
+.occupied{left:-18px;bottom:15px}
+#island .island5 #cities #cityLocation0
+.fleetAction{left:-65px;bottom:-45px}
+#island #cities
+.foreignOccupier{display:block;position:absolute;background:url(img/island/besatzung_rot_cursor.gif) no-repeat;width:21px;height:47px}
+#island #mainview #cities .level1
+div.cityimg{display:block;position:absolute;left:0px;bottom:0px;background:url(img/island/city_1_red.gif) no-repeat 20px top;width:64px;height:63px}
+#island #mainview #cities .level18 div.cityimg,
+#island #mainview #cities .level19 div.cityimg,
+#island #mainview #cities .level20 div.cityimg,
+#island #mainview #cities .level21 div.cityimg,
+#island #mainview #cities .level22 div.cityimg,
+#island #mainview #cities .level23 div.cityimg,
+#island #mainview #cities .level24
+div.cityimg{background:url(img/island/city_8_red.gif) no-repeat 2px 4px}
+#island #mainview #cities .level1
+div.ownCityImg{display:block;position:absolute;left:0px;bottom:0px;background:url(img/island/city_1_blue.gif) no-repeat;width:64px;height:63px}
+#island #mainview #cities .level1
+div.allyCityImg{background:url(img/island/city_1_green.gif) no-repeat 13px 10px}
+#island #mainview #cities .city
+div.treatyCityImg{display:block;position:absolute;left:0px;bottom:0px;background:url(img/island/city_1_yellow.gif) no-repeat 20px top;width:64px;height:63px}
+#island #mainview #cities .level18 div.treatyCityImg,
+#island #mainview #cities .level19 div.treatyCityImg,
+#island #mainview #cities .level20 div.treatyCityImg,
+#island #mainview #cities .level21 div.treatyCityImg,
+#island #mainview #cities .level22 div.treatyCityImg,
+#island #mainview #cities .level23 div.treatyCityImg,
+#island #mainview #cities .level24
+div.treatyCityImg{background:url(img/island/city_8_yellow.gif) no-repeat 2px 4px}
+#island #mainview #cities .city .textLabel
+.disabled{background-image:url(layout/disabled.gif);display:block;position:absolute;top:0;left:0;height:16px;width:16px}
+#mainview #createColony
+.costs{position:relative;left:50px;width:300px;margin:16px
+auto;padding:4px;background-color:#fffbec;border:1px
+solid #fbe7c0}
+#colonizeExtreme #mainview #createColony
+.noPalace{position:relative;margin:16px
+100px;padding:4px;background-color:#fffbec;border:1px
+solid #fbe7c0}
+#optionsInviteFriends
+.buildingDescription{height:50px;min-height:50px}
+@charset "utf-8";#finances
+#balance{width:585px;margin:10px;border-collapse:collapse}
+#options #mainview #emailInvalidWarning h3, #options #mainview #emailInvalidWarning
+p{color:#900}
+#options #mainview .content #fbFormConnect
+div{}
+#options #freestyleWallpost
+.content{position:relative;height:110px}
+#options
+#openIDProviders{margin-bottom:10px;display:block}
+#options
+#options_oiurl{margin:0
+20px 0 20px}
+#friends{position:absolute;z-index:50;top:200px;left:958px;width:42px;height:317px;background:url(friends/background.gif) no-repeat top left}
+#friends h3,
+#friends
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#friends
+ul{position:absolute;top:31px;width:42px;height:240px}
+#friends
+li{position:absolute;display:block;width:53px;height:40px;right:1px;overflow:hidden;background:url(friends/slot.gif) no-repeat top left;border:none}
+#friends
+li.slot0{top:0px}
+#friends
+li.slot1{top:40px}
+#friends
+li.slot2{top:80px}
+#friends
+li.slot3{top:120px}
+#friends
+li.slot4{top:160px}
+#friends
+li.slot5{top:200px}
+#friends li
+.slotnum{position:absolute;top:9px;left:2px;width:12px;text-align:center;font:9px Arial, Helvetica, sans-serif}
+#friends li
+.activity{position:absolute;top:21px;left:4px;width:8px;height:8px;overflow:hidden;background:url(friends/activity.gif) no-repeat 0px 0px}
+#friends li
+.online{background-position:0px 0px}
+#friends li
+.active{background-position:0px -8px}
+#friends li
+.idle{background-position:0px -24px}
+#friends li
+.inactive{background-position:0px -32px}
+#friends li
+.gone{background-position:0px -32px}
+#friends li
+.name{position:absolute;top:6px;left:54px;font-weight:bold}
+#friends li
+.clan{position:absolute;top:22px;left:54px;font-size:10px}
+#friends
+a.pageup_deactivated{background-position:0px -260px;cursor:default}
+#friends a.pageup_deactivated:hover{background-position:0px -260px}
+#friends
+.pageup{display:block;position:absolute;top:15px;left:4px;width:35px;height:13px;background:url(friends/button_up.gif) no-repeat 0px 0px}
+#friends .pageup:hover{background-position:0px -13px}
+#friends
+a.pagedown_deactivated{background-position:0px -260px;cursor:default}
+#friends a.pagedown_deactivated:hover{background-position:0px -260px}
+#friends
+.pagedown{display:block;position:absolute;top:290px;left:4px;width:35px;height:13px;background:url(friends/button_down.gif) no-repeat 0px 0px}
+#friends .pagedown:hover{background-position:0px -13px}
+#friends .showfriends,
+#friends
+.hidefriends{display:block;position:absolute;top:275px;left:4px;width:35px;height:13px;cursor:pointer;background:url(friends/button_showhide.gif) no-repeat}
+#friends
+.showfriends{background-position:0px 0px}
+#friends .showfriends:hover{background-position:0px -13px}
+#friends
+.hidefriends{background-position:0px -26px}
+#friends .hidefriends:hover{background-position:0px -39px}
+#friends
+.sendmsg{display:block;width:17px;height:17px;position:absolute;left:160px;top:10px;background:url(friends/button17_mail.gif) no-repeat center 0px}
+#friends .sendmsg:hover{background-position:0 -17px}
+#friends
+.delmsg{display:block;width:17px;height:17px;position:absolute;left:180px;top:10px;background:url(friends/button17_trashcan.gif) no-repeat center 0px}
+#friends .delmsg:hover{background-position:0 -17px}
+#friends .imageNew,
+#friends
+.image{display:block;width:34px;height:34px;position:absolute;left:15px;top:3px}
+#friends .friend
+.imageNew{background:url(friends/playerimg.gif) no-repeat 0px -102px}
+#friends .friend
+.image{background:url(friends/playerimg.gif) no-repeat 0px -68px}
+#friends .friend
+a{color:#542C0F}
+#friends .friend a:hover{color:#B03937;text-decoration:none}
+#friends .slot
+.image{background:url(friends/playerimg.gif) no-repeat 0px 0px}
+#friends .slot .image:hover{cursor:pointer;background:url(friends/playerimg.gif) no-repeat 0px -34px}
+.fbButton{background:url(friends/btn_facebook.gif);border-style:none;padding:6px
+10px 0px 29px;color:#fff;display:block;text-align:left;width:188px;height:23px;margin-left:0px;font-weight:bold;text-decoration:none}
+.invite{padding:8px
+0 0px 0px}
+#mainview
+p.inviteP{margin:4px
+0}
+.inviteButton{margin: -3px 0}
+#mainview .contentBox01h .content .inviteTable
+td{padding:0
+0}
+#container2 #invitationList
+.email{background:url(friends/playerimg.gif) no-repeat 0px -102px;width:34px;height:34px;float:left;display:block;position:relative}
+#container2 #invitationList
+.emailSmall{background:url(friends/player_icon_blue_20.gif) no-repeat left top;width:20px;height:20px;position:absolute;display:block}
+#container2 #invitationList
+.ingame{background:url(friends/playerimg.gif) no-repeat 0px -68px;width:34px;height:34px;float:left;display:block}
+#container2 #invitationList
+li{border-bottom:1px dotted #EBC185;padding:0
+0 0px 4px;margin-top:4px;height:38px;position:relative}
+#container2 #invitationList
+li.noBottomBorder{border-bottom:none}
+#container2 #invitationList
+h4{background-color:#ebc185;color:#580404;line-height:20px;font-weight:bold;text-align:center}
+#container2 #invitationList .currentUnit, #constructionList.dynamic .content ul
+li{position:relative;margin:4px
+0px;height:52px;padding-left:52px;border-bottom:1px solid #fffbdb}
+#container2 #invitationList
+.abort{background:url(friends/button17_trashcan.gif) no-repeat center 0px;display:block;width:17px;height:17px}
+#container2 #invitationList .abort:hover{background:url(friends/button17_trashcan.gif) no-repeat center -17px}
+#container2 #invitationList
+li.small{height:20px}
+#container2 #invitationList
+li.alt{background-color:#FDF7DD}
+#container2 #invitationList
+li.last{border-top:1px solid #C49873;height:25px}
+#container2 #invitationList .msgdiv,
+#container2 #invitationList
+.abortdiv{float:right;padding:5px
+5px 0 0;position:relative}
+#container2 #invitationList
+.shipCount{position:absolute;right:30px;top:0px;text-align:right:}
+#container2 #invitationList
+.shipCountSum{position:absolute;right:30px;text-align:right;top:5px;font-weight:bold}
+#container2 #invitationList
+.transporters{position:absolute;width:20px;height:24px;top:0px;right:4px;background:url(relatedCities/trade_ship_20.gif) no-repeat center 0px}
+#container2 #invitationList
+.msg{background:url(friends/button17_mail.gif) no-repeat center 0px;display:block;width:17px;height:17px}
+#container2 #invitationList .msg:hover{background:url(friends/button17_mail.gif) no-repeat center -17px}
+#container2 #invitationList
+.deactmsg{background:url(friends/button17_mail.gif) no-repeat center -34px;display:block;width:17px;height:17px}
+#container2 #invitationList
+.amount{font-weight:bold;padding-left:38px}
+#container2 #invitationList
+.amountSmall{padding:0
+0 0 20px;text-align:left}
+#container2 #invitationList .amountSum
+img{margin:0px;position:absolute;top:5px}
+#container2 #invitationList
+.time{padding-left:18px}
+textarea.friendsLink{padding-top:9px;text-align:center;background:url(img/button-bg_large.png) no-repeat;width:530px;height:58px;font-family:Arial,Helvetica,sans-serif;font-size:16px;font-size-adjust:none;font-stretch:normal;font-style:normal;font-variant:normal;font-weight:regular;line-height:normal;color:#811b0b;border:none;overflow:auto;margin-top:20px}
+html #container
+.popupMessage{z-index:99999999999;background-color:transparent;position:absolute;top:180px;left:320px;width:480px}
+html #container .popupMessage
+.header{float:left;height:39px;margin-top:-10px;padding:0}
+html #container .popupMessage .header
+h3{line-height:39px;color:#811709;font-weight:bold}
+html #container .popupMessage
+.headerMiddle{background:url(layout/notes_top.gif) repeat-x left top transparent;width:421px}
+html #container .popupMessage
+.headerLeft{background:url(layout/notes_top_left.gif) no-repeat left top transparent;width:39px}
+html #container .popupMessage
+.headerRight{background:url(layout/notes_top_right.gif) no-repeat right top transparent;width:20px}
+html #container .popupMessage
+.popupContent{background:#f7e7c5;border:3px
+solid #d2ac61;border-top:none;margin:2px;padding:39px
+12px 12px 12px}
+html #container .popupMessage
+.buttons{height:50px}
+html #container .popupMessage .buttonLeft,
+html #container .popupMessage .buttonLeftBuy,
+html #container .popupMessage
+.buttonRight{text-align:center;float:left;padding:20px}
+html #container .popupMessage
+.buttonLeft{margin-left:110px}
+html #container .popupMessage
+.buttonLeftBuy{margin-left:80px}
+html #container .popupMessage
+.buttonSingle{text-align:center;padding-top:20px;margin-bottom:5px}
+html #container .popupMessage
+.resizablepanel_h{background-color:transparent;height:39px;padding:0;margin:0}
+html #container .popupMessage
+.chars{padding:0
+0 0 10px}
+html #container .popupMessage
+img{float:left;margin-right:10px;padding-top:5px;padding-bottom:10px}
+html #container .popupMessage
+.error{background:url(townhall_warning.gif) no-repeat scroll 10px 4px #FCDDD2;border:1px
+solid #F1D198;margin:0px
+0px;min-height:50px;padding:10px
+10px 3px 80px}
+html #container .popupMessage
+.success{background:url(layout/ok-neu.gif) no-repeat scroll 10px 6px #E2FCD2;border:1px
+solid #F1D198;margin:0px
+0px;min-height:50px;padding:10px
+10px 3px 80px}
+html #container .popupMessage
+.diplomacy{background:url(friends/email_ok.jpg) no-repeat scroll 10px 6px #E2FCD2;border:1px
+solid #F1D198;margin:0px
+0px;min-height:50px;padding:10px
+10px 3px 80px}
+html #container
+.popupMessage.winterPopup{display:none}
+html #container .popupMessage.winterPopup
+.headerLeft{background-image:url(specials/winter/notes_top_left.gif)}
+html #container .popupMessage.specialPromotionMessage
+h1{font-size:33px;font-weight:bold;color:#811709}
+html #container .popupMessage.specialPromotionMessage
+img.promoImage{margin:10px
+0 10px 0}
+html
+.popup_window{z-index:9999999999;background-color:transparent}
+html .popup_window
+.messagebox{background-image:none;background-color:#f7e7c5;color:#000;margin:0
+6px 0 6px;height:100%;padding:0
+10px 0 10px}
+html .popup_window textarea, html .popup_window select,
+html .popup_window
+.message_chat{border:1px
+dotted #C0C0C0;font-size:12px;margin:0;padding:0;resize:none;width:100%}
+html .popup_window
+.message_chat{overflow:hidden;overflow-y:scroll}
+html .popup_window .message_chat
+li{text-align:left}
+html .popup_window
+.bd{background-color:#f7e7c5;background-image:url(layout/notes_left.gif);;background-position:left top;background-repeat:repeat-y;padding:0
+!important;margin:0;text-align:center}
+html .popup_window
+.ft{border:0;padding:0
+!important;margin:0;background-image:url(layout/notes_left.gif);;background-position:left top;background-repeat:repeat-y;height:20px}
+html .popup_window
+.leftalign{text-align:left}
+html .popup_window
+.rightborder{background:url(layout/notes_right.gif) right top repeat-y;width:100%;height:100%;padding:0;margin:0}
+html .popup_window
+#resizablepanel_h{background-color:transparent;height:39px;padding:0;margin:0}
+html .popup_window
+.div1{padding:0;margin:0;height:39px;background-image:url(layout/notes_top_left.gif);background-position:left top;background-repeat:no-repeat}
+html .popup_window
+.div2{padding:0;margin:0;height:39px;background-image:url(layout/notes_top_right.gif);background-position:right top;background-repeat:no-repeat}
+html .popup_window
+.bottom{border-bottom:3px solid #d2a860;border-left:2px solid #d2a860;background-color:#f7e7c5;height:12px;padding:5px
+0 0 0;margin:0
+23px 0 3px}
+html .popup_window
+.floatingchars{float:right}
+html .popup_window .hd
+p{color:#811709;font-weight:bold;font-size:12px;padding:12px
+0 0 0;margin:0
+14px 0 38px;height:39px;background-image:url(layout/notes_top.gif);background-repeat:repeat-x;background-position:left top}
+html .popup_window .hd p
+span{text-align:right;display:block;padding:0;margin: -15px 0 0 0}
+html .popup_window
+.notice{bottom: -4px;left:44%;position:absolute}
+html .popup_window
+.button2{text-align:center;display:inline-block;padding:0;margin:0;margin-left:0px}
+html #chatWindow
+td{height:auto}
+html #chatWindow .yui-skin-sam .yui-resize .yui-resize-handle-br{background-position:8px 0}
+html .yui-skin-sam .yui-panel
+.hd{padding:0}
+html .yui-skin-sam .yui-panel .hd, .yui-skin-sam .yui-panel .bd, .yui-skin-sam .yui-panel
+.ft{margin:0
+-2px}
+html .popup_window
+.chat_input{width:100%}
+html .popup_window
+.chat_send{margin:0
+6px}
+html .popup_window .chat_input:focus{border-color:#5D4C2F #C9A584 #C9A584 #5D4C2F;border-style:solid;border-width:1px}
+html .popup_window .userlist_select, html .popup_window
+.chat_send{height:100%;margin:0
+0 0 10px;padding-bottom:1px;width:130px}
+html .popup_window .message_chat, html .popup_window
+.userlist_chat{height:100%}
+html .popup_window
+.userlist_chat{width:140px}
+html .popup_window
+.message_chat{width:100%;padding:5px}
+html .popup_window .message_chat
+li{word-wrap:break-word}
+html .popup_window .message_chat
+li.sys_message{color:#B15749}
+html .popup_window
+.chat_info{position:absolute;top:50px;left:15px;right:15px;background-color:#f7e7c5;padding:20px
+10px;border:1px
+solid #CFAB6C}
+html .popup_window
+.chat_table{background-color:#f7e7c5;height:100%;margin:0
+auto;width:95%}
+html .popup_window .yui-nav_flexible{background:url(layout/bg_tabs_repeat.jpg) repeat-x transparent;margin:0
+auto;width:98%}
+html .popup_window  .yui-nav_flexible
+li{margin:0;left:0;width:150px}
+html .popup_window  .yui-nav_flexible .selected a, html .popup_window  .yui-nav_flexible a:hover, html .popup_window  .yui-nav_flexible .yui-content{background:url("layout/bg_tabs_small.jpg") no-repeat scroll 0 4px transparent}
+#container2 #tutorialMessage .content
+.fbNotice{width:450px;margin:5px
+auto;padding:0
+0 0 45px}
+#container2
+#tutorialAdvisor{position:absolute;top:185px;left:260px;z-index:50}
+#container2
+#tutorialMessage{position:absolute;top:185px;left:360px;z-index:50;color:#542c0f;width:560px;display:none;z-index:9999}
+#container2 #tutorialMessage
+h3{background-color:transparent;background-image:url(tutorial/headerbg.gif);height:20px;padding-top:10px;padding-left:10px;font-weight:bold}
+#container2 #tutorialMessage
+.content{background-image:url(tutorial/contentbg.gif)}
+#container2 #tutorialMessage .content
+p{padding:10px}
+#container2 #tutorialMessage
+.footer{background-image:url(tutorial/footerbg.gif);background-repeat:no-repeat;height:6px;line-height:1px;font-size:0px;padding:0px}
+body
+#arrow{position:absolute;top:185px;left:360px;width:40px;height:48px;z-index:10000;background-image:url(tutorial/arrow.gif);display:none}
+#container2 #tutorialAdvisor div
+a{display:block;width:66px;height:67px}
+#container2 #tutorialAdvisor
+div{background-image:url(tutorial/advisors.gif);width:66px;height:67px}
+#container2 #tutorialAdvisor
+div.lighten{background-image:url(tutorial/advisors_lighten.gif);width:66px;height:67px}
+#container2 #tutorialAdvisor
+div.mini{background-image:url(tutorial/advisors_32.gif);width:32px;height:33px}
+#container2 #tutorialAdvisor
+div.minilighten{background-image:url(tutorial/advisors_lighten_32.gif);width:32px;height:33px}
+#container2 #tutorialAdvisor div.mini
+a{width:32px;height:33px}
+#container2 #tutorialAdvisor div.minilighten
+a{width:32px;height:33px}
+#container2
+#tutorialAdvisorCloseLink{background-image:url(layout/notice_close.gif);position:absolute;left:535px;top:9px;height:18px;width:18px;cursor:pointer;display:none}
+#container2 #tutorialAdvisorCloseLink:hover{background-image:url(layout/notice_close_hover.gif)}
+#container2
+.allAdvisors{background-position:0px 0px}
+#container2
+.researchAdvisor{background-position: -66px 0px}
+#container2
+.cityAdvisor{background-position: -132px 0px}
+#container2
+.diplomacyAdvisor{background-position: -198px 0px}
+#container2
+.militaryAdvisor{background-position: -264px 0px}
+#container2
+#TutorialCheckboxImg{vertical-align:top;margin:0
+5px 0 0}
+#container2
+a.tutorialLink{text-decoration:none;font-weight:bold}
+#container2 a.tutorialLink:hover{text-decoration:underline}
+#container2
+div.rewardContainer{width:435px;margin-top:18px;margin-left:10px;margin-bottom:15px}
+#container2
+div.rewardHeader{text-align:left;font-size:15px;margin-bottom:5px;font-weight:bold}
+#container2
+ul.questReward{width:438px}
+#container2 ul.questReward
+li{display:block;float:left;text-align:left;width:155px;padding-right:15px;padding-left:45px;padding-top:15px;height:30px;font-size:15px;background-repeat:no-repeat}
+#container2 ul.questReward
+li.wood{background-image:url(resources/icon_wood.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.wine{background-image:url(resources/icon_wine.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.marble{background-image:url(resources/icon_marble.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.crystal{background-image:url(resources/icon_crystal.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.sulfur{background-image:url(resources/icon_sulfur.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.gold{background-image:url(resources/icon_gold.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.warehouse{background-image:url(buildings/x40_y40/warehouse.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.townhall{background-image:url(buildings/x40_y40/townHall.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.barracks{background-image:url(buildings/x40_y40/barracks.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.academy{background-image:url(buildings/x40_y40/academy.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.wall{background-image:url(buildings/x40_y40/wall.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.researchPoints{background-image:url(resources/icon_research.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.spearman{background-image:url(characters/military/x40_y40/y40_spearman_faceright.gif);background-position:0px 10px}
+#container2 ul.questReward
+li.transporter{background-image:url(characters/fleet/40x40/ship_transport_l_40x40.gif);background-position:0px 0px}
+#container2 ul.questReward
+li.premiumCurrency{background-image:url(premium/ambrosia_icon.gif);background-position:0px 10px;padding-left:30px;width:170px}
+#container2
+#tutorialRewardMessage{display:block;left:486px;top:154px;position:absolute;z-index:120}
+#container2 #tutorialRewardMessage .content
+p.first{padding-top:10px;width:225px}
+#container2 #tutorialRewardMessage .content
+p.last{padding-bottom:15px;width:225px}
+#container2 #tutorialRewardMessage
+div.rewardContainer{width:240px;margin-top:0px;margin-bottom:0px}
+#container2 #tutorialRewardMessage
+ul.questReward{padding-top:15px;padding-left:10px;width:230px;margin:0}
+#container2 #tutorialRewardMessage
+div.rewardHeader{width:240px}
+#container2 #tutorialRewardMessage
+h3{background-color:transparent;background-image:url(tutorial/headerbg_250.gif);height:20px;padding-top:10px;padding-left:10px;font-weight:bold;width:240px}
+#container2 #tutorialRewardMessage
+.content{background-image:url(tutorial/contentbg_250.gif)}
+#container2 #tutorialRewardMessage .content
+.centerButton{margin:0;padding-top:10px;padding-bottom:10px}
+#container2 #tutorialRewardMessage
+.footer{background-image:url(tutorial/footerbg_250.gif);background-repeat:no-repeat;height:6px;padding:0px;width:250px}
+#container2 #tutorialRewardMessage ul.questReward
+li{width:170px;margin:0}
+#container2 #tutorialRewardMessage ul.questReward
+li.premiumCurrency{width:185px}
+#container2 #tutorialRewardMessage #lastReward ul.questReward li.townhall,
+#container2 #tutorialRewardMessage #lastReward ul.questReward li.wood,
+#container2 #tutorialRewardMessage #lastReward ul.questReward li.marble,
+#container2 #tutorialRewardMessage #lastReward ul.questReward
+li.gold{background-position:0px 0px;height:24px;padding:4px
+25px 0 35px}
+#container2 #tutorialRewardMessage #lastReward ul.questReward
+li.townhall{background-image:url(buildings/townhall_25x25.gif)}
+#container2 #tutorialRewardMessage #lastReward
+ul.questReward{padding-top:5px}
+#container2 #tutorialRewardMessage #lastReward
+p.first{padding-top:5px}
+#container2 #tutorialRewardMessage #lastReward
+p.last{padding-bottom:0px}
+#container2 #tutorialMessage       .content .rewardContainer ul.questReward li,
+#container2 #tutorialRewardMessage .content .rewardContainer ul.questReward
+li{font-weight:bold;font-size:11px}
+#container2 #tutorialMessage .content
+div.floatingAdvisor{width:445px;margin-left:110px}
+#container2 #tutorialMessage .content
+img.tutorialAdvisorInMessage{left:10px;top:40px;position:absolute}
+#container2 #tutorialMessage
+ul.questSteps{padding-left:25px}
+#container2 #tutorialMessage ul.questSteps
+li{display:list-item;list-style-type:disc}
+#premiumDetails td.buy a:link{color:#542c0f;text-decoration:none}
+a.notenough{color:#999;font-weight:normal;font-size:11px;text-decoration:none}
+a.notenough
+.buyNow{text-decoration:underline}
+a.notenough:hover{color:#BBB}
+#premium #premiumOffers table
+p{margin:0px;text-align:left}
+#container #mainview table.TableHoriMax
+td.buy{text-align:left;padding:4px
+14px 4px 4px;width:100px;height:95px}
+#container #mainview #premiumOffers table.TableHoriMax
+td.active{vertical-align:top;text-align:left;color:green;font-weight:bold;font-size:16px}
+#container #mainview #premiumOffers table.TableHoriMax
+td.inactive{vertical-align:top;text-align:left;color:red;font-weight:bold;font-size:16px}
+#ambrosia
+.content{text-align:center}
+#ambrosia
+.ambrosiaCount{padding-top:100px;background:url(premium/ambrosia.gif) no-repeat top center;color:#906646;font-weight:bold;font-size:24px}
+html
+.premiumOfferBox{height:110px;position:relative}
+html .contentBox .premiumOffer td,
+html .contentBox01h .premiumOffer
+td{padding:5px
+0 0 0;vertical-align:middle}
+html .premiumOffer
+td.description{padding:5px
+0px 5px 0px}
+html
+table.premiumOffer{border:1px
+solid #e4b773;margin:5px;width:664px;background-color:#FAEAC6;min-height:71px}
+html .contentBox01h
+table.premiumOffer.first{margin: -5px auto 5px;width:664px}
+html .contentBox01h
+table.premiumOffer{margin:0
+auto 5px;width:664px}
+html
+table.premiumOffer.first{border:1px
+solid #e4b773;margin:5px
+5px 5px 5px;width:664px}
+html .premiumOffer
+td.feature{font-size:36px;line-height:30px;padding-left:74px;padding-right:7px;font-weight:bold;background-position:5px 50%;background-repeat:no-repeat}
+html #mainview .contentBox01h .premiumOffer
+td.feature{padding-top:0px}
+html #container #mainview .premiumOffer
+td.buy{font-size:11px;width:140px;text-align:right;padding-right:10px}
+html .premiumOffer tr.woodbonus
+td.feature{background-image:url(premium/b_premium_wood.jpg)}
+html .premiumOffer tr.marblebonus
+td.feature{background-image:url(premium/b_premium_marble.jpg)}
+html .premiumOffer tr.sulfurbonus
+td.feature{background-image:url(premium/b_premium_sulfur.jpg)}
+html .premiumOffer tr.crystalbonus
+td.feature{background-image:url(premium/b_premium_crystal.jpg)}
+html .premiumOffer tr.winebonus
+td.feature{background-image:url(premium/b_premium_wine.jpg)}
+html .premiumOffer tr.safecapacitybonus
+td.feature{background-image:url(premium/b_premium_safecapacity.jpg)}
+html .premiumOffer tr.storagecapacitybonus
+td.feature{background-image:url(premium/b_premium_storagecapacity.jpg)}
+html .premiumOffer tr.extendPremiumTraderoutes
+td.feature{background-image:url(premium/b_premium_trade_route.jpg)}
+html .premiumOffer
+.active{font-weight:bold;color:green}
+html .premiumOffer
+a{color:#612D04}
+html .premiumOffer
+a.notenough{color:#999}
+html .premiumOffer a:hover{color:#df5843;text-decoration:underline}
+html .premiumOffer
+.activate{text-decoration:underline}
+#premium #premiumOffers .account
+.feature{padding-top:10px}
+.checkbox{float:left;position:relative}
+.premiumExtendBox{cursor:pointer;font-weight:400;display:block;position:relative}
+.premiumFeatureLabel{position:relative;left:5px}
+.premiumExtendMouseover{left: -210px;top:-15px}
+#premiumDetails #premiumAccountNav .yui-carousel-element .yui-carousel-item{height:158px;text-align:left}
+.dummy_armybutton.swordsman{background-position:-36px 0px}
+.dummy_armybutton.phalanx{background-position:-72px 0px}
+.dummy_armybutton.slinger{background-position:0 0px}
+.dummy_armybutton.archer{background-position:-108px 0px}
+.dummy_armybutton.marksman{background-position:-144px 0px}
+.dummy_armybutton.medic{background-position:-180px 0px}
+.dummy_armybutton.cook{background-position:-216px 0px}
+.dummy_armybutton.steamgiant{background-position:-251px 0px}
+.dummy_armybutton.gyrocopter{background-position:-288px 0px}
+.dummy_armybutton.bombardier{background-position:-324px 0px}
+.dummy_armybutton.catapult{background-position:-360px 0px}
+.dummy_armybutton.mortar{background-position:-395px 0px}
+.dummy_armybutton.ram{background-position:-431px 0px}
+.dummy_armybutton.spearman{background-position:-540px 0px}
+.dummy_armybutton_hover.swordsman,.dummy_armybutton_active.swordsman{background-position:-36px -36px}
+.dummy_armybutton_hover.phalanx,.dummy_armybutton_active.phalanx{background-position:-72px -36px}
+.dummy_armybutton_hover.archer,.dummy_armybutton_active.archer{background-position:-108px -36px}
+.dummy_armybutton_hover.slinger,.dummy_armybutton_active.slinger{background-position:0 -36px}
+.dummy_armybutton_hover.marksman,.dummy_armybutton_active.marksman{background-position:-144px -36px}
+.dummy_armybutton_hover.medic,.dummy_armybutton_active.medic{background-position:-180px -36px}
+.dummy_armybutton_hover.cook,.dummy_armybutton_active.cook{background-position:-216px -36px}
+.dummy_armybutton_hover.steamgiant,.dummy_armybutton_active.steamgiant{background-position:-251px -36px}
+.dummy_armybutton_hover.gyrocopter,.dummy_armybutton_active.gyrocopter{background-position:-288px -36px}
+.dummy_armybutton_hover.bombardier,.dummy_armybutton_active.bombardier{background-position:-324px -36px}
+.dummy_armybutton_hover.catapult,.dummy_armybutton_active.catapult{background-position:-360px -36px}
+.dummy_armybutton_hover.mortar,.dummy_armybutton_active.mortar{background-position:-395px -36px}
+.dummy_armybutton_hover.ram,.dummy_armybutton_active.ram{background-position:-431px -36px}
+.dummy_armybutton_hover.spearman,.dummy_armybutton_active.spearman{background-position:-540px -36px}
+.dummy_armybutton_disabled.swordsman{background-position:-36px -72px}
+.dummy_armybutton_disabled.phalanx{background-position:-72px -72px}
+.dummy_armybutton_disabled.archer{background-position:-108px -72px}
+.dummy_armybutton_disabled.slinger{background-position:0 -72px}
+.dummy_armybutton_disabled.marksman{background-position:-144px -72px}
+.dummy_armybutton_disabled.medic{background-position:-180px -72px}
+.dummy_armybutton_disabled.cook{background-position:-216px -72px}
+.dummy_armybutton_disabled.steamgiant{background-position:-251px -72px}
+.dummy_armybutton_disabled.gyrocopter{background-position:-288px -72px}
+.dummy_armybutton_disabled.bombardier{background-position:-324px -72px}
+.dummy_armybutton_disabled.catapult{background-position:-360px -72px}
+.dummy_armybutton_disabled.mortar{background-position:-395px -72px}
+.dummy_armybutton_disabled.ram{background-position:-431px -72px}
+.dummy_armybutton_disabled.spearman{background-position:-540px -72px}
+.dummy_armybutton.ship_ram{background-position:-36px 0px}
+.dummy_armybutton.ship_ballista{background-position:-72px 0px}
+.dummy_armybutton.ship_flamethrower{background-position:-108px 0px}
+.dummy_armybutton.ship_catapult{background-position:-144px 0px}
+.dummy_armybutton.ship_steamboat{background-position:-180px 0px}
+.dummy_armybutton.ship_mortar{background-position:-216px 0px}
+.dummy_armybutton.ship_submarine{background-position:-251px 0px}
+.dummy_armybutton.ship_rocketship{background-position:-395px 0px}
+.dummy_armybutton.ship_paddlespeedship{background-position:-359px 0px}
+.dummy_armybutton.ship_ballooncarrier{background-position:-323px 0px}
+.dummy_armybutton.ship_tender{background-position:-287px 0px}
+.dummy_armybutton_hover.ship_ram,.dummy_armybutton_active.ship_ram{background-position:-36px -36px}
+.dummy_armybutton_hover.ship_ballista,.dummy_armybutton_active.ship_ballista{background-position:-72px -36px}
+.dummy_armybutton_hover.ship_flamethrower,.dummy_armybutton_active.ship_flamethrower{background-position:-108px -36px}
+.dummy_armybutton_hover.ship_catapult,.dummy_armybutton_active.ship_catapult{background-position:-144px -36px}
+.dummy_armybutton_hover.ship_steamboat,.dummy_armybutton_active.ship_steamboat{background-position:-180px -36px}
+.dummy_armybutton_hover.ship_mortar,.dummy_armybutton_active.ship_mortar{background-position:-216px -36px}
+.dummy_armybutton_hover.ship_submarine,.dummy_armybutton_active.ship_submarine{background-position:-251px -36px}
+.dummy_armybutton_hover.ship_rocketship,.dummy_armybutton_active.ship_rocketship{background-position:-395px -36px}
+.dummy_armybutton_hover.ship_paddlespeedship,.dummy_armybutton_active.ship_paddlespeedship{background-position:-359px -36px}
+.dummy_armybutton_hover.ship_ballooncarrier,.dummy_armybutton_active.ship_ballooncarrier{background-position:-323px -36px}
+.dummy_armybutton_hover.ship_tender,.dummy_armybutton_active.ship_tender{background-position:-287px -36px}
+.dummy_armybutton_disabled.ship_ram{background-position:-36px -72px}
+.dummy_armybutton_disabled.ship_ballista{background-position:-72px -72px}
+.dummy_armybutton_disabled.ship_flamethrower{background-position:-108px -72px}
+.dummy_armybutton_disabled.ship_catapult{background-position:-144px -72px}
+.dummy_armybutton_disabled.ship_steamboat{background-position:-180px -72px}
+.dummy_armybutton_disabled.ship_mortar{background-position:-216px -72px}
+.dummy_armybutton_disabled.ship_submarine{background-position:-251px -72px}
+.dummy_armybutton_disabled.ship_rocketship{background-position:-395px -72px}
+.dummy_armybutton_disabled.ship_paddlespeedship{background-position:-359px -72px}
+.dummy_armybutton_disabled.ship_ballooncarrier{background-position:-323px -72px}
+.dummy_armybutton_disabled.ship_tender{background-position:-287px -72px}
+#container2 #dailyActivityBonus
+#dailyActivityGraph{height:260px;position:relative}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusLevel{position:absolute;top:64px;left:56px;width:144px;text-align:center;font-weight:bold;color:#811709}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.days{position:absolute;text-align:center;color:#696969}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.selectedDay{font-weight:bold;color:#811709}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day1{left:49px;width:51px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day2{left:116px;width:51px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day3{left:183px;width:50px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day4{left:249px;width:54px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day5{left:319px;width:52px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day6{left:387px;width:54px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.day7{left:457px;width:50px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold1{top:173px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold2{top:165px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold3{top:154px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold4{top:143px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold5{top:130px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold6{top:117px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusGold7{top:104px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusWine{top:204px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.bonusTransporter{top:156px}
+#container2 #dailyActivityBonus #dailyActivityGraph
+.dayDescription{top:231px}
+#container2 #dailyActivityBonus
+div.cityImage{background-image:url(buildings/x40_y40/townHall.gif);background-position:9px 14px}
+#container2 #dailyActivityBonus
+.bottomRow{margin-bottom:0;margin-top:13px;position:relative;width:556px;height:27px}
+#container2 #dailyActivityBonus
+label{margin-left:12px;position:relative;top:5px}
+#container2 #dailyActivityBonus
+.cityDropdownOuterDiv{position:absolute;left:0;z-index:2;width:175px}
+#container2 #dailyActivityBonus
+.dailyActivityButton{position:absolute;text-align:center;top:0;width:556px;z-index:1}
+#container2 #dailyActivityBonus  .dailyActivityButton
+.button{margin-top:0}
+#container .dailyActivityPopup
+div.headerLeft{background:url(dailyActivity/header_icon_daily_bonus.gif) no-repeat scroll left top transparent}
+#container .popupMessage .headerRight span a
+img{padding-top:11px}
+#container #mainview
+table.dailyActivityBonusSummaryTable{width:300px}
+#container #mainview table.dailyActivityBonusSummaryTable
+td{text-align:center}
