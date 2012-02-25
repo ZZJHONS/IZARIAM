@@ -1,0 +1,41 @@
+#options #mainview .content
+.fbNotice{width:550px;margin:10px
+auto;padding:0
+0 5px 35px}#options #mainview .content .fbNotice
+p{text-align:left}#options #mainview .content
+.fbNoticeSpacer{height:2px}#options .yui-navset .yui-nav .selected a,
+#options .yui-navset .yui-nav a:hover,
+#options .yui-navset .yui-content{background:url(layout/bg_tabs_single_tabs4.png) no-repeat 0px 4px;color:#906646}#options
+p.error{color:#900;font-weight:bold;margin:8px
+10px}#options #mainview #vacationMode
+a.button{display:block;width:300px;margin:8px
+auto}#options .option_table
+table{width:500px;margin:0
+auto}#options #mainview .content
+div{margin-top:10px;margin-bottom:15px}#options ul.errors
+li{color:#C00;font-weight:bold;margin:4px
+100px;list-style:disc inside}#options #mainview .content
+p{text-align:center}#options #mainview .content h3, #options
+caption{padding:10px
+6px 0px 6px;margin:0;color:#612d04;font:bold 12px Arial, Helvetica, sans-serif;text-align:center;border-bottom:1px solid #f1d198}#options .option_table table
+th{text-align:right;padding-right:10px;width:200px}#options .option_table table td, #options .option_table table
+th{padding:4px
+8px}#options #mainview .content #fbFormDisconnect
+div{}#options #mainview .content #fbFormConnect
+p{text-align:left}#options #mainview .content #fbFormDisconnect
+p{text-align:left}#options #mainview .content #fbFormConnect
+a{width:250px}#options #mainview .content #fbFormDisconnect
+a{width:250px}#options #mainview .content .connectForm div.btn-fb{position:relative;margin-top:20px}#options a.fbBtn:hover{text-decoration:none}#options #fbLoginBox
+a{color:#861b0d;font-weight:bold}#options #fbLoginBox .fbBtn a:hover{text-decoration:none}#options #freestyleWallpost
+img{position:absolute;top:5px;left:20px;margin-bottom:5px}#options #mainview #freestyleWallpost
+p{position:absolute;top:5px;left:105px;text-align:left}#options #freestyleWallpost
+.button{position:absolute;top:55px;left:125px}#options .openid-provider{cursor:pointer;float:left;margin:0
+8px 5px 0;position:relative}#options .openid-provider:hover .provider-name{font-weight:700}#options .provider-name{position:absolute;left:4px;text-align:center;width:100px}#options #options_oiurl
+label{font-weight:bold}#options #openIDProviders, #options
+#openIDUrlText{clear:both;margin-top:0}#options #openIDUrlText .option_table
+label{display:block;margin-bottom:20px}#options #openIDUrlText .option_table
+input{width:400px}#options #openidListConnect .option_table
+table{width:90%;margin:20px
+auto 20px auto}#options #openidListConnect .option_table table
+th{text-align:left}#options #openidListConnect .option_table table
+th.action{width:20%}

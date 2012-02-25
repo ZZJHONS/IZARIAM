@@ -1,0 +1,83 @@
+#premium   #premiumOffers tr.winterProlong
+td.feature{background-image:url(premium/b_premium_penguins.jpg);height:83px}#premium   #premiumOffers tr.easterProlong
+td.feature{background-image:url(premium/easter_shopbild_01.gif);height:60px}#premium  #mainview .contentBox01h
+table.matrix{margin-bottom:2px}#premium  #mainview .contentBox01h table.matrix
+td{padding-top:3px;padding-right:0px;padding-bottom:3px;padding-left:5px;vertical-align:middle;border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:#faeac6;border-right-color:#faeac6;border-bottom-color:#faeac6;border-left-color:#faeac6;cursor:hand;cursor:pointer}#premium  #mainview .contentBox01h table.matrix  td
+img{padding-bottom:2px}#premium  #mainview .contentBox01h table.matrix
+th{background-color:#faeac6;color:#906646;font-weight:bold;text-align:center;padding-top:10px;padding-bottom:3px}#premium  #mainview .contentBox01h table.matrix
+td.active{height:40px;background-image:url(smilies/ecstatic_x32.gif);background-repeat:no-repeat;background-position:50% 50%}#premium  #mainview .contentBox01h table.matrix
+td.inactive{height:40px;background-image:url(layout/help.gif);background-repeat:no-repeat;background-position:50% 50%;text-align:center;font-weight:bold}#premium  #mainview .contentBox01h table.matrix td.inactive
+.tooltip{text-align:left;font-weight:normal}#premium  #mainview .contentBox01h table.matrix
+td.active_short{height:40px;background-image:url(smilies/neutral_x32.gif);background-repeat:no-repeat;background-position:50% 50%}#premium .contentBox01h div.content
+table.matrix{background-color:#f2d9ab}#premium .contentBox01,.contentBox01h{background-image:url(layout/bg_contentBox01.gif);position:relative;width:680px;margin-bottom:10px}#premium .contentBox01h .tooltip .order
+a{margin-top:15px;margin-bottom:5px;float:right;padding-left:5px;padding-right:5px}#premium #mainview .contentBox01h .matrix div.tooltip table.payment
+td{border:none;margin:0px;padding:0px;line-height:14px}#premium #mainview .contentBox01h .matrix div.tooltip table.payment
+td.active{float:right;background-image:none;line-height:14px;height:16px}#premium #mainview .contentBox01h .matrix div.tooltip table.payment td
+div.extend{float:right;padding-left:15px;background-image:url(layout/icon-clock_8x10px.gif);background-repeat:no-repeat;background-position:4px 2px}#premium #mainview .contentBox01h .matrix div.tooltip table.payment
+td.active{float:right;width:200px;text-align:right;font-weight:normal}#premium td.buy a:link{color:#542c0f;text-decoration:none}#premium td.buy a:hover{color:#b03937;text-decoration:none}#premium table td.desc,
+#premium table
+td.buy{font-size:11px}#premium
+td.ware{margin-top:10px}#premium
+td.buy{text-align:center;background-color:transparent;font-weight:bold;width:90px}#premium
+.product{margin:5px;border:3px
+solid #e4b873;padding:5px}#premium .product
+h2{font-weight:bold;font-size:14px;padding:5px
+0px}#premium .product
+.button{display:block;margin:5px
+0px}#premium .product
+h3{font-weight:bold;padding-left:20px}#premium .product
+table{margin:0px
+5px}#premium .product
+.until{color:red}#premium .product
+.desc{width:435px}#premium #mainview
+ul{margin-left:30px}#premium #mainview ul
+li{list-style-type:disc;margin-left:10px}#premium #mainview table.TableHoriMax tr.account
+td.feature{text-align:left}#premium #premiumOffers
+h4{font-weight:bold;text-align:left}#premium #premiumOffers
+td{padding:4px
+10px}#premium #premiumOffers
+.cost{width:60px}#premium   #mainview table.TableHoriMax td.buy
+.button{width:99%;max-width:95px}#premium #premiumOffers
+td.feature{padding-left:77px;height:72px;overflow:visible;background-repeat:no-repeat;background-position:7px 6px}#premium #premiumOffers
+tr.dottedLine{background-image:url(premium/table_border_2.gif);background-repeat:no-repeat;background-position:center}#premium #premiumOffers tr.dottedLine
+td{padding:1px
+0 0 0}#premium #premiumOffers
+td.duration{font-weight:bold;text-align:right;padding-top:10px;height:40px}#premium #container #mainview
+table.TableHoriMax{width:664px;height:auto}#premium #premiumOffers
+td.cost{font-weight:bold;line-height:22px;padding-top:8px}#premium  #premiumOffers td.buy
+a{display:block;margin-top:1px}#premium  #premiumOffers tr.account
+td.feature{background:url(premium/premium_account.gif) no-repeat 7px 4px;padding-left:150px}#premium   #premiumOffers tr.woodbonus
+td.feature{background-image:url(premium/b_premium_wood.jpg)}#premium  #premiumOffers tr.marblebonus
+td.feature{background-image:url(premium/b_premium_marble.jpg)}#premium   #premiumOffers tr.sulfurbonus
+td.feature{background-image:url(premium/b_premium_sulfur.jpg)}#premium   #premiumOffers tr.crystalbonus
+td.feature{background-image:url(premium/b_premium_crystal.jpg)}#premium   #premiumOffers tr.savecapacityBonus
+td.feature{background-image:url(premium/b_premium_safecapacity.jpg)}#premium   #premiumOffers tr.winebonus
+td.feature{background-image:url(premium/b_premium_wine.jpg)}#premium   #premiumOffers tr.storagecapacityBonus
+td.feature{background-image:url(premium/b_premium_storagecapacity.jpg)}#premium   #premiumOffers tr.extendPremiumTraderoutes
+td.feature{background-image:url(premium/b_premium_trade_route.jpg)}#premium   #premiumOffers tr.dummySmallBonus
+td.feature{background-image:url(premium/b_premium_dummy_small.jpg)}#premium   #premiumOffers tr.dummyMediumBonus
+td.feature{background-image:url(premium/b_premium_dummy_medium.jpg)}#premium   #premiumOffers tr.dummyHugeBonus
+td.feature{background-image:url(premium/b_premium_dummy_huge.jpg)}#premium   #premiumOffers td.feature
+h4{background-repeat:no-repeat;background-position:0px 50%}#premium   #premiumOffers tr.woodbonus td.feature
+h4{padding-left:23px;padding-top:6px;background-image:url(layout/icon_wood_15x19.gif)}#premium   #premiumOffers tr.marblebonus td.feature
+h4{padding-left:23px;padding-top:6px;background-image:url(layout/icon_marble_15x19.gif)}#premium   #premiumOffers tr.sulfurbonus td.feature
+h4{padding-left:23px;padding-top:6px;background-image:url(layout/icon_sulfur_15x19.gif)}#premium   #premiumOffers tr.crystalbonus td.feature
+h4{padding-left:23px;padding-top:6px;background-image:url(layout/icon_crystal_15x19.gif)}#premium   #premiumOffers tr.winebonus td.feature
+h4{padding-left:23px;padding-top:6px;background-image:url(layout/icon_wine_15x19.gif)}#premium   #premiumOffers
+a.notenough{color:#999;font-weight:normal;font-size:11px;text-decoration:none}#premium #container #premiumOffers a.notenough
+.buyNow{text-decoration:underline}#premium #container #premiumOffers a.notenough:hover{color:#BBB}#premium  .content div,
+#premium  .content h4,
+#premium
+.footer{clear:both}#premium  .content
+a.enlarge{float:right;width:300px;text-align:center;margin:10px;text-decoration:none}#premium  .content
+h4{font-weight:bold;margin:20px
+30px 10px 40px;;font-size:1.2em}#premium  .content
+ul{margin:8px
+30px}#premium  .content
+li{list-style:inside disc;margin:4px}#premium #premiumOffers
+h4{font-size:1em;font-weight:bold;text-align:left;margin:0}#premium #premiumOffers .feature
+.unit_icon{height:30px;width:30px}#premium #premiumOffers .feature
+.unit_icon_land{background:url(characters/military/unitsprites_x30_y30.gif) 0 0 no-repeat transparent}#premium #premiumOffers .feature
+.unit_icon_sea{background:url(characters/fleet/unitsprites_x30_y30.gif) 0 0 no-repeat transparent}#premium #premiumOffers .feature
+.unit_wrapper{margin:10px
+0}

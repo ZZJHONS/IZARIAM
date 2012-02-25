@@ -1,0 +1,9 @@
+/* 
+Anpassungen am CSS zur Darstellung der Ingame Netbar
+(Elemente um 32px nach unten verschieben)
+*/
+
+#GF_toolbar { top: 34px; }
+#container { top: 32px; }
+#extraDiv1 { top: 32px; }
+#extraDiv2 { top: 179px; }

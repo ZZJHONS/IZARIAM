@@ -1,0 +1,553 @@
+/* reset layout & set new defaults */
+
+@import url('gf_reset.css');
+@import url('gf_default.css');
+
+/* basics */
+
+html {
+	height:100%;
+}
+
+body {
+	background: url('../img/mobile/bg_mobile.jpg' ) no-repeat #013861; 
+	font:100 14px  Arial, Helvetica, sans-serif; 
+	color:#612d04;
+	width:100%;
+}
+
+h1, h2, h3, h4 {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+a {
+	color:#7a1208; 
+}
+
+#wrapper {
+	margin: 0 auto -35px !important; /* the bottom margin is the negative value of the footer's height */  
+	position:relative; 
+}
+
+#page {
+	position:relative;
+	margin:0 auto;
+	width: 310px;
+	z-index:100;
+	padding:0px 0;
+}
+
+#dieIE6 * { display: none !important; }
+
+#header {
+	height:5px; 
+}
+
+#header #logo {
+	background:url(../img/mobile/sp-bg-content-m.png) no-repeat; 
+	background-position: -182px -80px;
+	display:block;
+	text-indent:-99999px;
+	height:46px;
+	width:300px;
+}
+
+#sidebar {
+	background:url(../img/mobile/sp-bg-box-repeat-m.png) repeat-y 1px 0 transparent;
+	margin-left:6px;
+	padding:0 20px 0 20px; 
+	width:252px;
+	min-height:280px;
+	overflow: hidden;
+}
+
+#sidebarTop, #sidebarBottom {
+	background:url(../img/mobile/sp-bg-content-m.png) no-repeat transparent;
+	width: 302px;
+}
+
+#sidebarTop {
+	background-position: 2px -132px;
+	height:76px; 
+}
+
+#sidebarBottom {
+	background-position: 2px -218px;
+	height:40px;
+	z-index:100;
+}
+
+#sidebarWrapper {
+	float:left; 
+	min-height:394px; 
+	margin-top:46px; 
+	width:302px;
+	overflow:hidden;
+}
+
+/* background */
+
+#sky {
+	background: #000;
+	overflow:hidden; 
+	position:absolute; 
+	top:0px; 
+	width:100%; 
+	z-index:0;
+}
+
+/* login & register forms */
+
+#sidebar .activeMobileMenu {
+	clear:both;
+	display:inline; 
+	overflow:hidden; 
+	width:300px; 
+	z-index:300;
+}
+
+#mobileLoginWrapper, #registerWrapper {
+	display:none; 
+}
+
+#fbConnect {
+	display:none; 
+	z-index:200;
+	position:absolute; 
+	top: 135px;
+	left: 25px;
+}
+
+#mobilePwLost {
+ 	display:none;
+	overflow:hidden; 
+	z-index:200;
+	left:7px;
+	top:120px;
+}
+
+#sidebar #register form#fbRegisterForm {
+	display:none;
+	margin-top:20px;
+}
+
+
+/*  elements hidden in mobile version */
+
+.ship, #ship-1, #ship-2, #submarine , #sun, #sky, #water, #island-left, #island-right, .islands,
+.oiBtn, .oiBtn .btn-oi, .oiBtn .btn-oi-text, .nodisplay, .boxTop, .boxBottom, #oiLogin, a.btn-small, #loginWrapper, 
+#sidebar #major, #sidebar #register h1, #registerTop, #registerBottom, 
+a#btn-fb, a#btn-oi, #content, form#pwLostFormFb, #footer-wrapper #footer #footer-inner .logo,
+ .products, #ivwTAG, .rtl2, .komputerswiat, .gamezilla, .desktopOnly {	
+	display:none !important; 
+}
+
+/*
+form .formError .formErrorArrow, .formErrorContent .icon {
+	display:none !important;	
+}*/
+
+
+/* input elements */
+
+input, select {
+	color:#612d04; 
+	background-color:#fff7e1; 
+	border:1px solid #7e512a; 
+	font-size:14px;
+	margin:2px;
+	display:block;
+	width: 232px;
+	-moz-border-radius: 0; 
+	-webkit-border-radius: 0; 
+}
+
+input {
+	width: 216px;
+}
+
+.input-wrap {
+	background:url(../img/mobile/sp-bg-content-m.png) no-repeat left bottom; 
+	padding: 0 4px;
+	margin-bottom: 2px;
+	width:245px;
+	height: 46px;
+	background-position: -239px -34px;
+}
+
+.input-wrap-horiz  {
+	padding-left: 28px;
+	float:left;
+	margin:0 auto;
+}
+
+.input-wrap label {	
+	font-size:12px;
+}
+
+.button-wrap {
+	width:245px;
+	height:38px;
+	overflow:hidden;
+	margin: 0 auto;	
+	margin-top: 2px;
+	display: block;
+}
+
+/* custom checkboxes */
+
+input[type=checkbox] {
+	left: -9999px;
+	position: absolute;
+} 
+
+.customCheck label {
+    background-position: 8px center;
+    background-repeat: no-repeat;
+    clear: both;
+    padding: 35px 20px 20px 35px;
+	display:inline-block;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+	float:left;
+}
+
+.agb, .fbAgb {
+	padding: 10px;
+}
+
+.unchecked {
+    background-image: url("../img/mobile/chk_off.gif");
+}
+
+.checked {
+    background-image: url("../img/mobile/chk_on.gif");
+}
+
+#agb, #fbAgb {
+	float:left;
+	margin-right: 15px;
+	margin-top: 15px;
+}
+
+/* buttons & links */
+
+a:link, button {
+	color:#861b0d; 
+	outline:none;
+}
+
+a.login-lnk {
+	background:url(../img/mobile/bg_label.gif) no-repeat left center; 	
+	clear:both; 
+	padding: 12px;
+	font-size:13px; 
+	line-height:13px; 
+	display:block;
+	font-weight:bold;
+}
+
+#pwLostBack, #backToLogin, #backToReg {
+	background:url(../img/mobile/bg_label-rtl.gif) no-repeat left center !important; 	
+}
+
+#fbConnect a.regularLogin, 
+#sidebar #register form#fbRegisterForm a.regularRegister {
+	background:url(../img/mobile/bg_label.gif) no-repeat left center; 
+	padding-left:10px; 
+	margin-bottom:2px; 
+	display:block; 
+	font-weight:700;
+}
+
+.fbBtn {
+	height:29px; 
+	overflow:hidden; 
+	margin: 5px auto;
+	display:block;
+	width:243px; 
+	cursor:pointer;
+}
+
+a.fbBtn:hover{text-decoration:none;}
+
+.fbBtn .btn-fb-text{
+	background:url("../img/mobile/sp-bg-content-m.png") no-repeat scroll right transparent; 
+	background-position: -237px 0;
+	color:#FFF;
+	font-weight:700;
+	height:29px; 
+	line-height:28px; 
+	text-align:center;
+}
+
+
+.reg-btn, .btn-login {
+	background:url(../img/mobile/sp-bg-content-m.png) no-repeat 0 0; 
+	border:none; 
+	display:block; 
+	width:239px; 
+	height:40px; 
+	color: #F6EBBC; 
+	font-size:17px; 
+	font-weight:700;
+	text-align:center; 
+	line-height:20px;  
+	bottom:10px; 
+	text-shadow:-1px -1px #000;
+	margin: 0 auto;
+	margin-top:8px;
+}
+
+.reg-btn:hover, .btn-login:hover {
+	background-position: 0 -40px; 
+	color:#FDF7DD; 
+	text-decoration:none;
+}
+
+/* text, headings */
+
+#mobilePwLost h1 {
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:14px; 
+	height:18px; 
+	margin:0 0 4px 0; 
+	padding:5px 0 3px; 
+	text-align:center;
+} 
+
+#pwdWarning label {
+	font-weight:700;
+}
+
+#securePwd p {
+    margin:5px 0 0;
+    float:left;
+    width:165px;
+}
+
+/* top menu (tabs for login & registration) */
+
+#sidebarTop #mobileMenuBox {
+	height:35px; 
+	overflow:hidden; 
+	padding:31px 31px 0; 
+	width:248px;
+}
+
+#sidebarTop ul#mobileMenu li, #content .lnkmenu a {
+	float:left; 
+	margin-right:4px; 
+	width:120px;
+}
+
+#sidebarTop ul#mobileMenu li a, #content .lnkmenu a {
+	background:url(../img/mobile/sp-bg-content-m.png) no-repeat -303px -134px; 
+	text-shadow:0 1px 0 #DFB26F; 
+	display:block; 
+	height:15px; 
+	padding:10px 2px; 
+	overflow:hidden; 
+	text-align:center; 
+	color:#612d04; 
+	font-size:15px;
+	font-weight:700; 
+	width:115px; 
+	z-index:500;
+}
+
+#sidebarTop ul#mobileMenu li a:hover, #sidebarTop ul#mobileMenu li a.current, #sidebarTop .lnkmenu a.current, #sidebarTop .lnkmenu a:hover {
+	background-position:-303px -169px;
+	text-decoration:none; 
+	text-shadow:0 1px 0 #FFFFFF; 
+}
+
+
+/* footer */
+
+#footer-wrapper, .push {
+	height: 35px; /* .push must be the same height as .footer */
+}	
+
+#footer-wrapper {
+	background:url(../img/mobile/pt_footer-m.png) repeat-x; 
+	height:35px; 
+	width:100%; 
+	z-index:115; 
+	position:relative;
+	overflow:hidden;
+}
+
+#footer-wrapper #footer {
+	background:url(../img/mobile/bg_footer-m.png) no-repeat top; 
+	padding-left: 11px; 
+	padding-top: 2px;
+	font-size:11px; 
+	color:#549dd5;
+	overflow:hidden;
+	margin: 0 auto;
+}
+
+#footer-wrapper #footer a {
+	color:#86c4f4;
+}
+
+
+#footer-wrapper #footer #footer-inner #footer-menu ul li {
+	float:left; 
+	padding: 0 4px;
+}
+
+#footer-wrapper #footer #footer-inner #footer-menu ul li#language {
+	width:90px;
+}
+
+#footer-wrapper #footer #footer-inner #footer-menu .copyright {
+	margin-top: 1px;
+	font-size:9px;
+}
+
+#footer-wrapper #footer #footer-inner {
+	display: inline;
+}
+
+#footer-wrapper #footer #footer-inner #footer-menu {
+	margin: 0 auto;
+	max-width: 310px;
+}
+
+#footer-wrapper #footer #footer-inner #footer-menu ul {
+	display: inline;
+}
+/* register-box secure pwd */
+
+#securePwd {
+	display:none;
+    height:39px;
+    overflow:hidden;
+    position:relative;
+    width:200px;
+}
+
+.valid-icon {
+    background:transparent url(../img/mobile/sp-bg-content-m.png) no-repeat -349px -208px;
+    display:inline;
+    float:left;
+    height:16px;
+    margin:2px 5px 5px 10px;
+    width:16px;
+}
+
+.invalid {
+     background-position:-349px -224px;
+}
+
+#securePwd .securePwdBarBox {
+    float:left;
+    margin:0px 10px 2px;
+    width:180px;
+}
+#securePwd .securePwdBarBox, #securePwd #securePwdBar { 
+	background:transparent url(../img/mobile/sp-bg-content-m.png) no-repeat 0 -93px;
+	height:13px;
+	font-size:1px;
+}
+#securePwd #securePwdBar {
+	background-position:0 -93px;
+	float:left;
+}
+
+
+#errorOverlay {
+	position:absolute;
+	left:0;
+	top:120px;
+	height:100%;
+	width:100%;
+	z-index:3000;
+	display:none;
+}
+
+#errorWrapper {
+    width:250px;
+	margin: 0 auto;
+	position:absolute;
+	z-index:5005;
+	display:none;
+	top:130px;
+}
+
+#errorWrapper .formError {
+    display:block;
+    text-align:left;
+    width:250px;
+    z-index:5005;
+}
+
+#errorWrapper .formError .formErrorContent {
+    background:#5C0400 url(../img/tooltip-bg.png) repeat-x;
+    border:1px solid #111;
+    box-shadow:0px 0px 4px #000;
+    -moz-box-shadow:0px 0px 4px #000;
+    -webkit-box-shadow:0px 0px 4px #000;
+    color:#ddc494;
+	font-size:12px;
+	width:100%;
+}
+
+#errorWrapper .formError .formErrorHeader {
+    left:27px;
+    top:18px;
+	margin-top:-18px;
+    z-index:5011;
+	color:#ddc494;
+	font-weight:700;
+	font-size:12px;
+	position: relative;
+}
+
+.formError .formErrorArrow {
+	display:none;
+}
+
+#errorWrapper  .formError .icon {
+    background:url(../img/mobile/warning_16.gif) no-repeat scroll 5px 2px;
+    padding:4px 10px 4px 25px;
+	margin-top:17px;
+}
+
+.invalidInput { background-color: #ffcabf; } 
+.inputWarning { 
+	background:url(../img/mobile/warning_16.gif) no-repeat scroll left top; 
+	width: 16px;
+	height: 16px;
+	float:left;
+	padding-right:6px;	
+}
+.agb.invalidInput, .fbAgb.invalidInput {
+	color: #c70000;
+	background:url(../img/mobile/warning_16.gif) no-repeat scroll; 
+	background-position: 32px 19px;
+}
+
+/* always last parameter */
+
+.clearfloat {
+    clear:both;
+    height:0px;
+}
+
+.clearfix:after {
+ clear:both;
+ content:".";
+ display:block;
+ height:0;
+ visibility:hidden;
+}
+.clearfix { display:inline-block; }
+
+/* hide from IE Mac \*/
+
+* html .clearfix { height:1%; }
+.clearfix { display:block; }

@@ -1,0 +1,40 @@
+#sendSpy
+.buildingDescription{background:url(buildings/y100/safehouse.gif) no-repeat right 10px}#sendSpy #mainview .statusBar
+.bar{background:url(layout/bg-spy-detection-bar.gif) no-repeat}#sendSpy
+.buildingDescription{background:url(buildings/y100/safehouse.gif) no-repeat right 10px;height:auto}#sendSpy
+p.desc{min-height:120px;padding-left:130px;background:url(characters/spy_espionage.gif) no-repeat 10px 0px}#sendSpy
+.risk{position:relative;width:400px;margin-left:150px}#sendSpy .risk
+.textLabel{font-weight:bold}#sendSpy .risk
+.statusBar{width:300px;height:20px;border:1px
+solid #775726;background-color:#fefbe8;overflow:hidden}#sendSpy .risk .statusBar
+.bar{height:100%;background-color:#deaf64;border-right:1px solid #960;background:url(layout/bg-spy-detection-bar-205.gif) no-repeat}#sendSpy .risk
+.percentage{position:absolute;text-align:left;top:16px;left:308px;font-size:16px;font-weight:bold}#sendSpy
+.costs{position:relative;margin-left:150px;margin-bottom:10px;line-height:22px;background:url(resources/icon_gold.gif) no-repeat 2px top;padding-left:26px}#sendSpy
+.wineCosts{position:relative;margin-left:150px;margin-bottom:10px;line-height:22px;background:url(resources/icon_wine.gif) no-repeat 2px top;padding-left:26px}#sendSpy
+.targetCity{position:absolute;left:195px;top:25px}#sendSpy .missionWrapper .decoyMission .spycount,
+#sendSpy .missionWrapper .decoyMission .sliderinput,
+#sendSpy .missionWrapper .decoyMission .forminput,
+#sendSpy .missionWrapper .realMission,
+#sendSpy .missionWrapper .realMission .spycount,
+#sendSpy .missionWrapper .realMission .sliderinput,
+#sendSpy .missionWrapper .realMission .forminput,
+#spyMissions .missionWrapper .decoyMission .spycount,
+#spyMissions .missionWrapper .decoyMission .sliderinput,
+#spyMissions .missionWrapper .decoyMission .forminput,
+#spyMissions .missionWrapper .realMission,
+#spyMissions .missionWrapper .realMission .spycount,
+#spyMissions .missionWrapper .realMission .sliderinput,
+#spyMissions .missionWrapper .realMission
+.forminput{float:left !important}#sendSpy .missionWrapper .decoyMission img,
+#sendSpy .missionWrapper .decoyMission,
+#sendSpy .missionWrapper .realMission img,
+#sendSpy .missionWrapper .realMission,
+#spyMissions .missionWrapper .decoyMission img,
+#spyMissions .missionWrapper .decoyMission,
+#spyMissions .missionWrapper .realMission img,
+#spyMissions .missionWrapper
+.realMission{position:relative}#sendSpy
+.sliderinput{margin:0
+auto 15px;width:400px}#sendSpy #missionSummary
+.common{position:relative;margin:0px
+auto;width:350px;float:none}

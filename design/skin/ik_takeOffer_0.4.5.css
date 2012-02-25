@@ -1,0 +1,26 @@
+#takeOffer
+.buildingDescription{background:url(buildings/y100/branchOffice.gif) no-repeat right 27px;height:130px}#takeOffer .summaryBox ul.cargoInfo li,
+#takeOffer .summaryBox ul.speedInfo li,
+#takeOffer .summaryBox ul.costsInfo
+li{width:80px}#takeOffer
+div.smk_warning{border:1px
+solid #f1d198;padding:3px
+10px 3px 40px;margin:5px
+5px 5px 5px;background:#fcddd2}#takeOffer .summaryBox ul.cargoInfo
+li.rowTitle{margin-right:80px !important}#takeOffer .summaryBox ul.speedInfo
+li.rowTitle{margin-right:77px !important}#takeOffer .summaryBox ul.costsInfo
+li.rowTitle{width:140px !important;margin-right:20px !important}#takeOffer .offerTable
+td{height:40px;vertical-align:middle}#takeOffer .offerTable td.input,
+#takeOffer .offerTable
+td.icon{text-align:center}#takeOffer .offerTable td.input
+input{text-align:right}#takeOffer .offerTable td.input
+a{margin-left:5px}#takeOffer .offerTable td.amount,
+#takeOffer .offerTable
+td.costs{text-align:right}#takeOffer
+.increaseInput{position:relative;width:60px;margin:0
+auto}#takeOffer .increaseInput
+input{display:block;width:30px;text-align:center}#takeOffer .increaseInput
+a.increase{background:url(interface/btn_increase.gif) no-repeat center center;position:absolute;width:15px;height:13px;left:40px;top:-5px}#takeOffer .increase
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}#takeOffer
+.decrease{background:url(interface/btn_decrease.gif) no-repeat center center;position:absolute;width:15px;height:13px;left:40px;top:10px}#takeOffer .decrease
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}

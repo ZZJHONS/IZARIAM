@@ -1,0 +1,71 @@
+body{background: #00376a url(../img/bg_ie.jpg) no-repeat 50% top #01365e; }
+body{background: #00376a url(../img/bg_ie.jpg) no-repeat 50% top #01365e; }
+#sky, #water, #sunWrapper, .ship, .islands {display:none;}
+
+#container {width:800px;}
+#header #logo a {background-image:url(../img/logo.gif)}
+#footer-wrapper #footer{ background: none; padding-top:15px;} 
+#footer-wrapper #footer ul {width:400px;}
+#footer-wrapper #footer p {clear:both; width:400px;}
+#sidebar #major {background:url(../img/major.gif) no-repeat}
+#agb, #fbagb, #rememberMe {background:transparent; border:none;}
+#content #lnkmenu a {padding-right:12px;}
+#sidebar .input-wrap {padding:1px 5px;}
+#sidebarWrapper {margin-right:-35px;}
+#sidebar .input-wrap {width:191px !important; overflow:hidden;}
+#contenTop {overflow:hidden;}
+#content #menuBox  {width:490px;}
+#content ul#menu li, #content .lnkmenu a {margin-right:2px;}
+
+#contentTop, #sidebarTop, #sidebarBottom {background-image:url(../img/sp-bg-content.gif); font-size:0;}
+#content h2 {background-image:url(../img/sp-bg-content.gif);}
+#registerTop, #registerBottom, #pageContentTop, #pageContentBottom {font-size:0;}
+#content #pageContentTop, #content #pageContentBottom {background-image:url(../img/sp-bg-content.gif);}
+#content #contentBottom {background:url(../img/sp-bg-content.gif) no-repeat}
+#content #pageContentBottom {background-image:url(../img/sp-bg-content.gif);}
+#content #pageContent, .boxMiddle, #register  {background-image:url(../img/sp-bg-content-repeat.gif);}
+#content #contentBottom {background-image:url(../img/sp-bg-content-bottom.gif);}
+#fbConnect, #registerTop, #registerBottom {background-image:url(../img/sp-bg-content.gif);}
+#footer-wrapper  {background:url(../img/bg_footer_ie6.gif) no-repeat; height:90px;}
+#sidebar #register h1 {background-image:url(../img/sp-bg-content.gif);} 
+#registerForFree, #gameTourRegisterForFree {background:url(../img/sp-bg-content.gif) no-repeat -322px -144px;}
+
+.valid-icon {background-image:url(../img/sp-bg-content.gif); height:15px; line-height:15px;}
+a.btn-login {height:23px !important; overflow:hidden;}
+
+
+.rtl2 {
+    position:absolute;
+    top: 41px;
+    left: 4px;
+    width:65px;
+    height:75px;
+    background: url('../img/rtl2-ie.jpg') no-repeat scroll 2px 17px transparent;
+}
+
+.komputerswiat {
+    position:absolute;
+    top: 41px;
+    left: 4px;
+    width:65px;
+    height:75px;
+    background: url('../img/logo_komputerswiat.png') no-repeat scroll 2px 17px transparent;
+}
+
+.meristation {
+    position:absolute;
+    top: 125px;
+    left: -115px;
+    width:200px;
+    height:54px;
+    background: url('../img/logo_meristation.gif') no-repeat scroll 0px 0px transparent;
+}
+
+.gamezilla {
+    position:absolute;
+    top: 61px;
+    left: 4px;
+    width:65px;
+    height:75px;
+    background: url('../img/logo_gamezilla.png') no-repeat scroll 2px 17px transparent;
+}

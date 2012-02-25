@@ -1,0 +1,38 @@
+#banner_container
+{
+	left:50%;
+	position:absolute;
+	top:20px;
+	width:120px;
+	z-index:25;
+}
+#banner_skyscraper
+{
+	height:600px;
+	left:505px;
+	position:absolute;
+	width:120px;
+	z-index:25;
+}
+#banner2_container
+{
+	left:50%;
+	position:absolute;
+	top:20px;
+	width:120px;
+	z-index:25;
+}
+#banner2_skyscraper
+{
+	height:600px;
+	left:-630px;
+	position:absolute;
+	width:120px;
+	z-index:25;
+}
+#mainview {
+	min-height: 440px;
+}
+#options #container #container2 #mainview .buildingDescription {
+	min-height:0px;
+}

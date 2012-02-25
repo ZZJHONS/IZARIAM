@@ -1,0 +1,119 @@
+#diplomacyAdvisorAlly #container #mainview table.table01
+td.online{background-image:url(layout/bulb-on.gif);background-repeat:no-repeat;background-position:center}#diplomacyAdvisorAlly #container #mainview table.table01
+td.offline{background-image:url(layout/bulb-off.gif);background-repeat:no-repeat;background-position:center}#diplomacyAdvisorAlly #container #mainview table.table01
+td.inactive{background-image:url(layout/bulb-inactive.gif);background-repeat:no-repeat;background-position:center}#diplomacyAdvisorAlly #container #mainview table.table01
+td.vacation{background-image:url(layout/icon-palm.gif);background-repeat:no-repeat;background-position:center}#diplomacyAdvisorAlly #container #container2 #mainview
+#viewDiplomacyImperium.dynamic{margin-left:240px}#diplomacyAdvisorAlly #container #container2 #islandBoardOverview ul
+li{width:165px;background:url(board/schriftrolle_closed2.gif) no-repeat 14px 7px;margin:2px
+0;padding-left:30px}#diplomacyAdvisorAlly #container #container2 #islandBoardOverview
+li.current{font-weight:bold;background:url(board/schriftrolle_offen2_active.gif) no-repeat 0px 3px}#diplomacyAdvisorAlly
+#allyinfo{margin:0
+auto;width:95%}#diplomacyAdvisorAlly .ally_information #allyinfo
+.desc{max-width:210px;text-align:left;word-wrap:break-word}#diplomacyAdvisorAlly .ally_information #allyinfo
+.val{text-align:right}#diplomacyAdvisorAlly
+#allyinfo{font-size:12px}#diplomacyAdvisorAlly #allyinfo
+.sub{font-size:10px}#diplomacyAdvisorAlly #allyinfo .sub
+.desc{padding-left:8px}#diplomacyAdvisorAlly #allyinfo
+.icon_msg{background:url(interface/icon_send_message.gif);display:block;float:right;height:9px;margin:1px
+0 1px 2px;width:13px}#diplomacyAdvisorAlly #container #mainview .board_header_table
+td{text-align:left;padding:0px}#diplomacyAdvisorAlly #container #mainview .board_header_table
+.header_bar{background-color:#ECD5AC;border:1px
+solid #E0AE65;line-height:30px}#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar
+td{padding:4px
+0px}#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar
+.breadcrumbs{width:1%;white-space:nowrap;padding-left:12px}#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar .topic_title,
+#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar
+.thread_title{padding-left:4px}#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar .topic_actions,
+#diplomacyAdvisorAlly #container #mainview .board_header_table .header_bar
+.thread_actions{width:60px;white-space:nowrap;padding-right:12px;text-align:right}#diplomacyAdvisorAlly #container #mainview .board_header_table
+.page_bar{text-align:center;padding:2px}#diplomacyAdvisorAlly #container #mainview .board_header_table
+.page_link{background-color:#ECD5AC;border:1px
+solid #E0AE65;padding:2px;min-width:14px}#diplomacyAdvisorAlly #container #mainview .board_header_table
+a.page_link{background-color:#FFFAE8;text-decoration:none}#diplomacyAdvisorAlly #container #mainview .board_header_table a.page_link:hover{background-color:#ECD5AC}#diplomacyAdvisorAlly #container #mainview .topic_table td,
+#diplomacyAdvisorAlly #container #mainview .topic_table
+th{padding:4px
+0;text-align:left}#diplomacyAdvisorAlly #container #mainview .topic_table
+td{cursor:pointer}#diplomacyAdvisorAlly #container #mainview .topic_table
+.openCloseArrow{padding:10px;width:12px}#diplomacyAdvisorAlly #container #mainview .topic_table
+.footerText{padding:10px}#diplomacyAdvisorAlly #container #mainview .topic_table
+.topic_num_threads{width:100px}#diplomacyAdvisorAlly #container #mainview .topic_table
+.topic_lastupdate{width:140px;text-align:center}#diplomacyAdvisorAlly #container #mainview .topic_table
+.topic_actions{width:60px;white-space:nowrap}#diplomacyAdvisorAlly #container #mainview .topic_table
+.topic_title{line-height:30px;padding-left:22px}#diplomacyAdvisorAlly #container #mainview .thread_table
+td{cursor:pointer;border-bottom:1px dotted #E4B873;padding:4px
+0px}#diplomacyAdvisorAlly #container #mainview .thread_table
+.thread_title{line-height:30px;padding:0
+0 0 40px;text-align:left}#diplomacyAdvisorAlly #container #mainview .thread_table
+.sticky{background-color:#FFFAE8}#diplomacyAdvisorAlly #container #mainview .thread_table .thread_title a:hover{text-decoration:none}#diplomacyAdvisorAlly #container #mainview .thread_table
+.thread_lastupdate{width:140px;text-align:center}#diplomacyAdvisorAlly #container #mainview .thread_table
+.thread_actions{width:60px;white-space:nowrap}#diplomacyAdvisorAlly #container #mainview
+.thread_icon{padding:0
+10px 0 0;vertical-align:middle}#diplomacyAdvisorAlly #container #mainview .thread_table
+.thread_replies{text-align:center;width:auto}#diplomacyAdvisorAlly #container #mainview .thread_table
+td.thread_lastupdate{background-color:#FFF5D6;border-left:1px solid #FBE7C0}#diplomacyAdvisorAlly #container #mainview .thread_table
+td.thread_actions{background-color:#FFF5D6;width:60px}#diplomacyAdvisorAlly #container #mainview .posting_table
+.posting_left_column{background-color:#FAEAC6;border-right:1px solid #FBE7C0;padding-top:20px;text-align:center;vertical-align:top;width:100px}#diplomacyAdvisorAlly #container #mainview .posting_table
+.posting_right_column{background-color:#FFFAE8}#diplomacyAdvisorAlly #container #mainview
+.posting_header{border-bottom:2px dotted #E4B873;line-height:20px;padding:6px;text-align:left}#diplomacyAdvisorAlly #container #mainview .posting_header
+.posting_number{padding-left:15px}#diplomacyAdvisorAlly #container #mainview
+.posting_content{padding:10px;text-align:left}#diplomacyAdvisorAlly #container #mainview
+.posting_footer{border-top:2px dotted #E4B873;font-size:10px;padding:6px}#diplomacyAdvisorAlly #container #mainview
+.posting_breadcrumb{padding:15px}#diplomacyAdvisorAlly #container #mainview
+.breadcrumb_icon{vertical-align:middle}#diplomacyAdvisorAlly #container #mainview .posting_breadcrumb a:hover{text-decoration:none}#diplomacyAdvisorAlly #container #mainview .posting_breadcrumb
+.crumb_part{color:#542C0F;padding:0
+6px 0 0;font-style:italic}#diplomacyAdvisorAlly #container #mainview
+.board_editor_table{margin-top:20px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+th{padding:5px
+20px;text-align:left;width:100%}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+td{padding-top:0}#diplomacyAdvisorAlly #container #mainview
+.editor_popup{background-color:#FAE0AE;border:1px
+solid #E4B873;display:none;margin:5px
+0 0 5px;padding:5px;position:absolute;text-align:left;width:220px;z-index:7000}#diplomacyAdvisorAlly #container #mainview .editor_colors
+ul{list-style:none outside none;margin:0;padding:1px
+0 0 1px;width:auto}#diplomacyAdvisorAlly #container #mainview .editor_colors ul li,
+#diplomacyAdvisorAlly #container #mainview .editor_colors ul li
+a{display:block;float:left;height:15px;margin:0
+1px 1px 0;padding:0;width:15px}#diplomacyAdvisorAlly #container #mainview
+.thread_header_table{}#diplomacyAdvisorAlly #container #mainview .thread_header_table
+td{cursor:default;padding:0}#diplomacyAdvisorAlly #container #mainview .thread_header_table
+.topic_actions{width:60px}#diplomacyAdvisorAlly #container #mainview .thread_header_table
+.topic_num_threads{width:auto;min-width:10%}#diplomacyAdvisorAlly #container #mainview  .posting_table
+.posting_link{color:#906646}#diplomacyAdvisorAlly #container #mainview
+.posting_table_footer{background-color:#FBE7C0;padding:3px
+10px;text-align:right}#diplomacyAdvisorAlly #container #mainview
+.quote{background-color:#FAEAC6;border:1px
+solid #E4B873;text-align:left;margin:auto 0px auto 0px;padding:2px}#diplomacyAdvisorAlly #container #mainview
+.thread_buttons{margin:3px
+10px;text-align:right}#diplomacyAdvisorAlly #container #mainview  .thread_buttons
+.button{line-height:26px}#diplomacyAdvisorAlly #container #mainview  .edit_mode .title_text,
+#diplomacyAdvisorAlly #container #mainview  .edit_mode
+img{display:none}#diplomacyAdvisorAlly #container #mainview .posting_table
+.player_icons{margin:5px
+auto;width:33px}#diplomacyAdvisorAlly #container #mainview .posting_table
+.icon{display:block;float:left;height:9px;margin:1px
+0 1px 2px;width:13px}#diplomacyAdvisorAlly #container #mainview .posting_table
+.sendMessage{background-image:url(interface/icon_send_message.gif)}#diplomacyAdvisorAlly #container #mainview .posting_table
+.reportPlayer{background-image:url(interface/icon_report.gif)}#diplomacyAdvisorAlly #container #mainview .posting_table
+.textLabel{height:1px;left: -9999px;overflow:hidden;position:absolute;width:1px}#diplomacyAdvisorAlly #container #mainview
+.popupMessage{left:320px;position:absolute;top:180px}#diplomacyAdvisorAlly #container #mainview
+.thread_title_input{margin:15px
+7px 0 7px}#diplomacyAdvisorAlly #container #mainview .thread_title_input
+input{width:100%}#diplomacyAdvisorAlly #container #mainview
+.board_table_button{margin:0
+10px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.color_picker{background-position:0px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .color_picker:hover{background-position:0px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.smiley_picker{background-position: -24px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .smiley_picker:hover{background-position: -24px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.code_insert{background-position: -48px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .code_insert:hover{background-position: -48px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.pic_insert{background-position: -72px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .pic_insert:hover{background-position: -72px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.link_insert{background-position: -96px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .link_insert:hover{background-position: -96px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.quote_insert{background-position: -120px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .quote_insert:hover{background-position: -120px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.font_bold{background-position: -144px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .font_bold:hover{background-position: -144px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.font_italic{background-position: -168px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .font_italic:hover{background-position: -168px -24px}#diplomacyAdvisorAlly #container #mainview .board_editor_table
+.font_underlined{background-position: -192px 0px}#diplomacyAdvisorAlly #container #mainview .board_editor_table .font_underlined:hover{background-position: -192px -24px}#diplomacyAdvisorAlly #container #mainview
+.delete_button{background-position:0px 0px}#diplomacyAdvisorAlly #container #mainview .delete_button:hover{background-position:0px -18px}#diplomacyAdvisorAlly #container #mainview
+.warning_button{background-position: -18px 0px}#diplomacyAdvisorAlly #container #mainview .warning_button:hover{background-position: -18px -18px}#diplomacyAdvisorAlly #container #mainview
+.edit_button{background-position: -36px 0px}#diplomacyAdvisorAlly #container #mainview .edit_button:hover{background-position: -36px -18px}#diplomacyAdvisorAlly #container #mainview
+.quote_button{background-position: -54px 0px}#diplomacyAdvisorAlly #container #mainview .quote_button:hover{background-position: -54px -18px}#diplomacyAdvisorAlly #container #mainview
+.topic_button{background-position: -72px 0px}#diplomacyAdvisorAlly #container #mainview .topic_button:hover{background-position: -72px -18px}#diplomacyAdvisorAlly #container #mainview
+.top_button{background:url(board/board_top.gif) center top no-repeat transparent;margin:10px
+5px;width:30px}

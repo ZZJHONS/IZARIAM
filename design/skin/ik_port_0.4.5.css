@@ -1,0 +1,103 @@
+#port #mainview .contentBox01h .content
+div.tcap{font-weight:bold;text-align:center;margin:0
+auto}#port #mainview .contentBox01h .master
+p{text-align:center;font-style:italic}#port #container #mainview
+li.unit{height:140px}#port #container #mainview .unit .resources
+li.gold{display:block;float:none;width:75px;position:absolute;top:110px;left:120px}#port #container div.costs ul.resources li
+.textLabel{position:absolute;left:0;top:0}#port #ships
+.unitDescription{background-color:#fdf7dd;padding:7px
+20px 5px 20px}#port #ships
+.unitCosts{background-color:#fdf7dd;background:url(layout/dummy-port-ship.gif) no-repeat}#port #container #cityResources li .tooltip
+.textLabel{display:inline;height:auto;left:0pt;overflow:visible;position:static}#port #mainview
+.buildingDescription{margin:0px
+10px 10px 10px;position:relative}#port #container #mainview .contentBox01h .content table.table01
+.progressBar{margin:0
+auto;height:8px;text-align:left;overflow:hidden}#port #container #mainview
+.table01{margin-top:10px}#port #container #mainview .table01
+td{text-align:center}#port #container #mainview .table01
+.destination{width:150px;text-align:left}#port #container #mainview .table01
+.status{width:140px}#port #container #mainview .table01
+tr.struggle{background-color:#DFC5C3}#port #container #mainview .contentBox01h .content .table01
+td.city{text-align:left;background:url(layout/icon-city2.gif) no-repeat left center;padding-left:25px}#port .contentBox01h .content ul.cities
+li.cityBox{padding:5px
+0px;float:left;position:relative;width:133px;height:120px;cursor:pointer}#port #container #mainview .table01
+tr.struggle{background-color:#DFC5C3}#port #container #mainview .contentBox01h .content .table01
+th.origin{width:98px}#port #container #mainview .contentBox01h .content
+ul.cities{overflow:hidden;padding:5px
+0 10px 8px}#port #container #mainview .contentBox01h .content ul.cities
+li{background:url(layout/bg_port_button_grey.jpg) no-repeat left center;color:#542c0f;display:block;width:133px;height:120px}#port #container #mainview .contentBox01h .content ul.cities li
+a{background:url(layout/bg_port_button.jpg) no-repeat left center;color:#542c0f;display:block;width:133px;height:120px}#port #container #mainview .contentBox01h .content ul.cities li a:hover{background:url(layout/bg_port_button_hover3.jpg) no-repeat left center;text-decoration:none}#port #container #mainview .contentBox01h .content ul.cities li
+a.down{background:url(layout/bg_port_button_down.jpg) no-repeat left center}#port #container #mainview .contentBox01h .content
+.sendGoodsBox{position:relative;width:600px}#port
+.citiesContentBox{min-height:120px}#port #container #mainview .contentBox01h .content ul.cities
+.boxContent{position:relative;top:5px;left:0;height:120px;width:120px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.coords{background:url(layout/icon-island.gif) no-repeat center top;position:absolute;top:0px;width:50px;height:20px;padding-top:16px;text-align:center;font-size:10px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.resource{background:url(resources/icon_wood.gif) no-repeat center top;position:absolute;top:4px;right:3px;width:25px;height:20px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.wine{background:url(resources/icon_wine.gif) no-repeat center top}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.marble{background:url(resources/icon_marble.gif) no-repeat center top}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.crystal{background:url(resources/icon_glass.gif) no-repeat center top}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.sulfur{background:url(resources/icon_sulfur.gif) no-repeat center top}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.symbol{background:url(img/island/city_4_red.gif) no-repeat center top;position:absolute;top:15px;right:23px;width:64px;height:80px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level1{background:url(img/island/city_1_blue.gif) no-repeat 12px 10px}#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level2,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level3{background:url(img/island/city_2_blue.gif) no-repeat 11px 16px}#port #container #mainview .contentBox01h .content ul.cities .cityBox   .level4,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox   .level5,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level6{background:url(img/island/city_3_blue.gif) no-repeat 12px 14px}#port #container #mainview .contentBox01h .content ul.cities .cityBox   .level7,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox   .level8,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level9{background:url(img/island/city_4_blue.gif) no-repeat 5px 10px}#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level10,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level11,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level12{background:url(img/island/city_5_blue.gif) no-repeat 6px 8px}#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level13,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level14,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level15{background:url(img/island/city_6_blue.gif) no-repeat 2px 6px}#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level16,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level17{background:url(img/island/city_7_blue.gif) no-repeat 0px 7px}#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level18,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level19,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level20,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level21,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level22,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox  .level23,
+#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.level24{background:url(img/island/city_8_blue.gif) no-repeat 0px 0px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.roll{position:absolute;top:4px;right:10px;width:25px;height:20px}#port #container #mainview .contentBox01h .content ul.cities .cityBox
+.name{display:block;position:absolute;top:81px;left:8px;text-align:center;line-height:23px;height:23px;background:url(layout/scroll_bg.gif) repeat-x center top;padding:0
+16px;white-space:nowrap;font-size:10px;color:#50110a;margin:0
+auto;width:78px}#port #container #mainview .contentBox01h .content ul.cities .cityBox .name
+.before{display:block;position:absolute;top:0;left:0;width:12px;height:23px;background:url(layout/scroll_leftend.gif) no-repeat center top}#port #container #mainview .contentBox01h .content ul.cities .cityBox .name
+.after{display:block;position:absolute;top:0;right:0;width:12px;height:23px;background:url(layout/scroll_rightend.gif) no-repeat center top}#port
+.leftmenuTable{margin:0px
+0px 3px 5px;padding-left:5px;width:200px}#port .leftmenuTable
+td{padding:4px}#port .leftmenuTable
+.sumLeft{background:url(layout/sigma.gif) no-repeat 5px 5px}#port .leftmenuTable
+td.right{text-align:right}#port .leftmenuTable
+.sum{border-top:1px solid #c49873}#port
+.cityBox.inactive{background:url(layout/bg_port_button_grey.jpg) no-repeat scroll left center transparent}#port #container #mainview .contentBox01h .content ul.cities .cityBox.inactive
+.name{background:url(layout/port_banner_grey.gif) no-repeat scroll center top transparent}#port #container #mainview .contentBox01h .content ul.cities .cityBox.inactive
+.symbol{background:url(layout/port_flag_grey.gif) no-repeat scroll center top transparent;top:30px}#port #container #mainview .contentBox01h .content ul.cities .cityBox.inactive
+.resource{background:url(layout/port_questionmark_grey.gif) no-repeat scroll center top transparent}#port #container #mainview .contentBox01h .content ul.cities .cityBox.inactive
+.coords{background:url(layout/port_island_grey.gif) no-repeat scroll center top transparent}#port #mainview .contentBox01h
+div.content{position:static !important}#port #mainview
+#tradeRouteBoxContent{position:relative !important}#port #container #mainview .contentBox01h.sendTransporterBox
+.footer{width:678px}#port #container #mainview .contentBox01h.tradeRouteBox
+.content{display:block}#port #container #mainview .contentBox01h.tradeRouteBox.hidden
+.content{display:none}#port #container #mainview .contentBox01h.tradeRouteBox .minimize a:hover{text-decoration:none}#port #container #mainview .contentBox01h.tradeRouteBox
+.minimize{background:url(layout/up-arrow.gif) no-repeat center center;display:block;height:20px;left:640px;margin-bottom:-20px;position:relative;text-align:left;top:-23px;width:20px}#port #container #mainview .contentBox01h.tradeRouteBox.hidden
+.minimize{background-image:url(layout/down-arrow.gif)}#port .buyTransporter .content .unitcount
+.textLabel{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}#port .buyTransporter
+.tradeShip{background:url(characters/fleet/60x60/ship_transport_faceright.gif) no-repeat 30px 5px;position:relative;width:217px;height:65px}#port .buyTransporter .tradeShip
+a{width:115px;height:100%;position:absolute}#port .buyTransporter
+.bonusShips{font-weight:bold}#port .buyTransporter
+.leftmenuTable{width:190px;margin-bottom:0px}#port .buyTransporter .leftmenuTable
+tr{line-height:15px}#port .buyTransporter .leftmenuTable
+.grantedTransporters{background:url(friends/player_icon_blue_20.gif) no-repeat center left;width:27px;height:31px;padding-left:29px;vertical-align:middle}#port .buyTransporter .leftmenuTable
+.governmentSymbol{background:url(government/zepter_20.gif) no-repeat center left;width:20px;height:20px;padding-left:29px;vertical-align:middle}#port .buyTransporter
+.forminput{text-align:center;position:relative}#port .buyTransporter .forminput
+.center{position:relative;height:25px}#port .buyTransporter .forminput
+.costs{position:absolute;left:0px}#port .buyTransporter .forminput
+.gold{background:url(resources/icon_gold.gif) no-repeat 4px 0px;height:30px;text-align:left;padding-left:28px;position:absolute;right:0px}#port .buyTransporter .forminput
+.button{margin:5px
+auto 10px;background:url(input/button_50.gif) repeat-x scroll 0 0 #ECCF8E;height:45px}#port .buyTransporter .leftmenuTable
+.dailyActivityBonusSymbol{background:url(dailyActivity/icon_daily_bonus.gif) no-repeat center left;width:140px;height:20px;padding-left:29px;vertical-align:middle}

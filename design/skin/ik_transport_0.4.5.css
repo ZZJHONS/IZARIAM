@@ -1,0 +1,32 @@
+#transport .summaryBox ul.speedInfo
+li.rowTitle{margin-right:90px !important}#transport
+#sendTransporter{height:384px;width:654px;position:relative}#transport #sendTransporter
+.textLabel{top:-9999px;position:absolute;width:1px;height:1px}#transport
+.sendNormalTransporter{left:0px;top:0px;position:relative;height:79px;background-image:url(transport/bgSendTransporter.jpg);margin-bottom:5px}#transport .sendNormalTransporter
+.journeyTarget{background:url(img/icon_target2.gif) no-repeat scroll left top transparent;line-height:24px;padding-left:44px;position:absolute;left:267px;top:11px}#transport .sendNormalTransporter
+.journeyTime{background:url(img/icon_journeytime.gif) no-repeat scroll left top transparent;line-height:24px;padding-left:44px;position:absolute;left:267px;top:41px}#transport .sendNormalTransporter
+.transporters{background:url(characters/fleet/40x40/ship_transport_r_40x40.gif) no-repeat scroll 4px 4px transparent;color:#906646;font-size:18px;height:50px;width:130px;position:absolute;left:27px;top:16px;padding-left:2px;padding-top:23px}#transport .sendNormalTransporter .transporters
+input{background:none repeat scroll 0 0 transparent;border:medium none;text-align:right;color:#906646;font-size:18px;margin-left:0;padding-left:0}#transport .sendNormalTransporter
+.transportCapacity{position:absolute;left:400px;top:16px}#transport .sendNormalTransporter
+select#capacityPerTransport{left:0px;top:24px;position:absolute}#transport .sendNormalTransporter
+#capacityPerTransport{left:0px;top:10px}#transport .sendNormalTransporter .transportCapacity
+.jsSelect{top:10px;left:0px}#transport .sendNormalTransporter
+select#capacityPerTransport.replaced{left:-9999px}#transport .sendNormalTransporter select.dropdown
+option{background:none}#transport
+.sendNormalTransporter{}#transport
+.sendNormalTransporter{}#transport
+.sendNormalTransporter{}#transport .sendNormalTransporter
+.button{position:absolute;left:484px;top:31px;width:160px}#transport
+.sendTritonTransporter{height:300px;background-image:url(transport/bgSendTransporter.jpg);background-position:0 -84px;margin-bottom:5px;position:relative}#transport .sendTritonTransporter
+.teaser{background-image:url(premium/tritonTransporter.gif);background-repeat:no-repeat;height:100px;padding-left:110px;padding-right:10px;padding-top:2px;position:absolute;top:10px;left:10px}#transport .sendTritonTransporter
+.premiumFeatures{position:absolute;left:65px;top:105px;margin:0;padding:0}#transport .sendTritonTransporter
+.feature{position:relative;top:10px;height:30px;padding-top:5px}#transport .sendTritonTransporter
+.journeyTime{background:url(img/icon_journeytime.gif) no-repeat scroll left top transparent;line-height:24px;padding-left:44px;position:absolute;left:202px;top:0px;width:100px}#transport .sendTritonTransporter
+.cost{position:absolute;left:325px;width:75px;text-align:right;top:2px}#transport .sendTritonTransporter  .cost
+img{vertical-align:middle}#transport .sendTritonTransporter
+.button{position:absolute;left:419px;top:0px;width:160px;margin:0}#transport .tradeRoute
+li.text{position:absolute;top:10px;left:100px;width:50px;text-align:right;padding-top:5px}#transport .tradeRoute
+li.time{position:absolute;top:10px;left:150px}#transport .tradeRoute
+li.save{position:absolute;top:10px;left:290px}#transport .tradeRoute li.save
+input{margin:0px}#transport .dropdown
+.dropbutton{width:110px;vertical-align:middle}

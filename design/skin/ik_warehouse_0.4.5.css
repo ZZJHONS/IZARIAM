@@ -1,0 +1,7 @@
+#warehouse
+.buildingDescription{background:url(buildings/y100/warehouse.gif) no-repeat right 10px}#warehouse .sicher, #warehouse .gesamt, #warehouse
+.klaubar{vertical-align:top}#warehouse #container #container2 #mainview
+#premiumbox{padding-left:140px;padding-bottom:20px;width:403px}#warehouse #container #container2 #mainview #premiumbox
+.header{background-color:transparent;background-image:url(layout/bg_messageBox_header.gif);background-repeat:no-repeat;height:20px;padding-top:10px;padding-left:10px;font-weight:bold}#warehouse #container #container2 #mainview #premiumbox
+.footer{background-image:url(layout/bg_messageBox_footer.gif);background-repeat:no-repeat;height:6px;line-height:1px;font-size:0px;padding:0px}#warehouse #container #container2 #mainview #premiumbox
+.content{padding:10px;background-image:url(layout/bg_messageBox.gif)}

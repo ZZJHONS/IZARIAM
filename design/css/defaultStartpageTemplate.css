@@ -1,0 +1,23 @@
+
+#content #openIDForm .large-btn {background:url(../img/btn-large.jpg) no-repeat transparent; font-size:16px; height:55px; width:269px;}
+
+#pageContent .message {
+    margin:10px;
+}
+
+#content #openIDForm label#agbLabel {
+    display: inline;
+}
+
+#content #openIDForm input#agb {
+    width: 20px;
+}
+
+#content #openIDForm .error li {
+    padding-bottom: 0;
+}
+
+#content #openIDProviders {
+    margin-top:10px;
+}
+

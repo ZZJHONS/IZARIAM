@@ -1,0 +1,153 @@
+#militaryAdvisorDetailedReportView
+#header{background-image:url(combatreport/bg_header.jpg)}#militaryAdvisorDetailedReportView
+#breadcrumbs{background-image:url(combatreport/breadcrumbs.gif)}#militaryAdvisorDetailedReportView
+#footer{background-image:url(combatreport/bg_footer.jpg)}#militaryAdvisorDetailedReportView
+#conExtraDiv1{background-image:none}#militaryAdvisorDetailedReportView
+#battlefield{width:909px;height:398px}#militaryAdvisorDetailedReportView
+.battlefield_sea_A_D{background-image:url(combatreport/battlefield_sea_A_D.jpg)}#militaryAdvisorDetailedReportView
+.battlefield_land_A_D{background-image:url(combatreport/battlefield_land_A_D.jpg)}#militaryAdvisorDetailedReportView
+.battlefield_city_A_D{background-image:url(combatreport/battlefield_city_A_D.jpg)}#militaryAdvisorDetailedReportView
+.battlefield_barb_A_D{background-image:url(combatreport/battlefield_barb_A_D.jpg)}#militaryAdvisorDetailedReportView
+.battlefield_city_city{background-image:url(combatreport/battlefield_city_city.jpg)}#militaryAdvisorDetailedReportView
+#mainview{margin:0
+29px -18px 20px}#militaryAdvisorDetailedReportView #mainview
+.buildingDescription{height:auto;min-height:45px;margin:0
+10px 0}#militaryAdvisorDetailedReportView #mainview
+h1{margin:0
+auto 0 588px}#militaryAdvisorDetailedReportView
+#container2{background-image:url(combatreport/bg_content.jpg);background-repeat:repeat-y}#militaryAdvisorDetailedReportView
+#resAttacker{width:125px;height:183px;position:relative;top:5px;left:4px;float:left}#militaryAdvisorDetailedReportView
+#resDefender{width:125px;height:183px;position:relative;left:4px;top:8px;float:left}#militaryAdvisorDetailedReportView .nav
+ul{list-style:none;padding:3px
+0 0 10px;margin:0}#militaryAdvisorDetailedReportView .nav
+li{font-size:11px;font-weight:bold;color:#612d04;float:left}#militaryAdvisorDetailedReportView .nav
+li.res{padding:0
+18px}#militaryAdvisorDetailedReportView .nav li
+a{text-decoration:none;color:#612d04}#militaryAdvisorDetailedReportView .nav li a:hover{text-decoration:underline}#militaryAdvisorDetailedReportView .units
+ul{list-style:none;margin:25px
+0 0 5px;padding:0}#militaryAdvisorDetailedReportView .units ul
+li{padding:2px;text-align:center;float:left;font-size:11px;color:#612d04}#militaryAdvisorDetailedReportView .units ul li
+div{background-image:url(characters/military/unitsprites_x34_y35.gif);width:36px;height:36px;background-repeat:no-repeat}#militaryAdvisorDetailedReportView .ships ul li
+div{background-image:url(characters/fleet/unitfleets_x34_y34.gif)}#militaryAdvisorDetailedReportView
+#attacker{background-image:url(unitdesc/unit_attack.gif);background-position:8px 0;background-repeat:no-repeat;padding:0
+0 0 50px;height:30px}#militaryAdvisorDetailedReportView
+#rounds{padding:0;color:#612d04;position:absolute;width:400px;right:32px;top:57px;text-align:right;vertical-align:middle}#militaryAdvisorDetailedReportView #rounds
+span{padding:0
+5px 0 0}#militaryAdvisorDetailedReportView
+#defender{background-image:url(unitdesc/unit_defend.gif);background-position:12px 2px;background-repeat:no-repeat;padding:0
+0 0 50px;height:50px}#militaryAdvisorDetailedReportView
+#back{padding:10px
+10px 10px 0;position:absolute;width:200px;right:25px;top:470px;text-align:right;float:right;display:block}#militaryAdvisorDetailedReportView
+#events{background-image:url(combatreport/resultbg.gif);background-repeat:repeat-x;background-color:#f9e3aa;width:905px;border:2px
+solid #fedc9c;padding:0;margin:20px
+0}#militaryAdvisorDetailedReportView #events
+div.norm{padding:10px}#militaryAdvisorDetailedReportView #events
+div.alt{background-color:#fedc9c}#militaryAdvisorDetailedReportView #events
+h2{padding:7px;font-weight:bold}#militaryAdvisorDetailedReportView #events
+p{padding:7px;margin:0}#militaryAdvisorDetailedReportView #events
+label{float:left;padding:0;margin:0;width:140px}#militaryAdvisorDetailedReportView #events
+span{width:740px;display:block;padding:0
+0 0 150px;margin:0}#militaryAdvisorDetailedReportView
+#fieldAttacker{width:765px;height:195px;margin:0
+0 0 140px}#militaryAdvisorDetailedReportView
+#fieldDefender{width:765px;height:195px;margin:0
+0 0 140px}#militaryAdvisorDetailedReportView #fieldAttacker ul,
+#militaryAdvisorDetailedReportView #fieldDefender
+ul{position:absolute;list-style:none}#militaryAdvisorDetailedReportView #fieldAttacker div.hitpoints,
+#militaryAdvisorDetailedReportView #fieldDefender div.hitpoints,
+#militaryAdvisorDetailedReportView #fieldAttacker.seafight div.hitpoints,
+#militaryAdvisorDetailedReportView #fieldDefender.seafight
+div.hitpoints{position:absolute;background-image:url(combatreport/hitpoints1.gif);width:5px;height:32px;margin:0
+0 0 36px}#militaryAdvisorDetailedReportView #fieldAttacker div.ammo,
+#militaryAdvisorDetailedReportView #fieldDefender div.ammo,
+#militaryAdvisorDetailedReportView #fieldAttacker.seafight div.ammo,
+#militaryAdvisorDetailedReportView #fieldDefender.seafight
+div.ammo{position:absolute;background-image:url(combatreport/ammo1.gif);width:5px;height:32px;margin:0
+0 0 42px}#militaryAdvisorDetailedReportView #fieldAttacker ul li div.ammoLoss,
+#militaryAdvisorDetailedReportView #fieldDefender ul li  div.ammoLoss,
+#militaryAdvisorDetailedReportView #fieldAttacker.seafight ul li div.ammoLoss,
+#militaryAdvisorDetailedReportView #fieldDefender.seafight ul li
+div.ammoLoss{position:absolute;background-image:url(combatreport/ammo2.gif);width:5px;height:32px;margin:0
+0 0 42px}#militaryAdvisorDetailedReportView #fieldAttacker div.loss,
+#militaryAdvisorDetailedReportView #fieldDefender div.loss,
+#militaryAdvisorDetailedReportView #fieldAttacker.seafight div.loss,
+#militaryAdvisorDetailedReportView #fieldDefender.seafight
+div.loss{position:absolute;background-image:url(combatreport/hitpoints2.gif);width:5px;height:32px;margin:0
+0 0 36px}#militaryAdvisorDetailedReportView #fieldAttacker
+.flankRight{margin:130px
+0 0 620px}#militaryAdvisorDetailedReportView #fieldAttacker
+.flankLeft{margin:130px
+0 0 15px}#militaryAdvisorDetailedReportView #fieldAttacker
+.special{margin:22px
+0 0 20px}#militaryAdvisorDetailedReportView #fieldAttacker
+.air{margin:22px
+0 0 2px}#militaryAdvisorDetailedReportView #fieldAttacker
+.airfighter{margin:22px
+0 0 578px;width:168px}#militaryAdvisorDetailedReportView #fieldAttacker
+.artillery{margin:22px
+0 0 236px}#militaryAdvisorDetailedReportView #fieldAttacker
+.longRange{margin:77px
+0 0 180px}#militaryAdvisorDetailedReportView #fieldAttacker
+.main{margin:130px
+0 0 180px}#militaryAdvisorDetailedReportView #fieldDefender
+.flankRight{margin:22px
+0 0 620px}#militaryAdvisorDetailedReportView #fieldDefender
+.flankLeft{margin:22px
+0 0 15px}#militaryAdvisorDetailedReportView #fieldDefender
+.special{margin:135px
+0 0 20px}#militaryAdvisorDetailedReportView #fieldDefender
+.air{margin:135px
+0 0 2px}#militaryAdvisorDetailedReportView #fieldDefender
+.airfighter{margin:135px
+0 0 578px;width:168px}#militaryAdvisorDetailedReportView #fieldDefender
+.artillery{margin:135px
+0 0 236px}#militaryAdvisorDetailedReportView #fieldDefender
+.longRange{margin:77px
+0 0 180px}#militaryAdvisorDetailedReportView #fieldDefender
+.main{margin:22px
+0 0 180px}#militaryAdvisorDetailedReportView #fieldAttacker li,
+#militaryAdvisorDetailedReportView #fieldDefender
+li{margin:5px;float:left}#militaryAdvisorDetailedReportView #fieldAttacker .longRange li,
+#militaryAdvisorDetailedReportView #fieldAttacker .main li,
+#militaryAdvisorDetailedReportView #fieldAttacker .artillery li,
+#militaryAdvisorDetailedReportView #fieldDefender .longRange li,
+#militaryAdvisorDetailedReportView #fieldDefender .main li,
+#militaryAdvisorDetailedReportView #fieldDefender .artillery
+li{margin-right:15px}#militaryAdvisorDetailedReportView #fieldAttacker .air li,
+#militaryAdvisorDetailedReportView #fieldDefender .air
+li{margin:0
+0 0 15px}#militaryAdvisorDetailedReportView #fieldAttacker .airfighter li,
+#militaryAdvisorDetailedReportView #fieldDefender .airfighter
+li{margin:0
+0 0 20px;float:right}#militaryAdvisorDetailedReportView #fieldAttacker .special li,
+#militaryAdvisorDetailedReportView #fieldDefender .special
+li{float:left;display:block}#militaryAdvisorDetailedReportView #fieldAttacker ul div.number,
+#militaryAdvisorDetailedReportView #fieldDefender ul
+div.number{position:absolute;background-image:none;text-align:center;font-size:10px;height:13px;background-color:#f6ebbd;border:1pt solid #c39363;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";filter:alpha(opacity=70);opacity: .7}#militaryAdvisorDetailedReportView #fieldAttacker ul div.empty,
+#militaryAdvisorDetailedReportView #fieldDefender ul
+div.empty{background-image:url(combatreport/empty.gif);background-repeat:no-repeat}#militaryAdvisorDetailedReportView #rounds
+ul{list-style:none;padding:0
+0 20px 0}#militaryAdvisorDetailedReportView #rounds ul
+li{float:right;height:18px}#militaryAdvisorDetailedReportView #rounds ul
+li.arrow{width:20px}#militaryAdvisorDetailedReportView #rounds ul
+li.roundNo{font-size:16px;font-weight:bold;margin: -2px 12px 0 0}#militaryAdvisorDetailedReportView #fieldAttacker ul div,
+#militaryAdvisorDetailedReportView #fieldDefender ul
+div{background-image:url(characters/military/unitsprites_x34_y35.gif);width:36px;height:36px;background-repeat:no-repeat}#militaryAdvisorDetailedReportView #fieldAttacker.seafight div,
+#militaryAdvisorDetailedReportView #fieldDefender.seafight
+div{background-image:url(characters/fleet/unitfleets_x34_y34.gif)}#militaryAdvisorDetailedReportView
+#infoBox{background-image:none;position:absolute;margin: -36px 0 0 36px;display:none;border:1px
+solid #be8d53;border-top:4px solid #be8d53;background-color:#fdf7dd;z-index:10000;color:#612d04;padding:0;text-align:left}#militaryAdvisorDetailedReportView #infoBox
+h2{display:block;background-color:#fae0ae;font-weight:bold;width:100%;margin:0
+0 4px 0}#militaryAdvisorDetailedReportView #infoBox h2
+span{display:block;padding:4px}#militaryAdvisorDetailedReportView #infoBox
+p{padding:4px}#militaryAdvisorDetailedReportView .table01
+.avatarName{width:150px}#militaryAdvisorDetailedReportView .table01
+.militaryName{width:150px}#militaryAdvisorDetailedReportView .table01
+.militarySize{width:100px}#militaryAdvisorDetailedReportView .table01
+.militaryMorale{width:130px}#militaryAdvisorDetailedReportView .table01
+.morale{width:50px;text-align:left}#militaryAdvisorDetailedReportView .militaryMorale
+.progressBar{background-color:#FEFBE8;border:1px
+solid #775726;height:10px;margin:4px
+0;text-align:left;width:130px}#militaryAdvisorDetailedReportView #morale table.table01
+.atter{background-image:url(unitdesc/unit_attack.gif);background-repeat:no-repeat;background-position:3px 3px;height:34px}#militaryAdvisorDetailedReportView #morale table.table01
+.deffer{background-image:url(unitdesc/unit_defend.gif);background-repeat:no-repeat;background-position:3px 3px;height:34px}
