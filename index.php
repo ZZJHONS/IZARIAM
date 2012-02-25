@@ -3,7 +3,7 @@
  * Project: iZariam
  * Edited: 31/01/2012
  * By: ZZJHONS
- * Info: zzjhosn@gmail.com
+ * Info: zzjhons@gmail.com
  */
 /*
 |---------------------------------------------------------------
@@ -29,7 +29,7 @@
 | NO TRAILING SLASH!
 |
 */
-	$system_folder = "system";
+	$system_folder = "izariam/system";
 
 /*
 |---------------------------------------------------------------
@@ -46,7 +46,7 @@
 | NO TRAILING SLASH!
 |
 */
-	$application_folder = "application";
+	$application_folder = "izariam";
 
 /*
 |===============================================================
