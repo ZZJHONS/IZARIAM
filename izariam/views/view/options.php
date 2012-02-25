@@ -54,7 +54,7 @@
                     <div id="options_userData">
                         <table cellpadding="0" cellspacing="0">
                             <tr>
-                                <th><?=$this->lang->line('change_player_name');></th>
+                                <th><?=$this->lang->line('change_player_name');?></th>
                                 <td>
                                     <?$data = array(
                                             'class' => 'textfield',
