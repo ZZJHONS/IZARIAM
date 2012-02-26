@@ -77,6 +77,7 @@ class View_Model extends Model
             case 'highscore': $caption = $this->lang->line('top_list'); $file = 'null'; break;
             case 'version': $caption = $this->lang->line('changelog'); $file = 'world'; break;
             case 'credits': $caption = $this->lang->line('credits'); $file = 'world'; break;
+            case 'options_deletion_confirm': $caption = $this->lang->line('settings'); $file = 'null'; break;
             default:
                  $file = $location; break;
             break;
@@ -261,7 +262,8 @@ class View_Model extends Model
             case 'winegrower':
             case 'alchemist':
             case 'credits':
-            case 'version':            
+            case 'version':
+            case 'options_deletion_confirm':
             case 'highscore': $this->load->view('view/'.$location); break;
             default: $this->load->view('view/null'); break;
         }

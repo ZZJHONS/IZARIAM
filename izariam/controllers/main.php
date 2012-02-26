@@ -165,7 +165,7 @@ class Main extends Controller
                                         <br>'.$this->lang->line('register_email_text_3').':<br>
                                         <br><a href="'.$this->config->item('base_url').'main/validate/'.$_POST['universe'].'/'.$key.'/" target="_blank">'.$this->config->item('base_url').'main/validate/'.$_POST['universe'].'/'.$key.'</a><br>
                                         <br>'.$this->lang->line('register_email_text_4').':
-                                        <br>'.$this->lang->line('name').': '.$user->login.'
+                                        <br>'.$this->lang->line('username').': '.$user->login.'
                                         <br>'.$this->lang->line('password').': '.$password.'
                                         <br>'.$this->lang->line('world').': '.$_POST['universe'].'<br>
                                         <br>'.$this->lang->line('register_email_text_5').' ('.$this->config->item('forum_url').').<br>

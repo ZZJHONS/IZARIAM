@@ -347,7 +347,7 @@
 							echo form_hidden($data);
 						?>
 			        </fieldset>
-			        <h3><?=$this->lang->line('navigation')?></h3>
+			        <h3><?=$this->lang->line('town_navigation')?></h3>
 			        <ul>
 						<li>
 			                <label for="citySelect"><?=$this->lang->line('current_town')?>:</label>

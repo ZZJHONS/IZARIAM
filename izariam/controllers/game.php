@@ -307,6 +307,10 @@ class Game extends Controller {
         }
     }
 
+    function options_deletion_confirm() {
+        $this->show('options_deletion_confirm');
+    }
+
     function palace() {
         $position = $this->Data_Model->get_position(10, $this->Player_Model->now_town);
         if ($position == 0) {

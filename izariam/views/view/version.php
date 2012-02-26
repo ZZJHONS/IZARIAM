@@ -1,7 +1,7 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 15/02/2012
+ * Edited: 25/02/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -16,9 +16,21 @@
         </tr>
         <tr>
             <td class="version">0.1.0</td>
-            <td class="version">Soon</td>
+            <td class="version">25.02.2012</td>
             <td class="desc">
             	<ul>
+            		<li>Reordered to alphabetical order actions controller and translated</li>
+            		<li>
+            			Improved - Options page redesigned and full translated
+            			<ul>
+            				<li>Can disable Tutorial</li>
+            				<li>Can Change your password</li>
+            				<li>Can Change your username</li>
+            				<li>Show errors</li>
+            				<li>Edit show town details</li>
+            				<li>Add deletion template</li>
+            			</ul>
+            		</li>
             		<li>Fixed - Show world error when try to login or register in world wich don't exist</li>
             		<li>Updated - iZariam HomePage</li>
             		<li>Updated - All external game pages (error, lost pasword, etc.) appear in the content of game homepage</li>

@@ -24,7 +24,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><label for="login" class="labellogin"><?=$this->lang->line('name')?></label></td>
+                        <td><label for="login" class="labellogin"><?=$this->lang->line('username')?></label></td>
                         <td><input type='text' name='name' class="startinput"  size='30'></td>
                     </tr>
                     <tr>

@@ -290,7 +290,7 @@
                                 </select>
                             </div>
                             <div class="input-wrap">
-                                <label for="loginName"><?=$this->lang->line('name')?></label>
+                                <label for="loginName"><?=$this->lang->line('username')?></label>
                                 <input id="loginName" name="name" type="text" value="" class="" />
                             </div>
                             <div class="input-wrap">
@@ -340,7 +340,7 @@
                                         </select>
                                     </div> 
                                     <div class="input-wrap ">
-                                        <label for="loginName"><?=$this->lang->line('name')?></label>
+                                        <label for="loginName"><?=$this->lang->line('username')?></label>
                                         <input id="loginName" name="name" type="text" value="" class="" />
                                     </div>
                                     <div class="input-wrap ">
@@ -395,7 +395,7 @@
                                 <form id="registerForm" name="registerForm" action="<?=$this->config->item('base_url')?>" method="post">
                                     <input name="action" type="hidden" value="register">
                                     <div class="input-wrap">
-                                        <label for="registerName"><?=$this->lang->line('name')?></label>
+                                        <label for="registerName"><?=$this->lang->line('username')?></label>
                                         <input id="registerName" name="name" type="text" value="" class="validate[required,custom[noSpecialCaracters],length[3,30]]" />
                                     </div>
                                     <div class="input-wrap">

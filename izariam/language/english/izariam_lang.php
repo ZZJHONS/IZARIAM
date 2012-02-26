@@ -1,7 +1,7 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 25/02/2012
+ * Edited: 26/02/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -141,12 +141,6 @@ $lang['island_building_crystal'] = 'Crystal Mine';
 $lang['island_building_marble'] = 'Quarry';
 $lang['island_building_wine'] = 'Vines';
 
-// Mission
-$lang['mission_1'] = 'Colonization';
-$lang['mission_2'] = 'Transport';
-$lang['mission_3'] = 'Trade';
-$lang['mission_4'] = 'Trade';
-
 // Researches
 $lang['way1_name'] = 'Seafaring';
 $lang['way2_name'] = 'Economy';
@@ -282,7 +276,13 @@ $lang['crystal'] = 'Crystal Glass';
 $lang['sulfur'] = 'Sulfur';
 $lang['wood'] = 'Building material';
 
-// Spy mission
+
+// Missions
+$lang['mission_1'] = 'Colonization';
+$lang['mission_2'] = 'Transport';
+$lang['mission_3'] = 'Trade';
+$lang['mission_4'] = 'Trade';
+
 $lang['spy_mission_0_name'] = 'The spy waits for new orders';
 $lang['spy_mission_1_name'] = 'Arrival';
 $lang['spy_mission_2_name'] = 'The spy comes back';
@@ -293,6 +293,14 @@ $lang['spy_mission_6_name'] = 'Online the status';
 $lang['spy_mission_7_name'] = 'Espionage behind garrison';
 $lang['spy_mission_8_name'] = 'Espionage behind fleet';
 $lang['spy_mission_9_name'] = 'Espionage behind an exchange of messages';
+
+$lang['available_this_town'] = 'Available in this town';
+$lang['leader_online'] = 'The leader in online mode.';
+$lang['leader_offline'] = 'The leader is in offline mode, so it will not take any measures to repel our attack!';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
 
 // Wonders name
 $lang['wonder_1'] = 'Hephaistos` Forge';
@@ -894,7 +902,7 @@ $lang['world'] = 'World';
 
 $lang['large_text'] = 'Warning! Your text is longer than allowed!';
 $lang['ansient_world'] = 'Live the ancient world!';
-$lang['navigation'] = 'Town navigation';
+$lang['town_navigation'] = 'Town navigation';
 $lang['current_town'] = 'Current town';
 $lang['trade_resource'] = 'Trade good';
 
@@ -1188,6 +1196,7 @@ $lang['sender'] = 'Sender';
 $lang['subject'] = 'Subject';
 $lang['town'] = 'Town';
 $lang['date'] = 'Date';
+$lang['recipient'] = 'Recipient';
 $lang['expand_hide'] = 'Click here to expand/hide the message';
 $lang['to_city_sender'] = 'To a city of the sender';
 $lang['all'] = 'All';
@@ -1558,7 +1567,7 @@ $lang['description'] = 'Description';
 $lang['position_of'] = 'The position of';
 $lang['no_build_improve'] = 'isn`t a building to improve!';
 
-// Options
+// Options views
 $lang['email_not_confirmed'] = 'Your e-mail address has not been confirmed yet.';
 $lang['email_not_confirmed_desc'] = 'Your e-mail address has not been confirmed yet. Until then you can`t get in touch with other players or send out fleets or armies. You can confirm your address by clicking on the link in the e-mail that was sent to you. If you did not receive this e-mail you can request it again here.';
 $lang['get_confirm_email'] = 'Get a confirmation mail';
@@ -1597,26 +1606,26 @@ $lang['connect_izariam_to_facebook'] = 'Connect iZariam to Facebook!';
 $lang['connect_openid'] = 'Connect OpenId account';
 $lang['connect_openid_desc'] = 'You can connect an existing OpenId account to your iZariam account here. This means you can directly log in to the game by simply clicking on the home page.';
 $lang['login_via'] = 'Login via';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
-$lang[''] = '';
+
+// Actions Controller
+$lang['unable_leave_colony'] = 'Unable to leave the colony today!';
+$lang['construction_enough_resources'] = 'For the construction of buildings do not have the resources!';
+$lang['enough_action_points'] = 'Not enough action points!';
+$lang['impossible_reduce_level'] = 'It is impossible to reduce the level of City Hall!';
+$lang['research_areas'] = 'Research areas';
+$lang['current_research'] = 'Current research';
+$lang['unit'] = 'Unit';
+$lang['number'] = 'Number';
+$lang['no_troops'] = 'No troops';
+$lang['fleets_in'] = 'Fleets in';
+$lang['blocking_fleet_in'] = 'Blocking the fleet in';
+$lang['no_fleet_movements'] = 'No movements of the fleets!';
+$lang['no_get_touch'] = 'Your spy does not get in touch.';
+$lang['no_get_touch_txt'] = 'Your spy does not get in touch. Perhaps it uncovered. The chance of success';
+$lang['job_canceled'] = 'The job was canceled...';
+$lang['discovered_bet_returns'] = 'The spy was discovered, but managed to escape in time. He returns home...';
+$lang['select_city'] = 'Select a city!';
+$lang['trade_fleet_no_freight'] = 'The trade fleet doesn`t have any freight';
 $lang[''] = '';
 
 /*

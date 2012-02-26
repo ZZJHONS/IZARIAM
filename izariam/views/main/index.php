@@ -11,7 +11,7 @@
                             <table cellpadding="0" cellspacing="0" id="logindata">
                                 <tr>
                                     <td><label for="welt" class="labelwelt"><?=$this->lang->line('world')?></label></td>
-                                    <td><label for="login" class="labellogin"><?=$this->lang->line('name')?></label></td>
+                                    <td><label for="login" class="labellogin"><?=$this->lang->line('username')?></label></td>
                                     <td><label for="pwd" class="labelpwd"><?=$this->lang->line('password')?></label></td>
                                     <td></td>
                                 </tr>
