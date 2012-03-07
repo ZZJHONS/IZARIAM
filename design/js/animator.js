@@ -1,12 +1,12 @@
 // JavaScript Document
 // ==UserScript==
-// @name           Magyc Ikariam Animator v0.5.2 modifie v 5
+// @name           Magyc iZariam Animator v0.5.2 modifie v 5
 // @autor          Angelo Verona alias Anilo, Givelin, Omegaboy,Magyc_victor
 // @email          anilo4ever@gmail.com,webmaster@magyc.net
-// @namespace      Ikariam
-// @description    Animation Magyc pour Ikariam v.0.2.3
-// @include        http://*.ikariam.*/*
-// @exclude        http://board.ikariam.*/*
+// @namespace      iZariam
+// @description    Animation Magyc pour iZariam v.0.2.3
+// @include        http://*.izariam.*/*
+// @exclude        http://board.izariam.*/*
 // ==/UserScript==
 
 /*TEST VERSION, SLOW CODED ONLY FOR TESTING PURPOSE*/
@@ -23,7 +23,7 @@ function addAnimStyle(css) {
 
 //*********
 //addAnimStyle('');
-//http://www.magyc.net/ikariam/images/
+//http://www.magyc.net/izariam/images/
 //http://www.magyc.net/portal/
 
 

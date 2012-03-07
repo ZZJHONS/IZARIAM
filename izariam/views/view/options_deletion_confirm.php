@@ -9,14 +9,12 @@
             <p>Are you sure you no longer want to play?</p>
             <?$this->load->helper('form');?>
             <?=form_open('actions/delete/');?>
-            <!-- <form action="/actions/delete/" method="POST"> -->
                 <p>
                     Please enter your password as a safety measure:
                     <?$data = array(
                         'name' => 'password'
                     );?>
                     <?=form_password($data);?>
-                    <!-- <input type="password" name="password"></input> -->
                 <p>
                 <div class="centerButton">
                     <?$data = array(
@@ -25,10 +23,8 @@
                         'value' => 'Yes, I no longer want to play'
                     );?>
                     <?=form_submit($data);?>
-                    <!-- <input style="width:auto;" type="submit" class="button" value="Yes, I no longer want to play"></input> -->
                 </div>
             <?=form_close();?>
-            <!-- </form> -->
             <p style="margin:10px auto;text-align: center;">
                 <a class="button" href="<?=$this->config->item('base_url');?>game/options/">No, I will not leave my citizens alone</a>
             </p>

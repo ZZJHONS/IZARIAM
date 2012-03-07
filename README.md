@@ -1,13 +1,13 @@
 IZARIAM - Ikariam Development Project
 ======================================
 
-* Ikariam Development Forum: http://browserworld.zzjhons.com/
-* IZARIAM Beta Server: http://izariam.zzjhons.com/
+* Ikariam Development Forum: http://forum.spazze.net/
+* IZARIAM Beta Server: http://izariam.spazze.net/
 
 INSTALL:
 ========
 
-* Tutorial (Spanish): http://browserworld.zzjhons.com/guias-y-tutoriales/instalacion-del-juegego/
+* Go to localhost/install/ or more help here: http://forum.spazze.net/topic/14-install-izariam-instalar-izariam/
 
 DEVELOPERS:
 ===========
@@ -26,7 +26,5 @@ LANGS:
 ======
 
 * English
-* Spanish
-* Russian
-
-PD: Langs isn't finished
+* Spanish (Soon)
+* Russian (No supported)

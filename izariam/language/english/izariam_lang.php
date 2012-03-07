@@ -939,7 +939,7 @@ $lang['generated'] = 'The page is generated for';
 
 $lang['other_options'] = 'Other Options';
 $lang['help'] = 'Help';
-$lang['ikariam_plus'] = 'iZariam PLUS';
+$lang['izariam_plus'] = 'iZariam PLUS';
 $lang['izariam_plus'] = 'iZariam PLUS';
 $lang['top_list'] = 'Highscore';
 $lang['options'] = 'Options';
@@ -1626,6 +1626,22 @@ $lang['job_canceled'] = 'The job was canceled...';
 $lang['discovered_bet_returns'] = 'The spy was discovered, but managed to escape in time. He returns home...';
 $lang['select_city'] = 'Select a city!';
 $lang['trade_fleet_no_freight'] = 'The trade fleet doesn`t have any freight';
+
+// Friends
+$lang['invite_friends'] = 'Invite friends';
+$lang['invite_friends_desc'] = 'You want your friends to start near you? Invite them here.';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
+$lang[''] = '';
 $lang[''] = '';
 
 /*

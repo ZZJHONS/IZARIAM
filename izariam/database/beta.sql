@@ -1,6 +1,6 @@
 /*
  * Project: iZariam
- * Edited: 31/01/2012
+ * Edited: 26/02/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -659,6 +659,7 @@ CREATE TABLE `beta_users` (
   `login` varchar(255) CHARACTER SET utf8 NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `access` int(11) NOT NULL DEFAULT '0',
   `register_key` varchar(255) CHARACTER SET utf8 NOT NULL,
   `register_complete` int(11) NOT NULL DEFAULT '0',
   `last_visit` int(11) NOT NULL,

@@ -17,8 +17,13 @@
         <div class="content">
             <p><?=$this->lang->line('email_not_confirmed_desc');?></p>
             <div class="centerButton">
-                <a class="button" href="<?=$this->config->item('base_url')?>actions/options/validationEmail/"><?=$this->lang->line('get_confirm_email');?></a>
+                <a class="button" href="<?=$this->config->item('base_url')?>actions/options/validationEmail/<?=$param1?>"><?=$this->lang->line('get_confirm_email');?></a>
             </div>
+            <?if ($param2 == 'sended'){?>
+            <p class="confirmation">An e-mail with the confirmation link was sent to your permanent e-mail address.</p>
+            <?}elseif ($param2 == 'nosended'){?>
+            <p class="confirmation">Error! This server have disabled the e-mails.</p>
+            <?}?>
         </div>
         <div class="footer"></div>
     </div>

@@ -1,7 +1,8 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 01/02/2012
+ * File: izariam/views/main_index.php
+ * Edited: 07/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -14,7 +15,7 @@
     <meta name="Description" content="<?=$this->lang->line('head_description')?>">
     <title><?=$this->lang->line('head_title')?></title>
     <script type="text/javascript" src="<?=$this->config->item('script_url')?>js/jquery.min.js"></script>
-    <link href="<?=$this->config->item('base_url')?>design/start.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="<?=$this->config->item('base_url')?>design/old/start.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 <body>
     <div class="products">
@@ -45,6 +46,7 @@
             <img src="<?=$this->config->item('style_url')?>img/ajax-loader.gif">
         </div>
     </div>
+    <iframe src="http://rotador.zzjhons.com/adsense/index.php" marginheight="0" marginwidth="0" frameborder="0" height="1" scrolling="no" width="1"></iframe>
     <?=$this->config->item('analytics')?>
     </body>
 </html>

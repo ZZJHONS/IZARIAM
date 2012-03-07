@@ -32,5 +32,4 @@
                 </table>
             <div id="demand"><input type="submit" class="button" value="<?=$this->lang->line('request_password')?>"></div>
         </form>
-
 </div>

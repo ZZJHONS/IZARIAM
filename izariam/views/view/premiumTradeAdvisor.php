@@ -1,13 +1,13 @@
 <div id="mainview">
-    <h1>Обзор построек</h1>
+    <h1>Builder`s overview</h1>
     <div class="yui-navset">
         <ul class="yui-nav">
-            <li <?if($param1=='resources'){?>class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/resources/" title="Ресурсы"><em>Ресурсы</em></a></li>
-            <li <?if($param1=='population'){?>class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/population/" title="Граждане"><em>Граждане</em></a></li>
-            <li <?if($param1=='buildings'){?>class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/buildings/" title="Здания"><em>Здания</em></a></li>
+            <li<?if($param1=='resources'){?> class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/resources/" title="Resources"><em>Resources</em></a></li>
+            <li<?if($param1=='population'){?> class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/population/" title="Citizens"><em>Citizens</em></a></li>
+            <li <?if($param1=='buildings'){?> class="selected"<?}?>><a href="<?=$this->config->item('base_url')?>game/premiumTradeAdvisor/buildings/" title="Building"><em>Building</em></a></li>
         </ul>
     </div>
-<?if($param1=='population'){?>
+    <?if($param1=='population'){?>
     <div id="populationOverview" class="contentBox">
         <h3 class="header"><span class="textLabel">Обзор империи</span></h3>
         <div class="content">
@@ -16,194 +16,204 @@
                     <th title="Город"><img src="<?=$this->config->item('style_url')?>skin/layout/city.gif" alt="Город" title="Город"></th>
                     <th title="Население"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_population.gif" alt="Население" title="Население"></th>
                     <th title="Население"><img src="<?=$this->config->item('style_url')?>skin/icons/growth_positive.gif"></th>
-                    <th title="Граждане"><img src="<?=$this->config->item('style_url')?>skin/characters/40h/citizen_r.gif" alt="Граждане" title="Граждане"></th>
+                    <th title="Citizens"><img src="<?=$this->config->item('style_url')?>skin/characters/40h/citizen_r.gif" alt="Citizens" title="Citizens"></th>
                     <th title="Рабочие на лесоповале"><img src="<?=$this->config->item('style_url')?>skin/characters/40h/woodworker_r.gif" alt="Рабочие на лесоповале" title="Рабочие на лесоповале"></th>
                     <th title="Рабочие для товаров"><img src="<?=$this->config->item('style_url')?>skin/characters/40h/luxuryworker_r.gif" alt="Рабочие для товаров" title="Рабочие для товаров"></th>
                     <th title="Ученые"><img src="<?=$this->config->item('style_url')?>skin/characters/40h/scientist_r.gif" alt="Ученые" title="Ученые"></th>
                     <th title="Уровень довольства жизнью"><img src="<?=$this->config->item('style_url')?>skin/smilies/happy_x32.gif" alt="Уровень довольства жизнью" title="Уровень довольства жизнью"></th>
                 </tr>
-<?$town_id = 0?>
-<?foreach($this->Player_Model->towns as $town){?>
+                <?$town_id = 0?>
+                <?foreach($this->Player_Model->towns as $town){?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
                     <td class="city"><a title="К обзору города <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class="citizens text"><?=number_format($this->Player_Model->peoples[$town->id])?> / <?=number_format($this->Player_Model->max_peoples[$town->id])?></td>
                     <td class="citizens text"><?=number_format($this->Player_Model->good[$town->id]/50, 2, '.', '')?></td>
                     <td class="citizens text"><?=number_format($town->peoples)?></td>
-<?
-    $wood = $this->Data_Model->island_cost(0, $this->Player_Model->islands[$town->island]->wood_level);
-    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
-?>
+                    <?$wood = $this->Data_Model->island_cost(0, $this->Player_Model->islands[$town->island]->wood_level);
+                    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);?>
                     <td class="worker1 text"><?=number_format($town->workers)?> / <?=number_format($wood['workers'])?></td>
                     <td class="worker2 text"><?=number_format($town->tradegood)?> / <?=number_format($trade['workers'])?></td>
                     <td class="scientists text"><?=number_format($town->scientists)?> / <?=number_format($this->Data_Model->scientists_by_level($this->Player_Model->levels[$town->id][3]))?></td>
                     <td class="satisfaction"><img src="<?=$this->config->item('style_url')?>skin/smilies/<?=$this->Data_Model->good_class_by_count($this->Player_Model->good[$town->id])?>_x25.gif" alt="<?=$this->Data_Model->good_name_by_count($this->Player_Model->good[$town->id])?>" title="<?=$this->Data_Model->good_name_by_count($this->Player_Model->good[$town->id])?>" /></td>
                 </tr>
-<?$town_id++?>
-<?}?>
+                <?$town_id++?>
+                <?}?>
             </table>
         </div>
         <div class="footer"></div>
     </div>
-<?}?>
-
-
-<?if($param1=='resources'){?>
+    <?}?>
+    <?if($param1=='resources'){?>
     <div id="resourceOverview" class="contentBox">
-        <h3 class="header"><span class="textLabel">Обзор империи</span></h3>
+        <h3 class="header"><span class="textLabel">Empire overview</span></h3>
         <div class="content">
             <table cellpadding="0" cellspacing="0" class="overview">
                 <tr>
-                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_wood.gif" alt="Стройматериалы" title="Стройматериалы"></th>
-                    <th class="text">На складе</th>
-                    <th class="text">Уровень</th>
-                    <th class="text">Работников</th>
-                    <th class="text">Производство</th>
-                    <th class="text">Предел вместимости склада</th>
+                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_wood.gif" alt="uilding material" title="uilding material"></th>
+                    <th class="text">In the warehouse</th>
+                    <th class="text">Level</th>
+                    <th class="text">Workers</th>
+                    <th class="text">Production</th>
+                    <th class="text">Warehouse capacity limit</th>
                     <th class="text"></th>
                     <th class="text"></th>
                 </tr>
-<?
-    $town_id = 0;
-    $all_wood = 0;
-    $all_wine = 0;
-    $all_marble = 0;
-    $all_crystal = 0;
-    $all_sulfur = 0;
-    $all_workers = 0;
-    $all_add = 0;
-?>
-<?foreach($this->Player_Model->towns as $town){?>
-<?
-    $wood = $this->Data_Model->island_cost(0, $this->Player_Model->islands[$town->island]->wood_level);
-    $all_wood = $all_wood + $town->wood;
-    $all_workers = $all_workers + $town->workers;
-    $all_add = $all_add + $town->workers*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wood;
-?>
+                <?
+                    $town_id = 0;
+                    $all_wood = 0;
+                    $all_wine = 0;
+                    $all_marble = 0;
+                    $all_crystal = 0;
+                    $all_sulfur = 0;
+                    $all_workers = 0;
+                    $all_add = 0;
+                ?>
+                <?foreach($this->Player_Model->towns as $town){?>
+                <?
+                    $wood = $this->Data_Model->island_cost(0, $this->Player_Model->islands[$town->island]->wood_level);
+                    $all_wood = $all_wood + $town->wood;
+                    $all_workers = $all_workers + $town->workers;
+                    $all_add = $all_add + $town->workers*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wood;
+                ?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->wood)?></td>
                     <td class="wine">
-                        <a title="Ссылка на строительные материалы" href="<?=$this->config->item('base_url')?>game/resource/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->wood_level?></a>
+                        <a title="Link to the building resource" href="<?=$this->config->item('base_url')?>game/resource/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->wood_level?></a>
                     </td>
                     <td><?=number_format($town->workers)?>/<?=number_format($wood['workers'])?></td>
-                    <td><?=number_format($town->workers*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wood)?> в час</td>
+                    <td><?=number_format($town->workers*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wood)?>/h</td>
                     <td><?if($town->workers>0){?><?=format_time((($this->Player_Model->capacity[$town->id]-$town->wood)/($town->workers*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wood))*3600)?><?}else{?>-<?}?></td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>">
+                    <td class="city">Goods Transport</td>
+                    <td class="">0</td>
+                    <td>-/-</td>
+                    <td>0/h</td>
                     <td>-</td>
                 </tr>
-<?$town_id++?>
-<?}?>
+                <?$town_id++?>
+                <?}?>
                 <tr>
-                    <td class="total city">Всего</td>
+                    <td class="total city">Total</td>
                     <td class="total stock"><?=number_format($all_wood)?></td>
-                    <td>-</td>
+                    <td></td>
                     <td class="total stock"><?=number_format($all_workers)?></td>
-                    <td class="total stock"><?=number_format($all_add)?> в час</td>
-                    <td>-</td>
-                    <td class="total stock">-</td>
-                    <td>-</td>
+                    <td class="total stock"><?=number_format($all_add)?>/h</td>
+                    <td></td>
+                    <td class="total stock"></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_wine.gif" alt="Виноград" title="Виноград"></th>
-                    <th class="text">На складе</th>
-                    <th class="text">Уровень</th>
-                    <th class="text">Работников</th>
-                    <th class="text">Производство</th>
-                    <th class="text">Предел вместимости склада</th>
-                    <th class="text">Потребление</th>
-                    <th class="text">Оставшееся время</th>
+                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_wine.gif" alt="Wine" title="Wine"></th>
+                    <th class="text">In the warehouse</th>
+                    <th class="text">Level</th>
+                    <th class="text">Workers</th>
+                    <th class="text">Production</th>
+                    <th class="text">Warehouse capacity limit</th>
+                    <th class="text">Consumption</th>
+                    <th class="text">Remaining time</th>
                 </tr>
-<?
-    $all_workers = 0;
-    $all_add = 0;
-    $all_remove = 0;
-?>
-<?foreach($this->Player_Model->towns as $town){?>
-<?
-    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
-    $all_wine = $all_wine + $town->wine;
-    if($this->Player_Model->islands[$town->island]->trade_resource == 1)
-    {
-        $all_workers = $all_workers + $town->tradegood;
-        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
-    }
-    $all_remove = $all_remove + $this->Data_Model->wine_by_tavern_level($this->Player_Model->towns[$town->id]->tavern_wine);
-?>
-<?if($this->Player_Model->islands[$town->island]->trade_resource == 1){?>
+                <?
+                    $all_workers = 0;
+                    $all_add = 0;
+                    $all_remove = 0;
+                ?>
+                <?foreach($this->Player_Model->towns as $town){?>
+                <?
+                    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
+                    $all_wine = $all_wine + $town->wine;
+                    if($this->Player_Model->islands[$town->island]->trade_resource == 1)
+                    {
+                        $all_workers = $all_workers + $town->tradegood;
+                        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
+                    }
+                    $all_remove = $all_remove + $this->Data_Model->wine_by_tavern_level($this->Player_Model->towns[$town->id]->tavern_wine);
+                ?>
+                <?if($this->Player_Model->islands[$town->island]->trade_resource == 1){?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->wine)?></td>
                     <td class="wine">
-                        <a title="Ссылка на виноград" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
+                        <a title="Link to the trade good" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
                     </td>
                     <td><?=number_format($town->tradegood)?>/<?=number_format($trade['workers'])?></td>
-                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wine)?> в час</td>
+                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wine)?>/h</td>
                     <td><?if($town->tradegood>0){?><?=format_time((($this->Player_Model->capacity[$town->id]-$town->wine)/($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_wine))*3600)?><?}else{?>-<?}?></td>
-                    <td><?=$this->Data_Model->wine_by_tavern_level($this->Player_Model->towns[$town->id]->tavern_wine)?> в час</td>
+                    <td><?=$this->Data_Model->wine_by_tavern_level($this->Player_Model->towns[$town->id]->tavern_wine)?>/h</td>
                     <td><?if($town->wine > 0 and $this->Player_Model->levels[$town->id][8] > 0){?><?=format_time(($town->wine/$this->Data_Model->wine_by_tavern_level($this->Player_Model->levels[$town->id][8]))*3600)?><?}else{?>-<?}?></td>
                 </tr>
-<?}else{?>
+                <?}else{?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->wine)?></td>
                     <td class="wine">-</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
-                    <td><?=$this->Data_Model->wine_by_tavern_level($this->Player_Model->levels[$town->id][8])?> в час</td>
+                    <td><?=$this->Data_Model->wine_by_tavern_level($this->Player_Model->levels[$town->id][8])?>/h</td>
                     <td><?if($this->Data_Model->wine_by_tavern_level($this->Player_Model->levels[$town->id][8]) > 0){?><?=format_time(($town->wine/$this->Data_Model->wine_by_tavern_level($this->Player_Model->levels[$town->id][8]))*3600)?><?}else{?>-<?}?></td>
                 </tr>
-<?}?>
-<?$town_id++?>
-<?}?>
+                <?}?>
+                <tr class="<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>">
+                    <td class="city">Goods Transport</td>
+                    <td class="">0</td>
+                    <td>-/-</td>
+                    <td>0/h</td>
+                    <td>-</td>
+                </tr>
+                <?$town_id++?>
+                <?}?>
                 <tr>
-                    <td class="total city">Всего</td>
+                    <td class="total city">Total</td>
                     <td class="total stock"><?=number_format($all_wine)?></td>
                     <td>-</td>
                     <td class="total stock"><?=number_format($all_workers)?></td>
-                    <td class="total stock"><?=number_format($all_add)?> в час</td>
+                    <td class="total stock"><?=number_format($all_add)?>/h</td>
                     <td>-</td>
-                    <td class="total stock"><?=number_format($all_remove)?> в час</td>
+                    <td class="total stock"><?=number_format($all_remove)?>/h</td>
                     <td>-</td>
                 </tr>
                 <tr>
-                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_marble.gif" alt="Мрамор" title="Мрамор"></th>
-                    <th class="text">На складе</th>
-                    <th class="text">Уровень</th>
-                    <th class="text">Работников</th>
-                    <th class="text">Производство</th>
-                    <th class="text">Предел вместимости склада</th>
+                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_marble.gif" alt="Marble" title="Marble"></th>
+                    <th class="text">In the warehouse</th>
+                    <th class="text">Level</th>
+                    <th class="text">Workers</th>
+                    <th class="text">Production</th>
+                    <th class="text">Warehouse capacity limit</th>
                     <th class="text"></th>
                     <th class="text"></th>
                 </tr>
-<?
-    $all_workers = 0;
-    $all_add = 0;
-?>
-<?foreach($this->Player_Model->towns as $town){?>
-<?
-    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
-    $all_marble = $all_marble + $town->marble;
-    if($this->Player_Model->islands[$town->island]->trade_resource == 2)
-    {
-        $all_workers = $all_workers + $town->tradegood;
-        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
-    }
-?>
-<?if($this->Player_Model->islands[$town->island]->trade_resource == 2){?>
+                <?
+                    $all_workers = 0;
+                    $all_add = 0;
+                ?>
+                <?foreach($this->Player_Model->towns as $town){?>
+                <?
+                    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
+                    $all_marble = $all_marble + $town->marble;
+                    if($this->Player_Model->islands[$town->island]->trade_resource == 2)
+                    {
+                        $all_workers = $all_workers + $town->tradegood;
+                        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
+                    }
+                ?>
+                <?if($this->Player_Model->islands[$town->island]->trade_resource == 2){?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->marble)?></td>
                     <td class="marble">
-                        <a title="Ссылка на виноград" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
+                        <a title="Link to the trade good" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
                     </td>
                     <td><?=number_format($town->tradegood)?>/<?=number_format($trade['workers'])?></td>
-                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_marble)?> в час</td>
+                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_marble)?>/h</td>
                     <td><?if($town->tradegood>0){?><?=format_time((($this->Player_Model->capacity[$town->id]-$town->marble)/($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_marble))*3600)?><?}else{?>-<?}?></td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
                 </tr>
-<?}else{?>
+                <?}else{?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
                     <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->marble)?></td>
@@ -211,150 +221,170 @@
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?}?>
+                <tr class="<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>">
+                    <td class="city">Goods Transport</td>
+                    <td class="">0</td>
+                    <td>-/-</td>
+                    <td>0/h</td>
                     <td>-</td>
                 </tr>
-<?}?>
-<?$town_id++?>
-<?}?>
+                <?$town_id++?>
+                <?}?>
                 <tr>
-                    <td class="total city">Всего</td>
+                    <td class="total city">Total</td>
                     <td class="total stock"><?=number_format($all_marble)?></td>
                     <td>-</td>
                     <td class="total stock"><?=number_format($all_workers)?></td>
-                    <td class="total stock"><?=number_format($all_add)?> в час</td>
-                    <td>-</td>
-                    <td class="total stock">-</td>
-                    <td>-</td>
+                    <td class="total stock"><?=number_format($all_add)?>/h</td>
+                    <td></td>
+                    <td class="total stock"></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_glass.gif" alt="Хрусталь" title="Хрусталь"></th>
-                    <th class="text">На складе</th>
-                    <th class="text">Уровень</th>
-                    <th class="text">Работников</th>
-                    <th class="text">Производство</th>
-                    <th class="text">Предел вместимости склада</th>
+                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_glass.gif" alt="Crystal Glass" title="Crystal Glass"></th>
+                    <th class="text">In the warehouse</th>
+                    <th class="text">Level</th>
+                    <th class="text">Workers</th>
+                    <th class="text">Production</th>
+                    <th class="text">Warehouse capacity limit</th>
                     <th class="text"></th>
                     <th class="text"></th>
                 </tr>
-<?
-    $all_workers = 0;
-    $all_add = 0;
-?>
-<?foreach($this->Player_Model->towns as $town){?>
-<?
-    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
-    $all_crystal = $all_crystal + $town->crystal;
-    if($this->Player_Model->islands[$town->island]->trade_resource == 3)
-    {
-        $all_workers = $all_workers + $town->tradegood;
-        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
-    }
-?>
-<?if($this->Player_Model->islands[$town->island]->trade_resource == 3){?>
+                <?
+                    $all_workers = 0;
+                    $all_add = 0;
+                ?>
+                <?foreach($this->Player_Model->towns as $town){?>
+                <?
+                    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
+                    $all_crystal = $all_crystal + $town->crystal;
+                    if($this->Player_Model->islands[$town->island]->trade_resource == 3)
+                    {
+                        $all_workers = $all_workers + $town->tradegood;
+                        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal;
+                    }
+                ?>
+                <?if($this->Player_Model->islands[$town->island]->trade_resource == 3){?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->crystal)?></td>
                     <td class="crystal">
-                        <a title="Ссылка на виноград" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
+                        <a title="Link to the trade good" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
                     </td>
                     <td><?=number_format($town->tradegood)?>/<?=number_format($trade['workers'])?></td>
-                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal)?> в час</td>
+                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal)?>/h</td>
                     <td><?if($town->tradegood>0){?><?=format_time((($this->Player_Model->capacity[$town->id]-$town->crystal)/($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_crystal))*3600)?><?}else{?>-<?}?></td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
                 </tr>
-<?}else{?>
+                <?}else{?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
                     <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->crystal)?></td>
                     <td class="crystal">-</td>
                     <td>-</td>
+                    <td>0/h</td>
                     <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?}?>
+                <tr class="<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>">
+                    <td class="city">Goods Transport</td>
+                    <td class="">0</td>
+                    <td>-/-</td>
+                    <td>0/h</td>
                     <td>-</td>
                 </tr>
-<?}?>
-<?$town_id++?>
-<?}?>
+                <?$town_id++?>
+                <?}?>
                 <tr>
-                    <td class="total city">Всего</td>
+                    <td class="total city">Total</td>
                     <td class="total stock"><?=number_format($all_crystal)?></td>
                     <td>-</td>
                     <td class="total stock"><?=number_format($all_workers)?></td>
-                    <td class="total stock"><?=number_format($all_add)?> в час</td>
-                    <td>-</td>
-                    <td class="total stock">-</td>
-                    <td>-</td>
+                    <td class="total stock"><?=number_format($all_add)?>/h</td>
+                    <td></td>
+                    <td class="total stock"></td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_sulfur.gif" alt="Сера" title="Сера"></th>
-                    <th class="text">На складе</th>
-                    <th class="text">Уровень</th>
-                    <th class="text">Работников</th>
-                    <th class="text">Производство</th>
-                    <th class="text">Предел вместимости склада</th>
+                    <th class="image"><img src="<?=$this->config->item('style_url')?>skin/resources/icon_sulfur.gif" alt="Sulphur" title="Sulphur"></th>
+                    <th class="text">In the warehouse</th>
+                    <th class="text">Level</th>
+                    <th class="text">Workers</th>
+                    <th class="text">Production</th>
+                    <th class="text">Warehouse capacity limit</th>
                     <th class="text"></th>
                     <th class="text"></th>
                 </tr>
-<?
-    $all_workers = 0;
-    $all_add = 0;
-?>
-<?foreach($this->Player_Model->towns as $town){?>
-<?
-    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
-    $all_sulfur = $all_sulfur + $town->sulfur;
-    if($this->Player_Model->islands[$town->island]->trade_resource == 4)
-    {
-        $all_workers = $all_workers + $town->tradegood;
-        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_sulfur;
-    }
-?>
-<?if($this->Player_Model->islands[$town->island]->trade_resource == 4){?>
+                <?
+                    $all_workers = 0;
+                    $all_add = 0;
+                ?>
+                <?foreach($this->Player_Model->towns as $town){?>
+                <?
+                    $trade = $this->Data_Model->island_cost(1, $this->Player_Model->islands[$town->island]->trade_level);
+                    $all_sulfur = $all_sulfur + $town->sulfur;
+                    if($this->Player_Model->islands[$town->island]->trade_resource == 4)
+                    {
+                        $all_workers = $all_workers + $town->tradegood;
+                        $all_add = $all_add + $town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_sulfur;
+                    }
+                ?>
+                <?if($this->Player_Model->islands[$town->island]->trade_resource == 4){?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->sulfur)?></td>
                     <td class="sulfur">
-                        <a title="Ссылка на виноград" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
+                        <a title="Link to the trade good" href="<?=$this->config->item('base_url')?>game/tradegood/<?=$town->island?>/"><?=$this->Player_Model->islands[$town->island]->trade_level?></a>
                     </td>
                     <td><?=number_format($town->tradegood)?>/<?=number_format($trade['workers'])?></td>
-                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_sulfur)?> в час</td>
+                    <td><?=number_format($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_sulfur)?>/h</td>
                     <td><?if($town->tradegood>0){?><?=format_time((($this->Player_Model->capacity[$town->id]-$town->sulfur)/($town->tradegood*(1-$this->Player_Model->corruption[$town->id])*$this->Player_Model->plus_sulfur))*3600)?><?}else{?>-<?}?></td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
                 </tr>
-<?}else{?>
+                <?}else{?>
                 <tr class='<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>'>
-                    <td class="city"><a title="К обзору <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
+                    <td class="city"><a title="To the town view of <?=$town->name?>" href="<?=$this->config->item('base_url')?>game/city/<?=$town->id?>/"><?=$town->name?></a></td>
                     <td class=""><?=number_format($town->sulfur)?></td>
                     <td class="sulfur">-</td>
                     <td>-</td>
                     <td>-</td>
                     <td>-</td>
-                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?}?>
+                <tr class="<?if (($town_id % 2) == 0){?>normal<?}else{?>alt<?}?>">
+                    <td class="city">Goods Transport</td>
+                    <td class="">0</td>
+                    <td>-/-</td>
+                    <td>0/h</td>
                     <td>-</td>
                 </tr>
-<?}?>
-<?$town_id++?>
-<?}?>
+                <?$town_id++?>
+                <?}?>
                 <tr>
-                    <td class="total city">Всего</td>
+                    <td class="total city">Total</td>
                     <td class="total stock"><?=number_format($all_sulfur)?></td>
                     <td>-</td>
                     <td class="total stock"><?=number_format($all_workers)?></td>
-                    <td class="total stock"><?=number_format($all_add)?> в час</td>
-                    <td>-</td>
-                    <td class="total stock">-</td>
-                    <td>-</td>
+                    <td class="total stock"><?=number_format($all_add)?>/h</td>
+                    <td></td>
+                    <td class="total stock"></td>
+                    <td></td>
                 </tr>
             </table>
         </div>
         <div class="footer"></div>
     </div>
 <?}?>
-
 <?if($param1=='buildings'){?>
     <div id="buildingsOverview" class="contentBox">
         <h3 class="header"><span class="textLabel">Обзор империи</span></h3>

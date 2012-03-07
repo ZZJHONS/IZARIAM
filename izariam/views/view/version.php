@@ -1,7 +1,8 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 25/02/2012
+ * File: izariam/views/view/version.php
+ * Edited: 07/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -16,9 +17,13 @@
         </tr>
         <tr>
             <td class="version">0.1.0</td>
-            <td class="version">25.02.2012</td>
+            <td class="version">07.03.2012</td>
             <td class="desc">
             	<ul>
+                    <li>Made install script</li>
+                    <li>Started Admin Panel (added new row in database)</li>
+            		<li>Alphabetical reorder to view_model</li>
+            		<li>Building construction lis full fixed</li>
             		<li>Reordered to alphabetical order actions controller and translated</li>
             		<li>
             			Improved - Options page redesigned and full translated
@@ -35,7 +40,7 @@
             		<li>Updated - iZariam HomePage</li>
             		<li>Updated - All external game pages (error, lost pasword, etc.) appear in the content of game homepage</li>
             		<li>Added - Ikart images</li>
-            		<li>Added - Ikariam Animator images</li>
+            		<li>Added - iZariam Animator images</li>
             		<li>Bugfix - Change City</li>
 					<li>
 						Bugfix - Highscore:

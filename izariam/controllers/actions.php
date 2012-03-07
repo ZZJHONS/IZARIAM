@@ -1380,8 +1380,9 @@ class Actions extends Controller
         $this->show('premium');
     }
 
-    function options($type = '')
+    function options($type = '', $from = '')
     {
+        $email = '';
         switch($type)
         {
             case 'user':
@@ -1460,7 +1461,6 @@ class Actions extends Controller
                     }
                     $position = 'game';
                 }
-                redirect($this->config->item('base_url').'game/options/'.$position.'/', 'refresh');
                 break;
             case 'validationEmail':
                 $this->load->library('email');
@@ -1492,10 +1492,14 @@ class Actions extends Controller
                     $this->email->subject($this->lang->line('register_email_title'));
                     $this->email->message($message);
                     $this->email->send();
+                    $email = 'sended';
+                }else{
+                $email = 'nosended';
                 }
+                $position = $from;
                 break;
         }
-        $this->show('options');
+        redirect($this->config->item('base_url').'game/options/'.$position.'/'.$email.'/', 'refresh');
     }
 
     /**

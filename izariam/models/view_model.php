@@ -1,7 +1,7 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 12/02/2012
+ * Edited: 26/02/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -24,63 +24,62 @@ class View_Model extends Model
         @$pos_text = 'pos'.$param1.'_type';
         @$type = ($param1 > 0 and $param1 <= 15) ? $this->Player_Model->now_town->$pos_text : $this->Data_Model->building_type_by_class($location);
         switch($location) {
-            case 'demolition': $caption = $this->lang->line('confirm'); $file = 'building';break;
-            case 'renameCity': $caption = $this->lang->line('rename_city'); $file = 'building'; $type = 1; break;
             case 'abolishColony': $caption = $this->lang->line('leave_colony'); $file = 'building'; $type = 1; break;
+            case 'admin': $caption = 'Admin'; $file = 'world'; break;
+            case 'buildingDetail': $caption = $this->lang->line('building_info'); $file = 'world'; break;
+            case 'cityMilitary': $caption = $this->lang->line('military_advisor_title'); $file = 'town'; break;
+            case 'colonize': $caption = $this->lang->line('colonize'); $file = '_island'; break;
+            case 'credits': $caption = $this->lang->line('credits'); $file = 'world'; break;
+            case 'demolition': $caption = $this->lang->line('confirm'); $file = 'building'; break;
+            case 'diplomacyAdvisor':
+            case 'diplomacyAdvisorOutBox': $caption = $this->lang->line('diplomatic_advisor'); $file = 'world'; break;
+            case 'error': $caption = $this->lang->line('error'); $file = 'null'; break;
+            case 'finances': $caption = $this->lang->line('finances'); $file = 'null'; break;
+            case 'highscore': $caption = $this->lang->line('top_list'); $file = 'null'; break;
+            case 'merchantNavy': $caption = $this->lang->line('merchant_navy'); $file = 'null'; break;
+            case 'militaryAdvisorCombatReports':
+            case 'militaryAdvisorCombatReportsArchive':
+            case 'militaryAdvisorMilitaryMovements': $caption = $this->lang->line('military_advisor'); $file = 'world'; break;
+            case 'options': $caption = $this->lang->line('options'); $file = 'null'; break;
+            case 'options_deletion_confirm': $caption = $this->lang->line('settings'); $file = 'null'; break;
+            case 'premium':
+            case 'premiumDetails':
+            case 'premiumPayment': $caption = $this->lang->line('izariam_plus'); $file = 'null'; break;
+            case 'premiumTradeAdvisor': $caption = $this->lang->line('constructions_review'); $file = 'tradeAdvisor'; break;
+            case 'renameCity': $caption = $this->lang->line('rename_city'); $file = 'building'; $type = 1; break;
+            case 'researchAdvisor': $caption = $this->lang->line('research_advisor'); $file = 'world'; break;
+            case 'researchDetail': $caption = $this->lang->line('research_detail'); $file = 'null'; break;
             case 'researchOverview': $caption = $this->lang->line('library'); $file = 'building'; $type = 3; break;
             case 'safehouseMissions': $caption = $this->lang->line('missions'); $file = 'building'; $type = 14; break;
             case 'safehouseReports': $caption = $this->lang->line('esp_report'); $file = 'building'; $type = 14; break;
+            case 'sendIKMessage': $caption = $this->lang->line('create_message'); $file = 'world'; break;
+            case 'sendSpy': $caption = $this->lang->line('send_spy'); $file = '_island'; break;
             case 'takeOffer': if ($param2 == 0) { $caption = $this->lang->line('accept_rate'); } else { $caption = $this->lang->line('accept_offer'); } $file = 'building'; $type = 12; break;
+            case 'tradeAdvisor':
+            case 'tradeAdvisorTradeRoute': $caption = $this->lang->line('mayor'); $file = 'world'; break;
+            case 'transport': $caption = $this->lang->line('transport'); $file = '_island'; break;
+            case 'version': $caption = $this->lang->line('changelog'); $file = 'world'; break;
+            case 'wonderDetail': $caption = $this->lang->line('wonder_info'); $file = 'world'; break;
             case 'academy':
+            case 'alchemist':
             case 'barracks':
+            case 'branchOffice':
             case 'buildingGround':
+            case 'carpentering':
+            case 'forester':
+            case 'glassblowing':
             case 'palace':
             case 'palaceColony':
             case 'port':
-            case 'shipyard':
             case 'tavern':
             case 'townHall':
-            case 'wall':
-            case 'carpentering':
-            case 'branchOffice':
             case 'safehouse':
-            case 'forester':
-            case 'glassblowing':
+            case 'shipyard':
             case 'stonemason':
-            case 'winegrower':
-            case 'alchemist':
-            case 'warehouse': $file = 'town'; break;
-            case 'cityMilitary': $caption = $this->lang->line('military_advisor_title'); $file = 'town'; break;
-            case 'buildingDetail': $caption = $this->lang->line('building_info'); $file = 'world'; break;
-            case 'researchAdvisor': $caption = $this->lang->line('research_advisor'); $file = 'world'; break;
-            case 'diplomacyAdvisorOutBox':
-            case 'diplomacyAdvisor': $caption = $this->lang->line('diplomatic_advisor'); $file = 'world'; break;
-            case 'sendIKMessage': $caption = $this->lang->line('create_message'); $file = 'world'; break;
-            case 'tradeAdvisorTradeRoute':
-            case 'tradeAdvisor': $caption = $this->lang->line('mayor'); $file = 'world'; break;
-            case 'militaryAdvisorCombatReportsArchive':
-            case 'militaryAdvisorCombatReports':
-            case 'militaryAdvisorMilitaryMovements': $caption = $this->lang->line('military_advisor'); $file = 'world'; break;
-            case 'error': $caption = $this->lang->line('error'); $file = 'null'; break;
-            case 'options': $caption = $this->lang->line('options'); $file = 'null'; break;
-            case 'finances': $caption = $this->lang->line('finances'); $file = 'null'; break;
-            case 'premium':
-            case 'premiumDetails':
-            case 'premiumPayment': $caption = $this->lang->line('ikariam_plus'); $file = 'null'; break;
-            case 'researchDetail': $caption = $this->lang->line('research_detail'); $file = 'null'; break;
-            case 'wonderDetail': $caption = $this->lang->line('wonder_info'); $file = 'world'; break;
-            case 'merchantNavy': $caption = $this->lang->line('merchant_navy'); $file = 'null'; break;
-            case 'transport': $caption = $this->lang->line('transport'); $file = '_island'; break;
-            case 'sendSpy': $caption = $this->lang->line('send_spy'); $file = '_island'; break;
-            case 'colonize': $caption = $this->lang->line('colonize'); $file = '_island'; break;
-            case 'premiumTradeAdvisor': $caption = $this->lang->line('constructions_review'); $file = 'tradeAdvisor'; break;
-            case 'highscore': $caption = $this->lang->line('top_list'); $file = 'null'; break;
-            case 'version': $caption = $this->lang->line('changelog'); $file = 'world'; break;
-            case 'credits': $caption = $this->lang->line('credits'); $file = 'world'; break;
-            case 'options_deletion_confirm': $caption = $this->lang->line('settings'); $file = 'null'; break;
-            default:
-                 $file = $location; break;
-            break;
+            case 'wall':
+            case 'warehouse':
+            case 'winegrower': $file = 'town'; break;
+            default: $file = $location; break;
         }
         $this->load->view('bread/'.$file, array('caption' => $caption, 'type' => $type));
     }
@@ -94,65 +93,65 @@ class View_Model extends Model
             case 'diplomacyAdvisorOutBox': $location = 'diplomacyAdvisor'; break;
         }
         switch($location) {
-            case 'abolishColony':
-            case 'error':
-            case 'credits':
-            case 'version':
-            case 'finances': $this->load->view('sidebox/backToCity'); break;
             case 'demolition': $this->load->view('sidebox/'.$location, array('position' => $param1)); break;
+            case 'cityMilitary': $this->load->view('sidebox/cityMilitary', array('type' => $param1)); break;
+            case 'informations': $this->load->view('sidebox/'.$location, array('id' => $param1)); break;
+            case 'options': $this->load->view('sidebox/inviteFriends'); break;
             case 'worldmap_iso': $this->load->view('sidebox/'.$location, array('x' => $param1, 'y' => $param2)); break;
+            case 'abolishColony':
+            case 'credits':
+            case 'error':
+            case 'finances':
+            case 'version': $this->load->view('sidebox/backToCity'); break;
             case 'researchDetail':
             case 'wonderDetail':
             case 'buildingDetail':
             case 'pedia': $this->load->view('sidebox/'.$location, array('id' => $param1)); break;
-            case 'informations': $this->load->view('sidebox/'.$location, array('id' => $param1)); break;
-            case 'cityMilitary': $this->load->view('sidebox/cityMilitary', array('type' => $param1)); break;
             case 'academy':
+            case 'alchemist':
             case 'barracks':
-            case 'shipyard':
-            case 'townHall':
-            case 'warehouse':
-            case 'wall':
-            case 'tavern':
+            case 'branchOffice':
+            case 'carpentering':
+            case 'forester':
+            case 'glassblowing':
             case 'palace':
             case 'palaceColony':
             case 'port':
-            case 'carpentering':
-            case 'branchOffice':
             case 'safehouse':
-            case 'forester':
-            case 'glassblowing':
+            case 'shipyard':
             case 'stonemason':
-            case 'winegrower':
-            case 'alchemist': $this->load->view('sidebox/update', array('type' => $this->Data_Model->building_type_by_class($location), 'position' => $param1));
+            case 'tavern':
+            case 'townHall':
+            case 'wall':
+            case 'warehouse':
+            case 'winegrower': $this->load->view('sidebox/update', array('type' => $this->Data_Model->building_type_by_class($location), 'position' => $param1));
+            case 'armyGarrisonEdit':
             case 'city':
+            case 'diplomacyAdvisor':
+            case 'fleetGarrisonEdit':
             case 'island':
-            case 'resource':
-            case 'tradegood':
-            case 'renameCity':
+            case 'merchantNavy':
             case 'premium':
             case 'premiumDetails':
             case 'premiumPayment':
-            case 'researchAdvisor':
-            case 'tradeAdvisor':
-            case 'armyGarrisonEdit':
-            case 'fleetGarrisonEdit':
-            case 'merchantNavy':
             case 'premiumTradeAdvisor':
-            case 'takeOffer':
+            case 'renameCity':
+            case 'researchAdvisor':
             case 'researchOverview':
+            case 'resource':
             case 'safehouseMissions':
             case 'safehouseReports':
-            case 'diplomacyAdvisor':
-            case 'highscore': $this->load->view('sidebox/'.$location); break;
-            case 'plunder':
+            case 'takeOffer':
+            case 'tradeAdvisor':
+            case 'highscore':
+            case 'tradegood': $this->load->view('sidebox/'.$location); break;
             case 'colonize':
-            case 'transport':
-            case 'sendSpy': $this->load->view('sidebox/back_to_island'); break;
+            case 'plunder':
+            case 'sendSpy':
+            case 'transport': $this->load->view('sidebox/back_to_island'); break;
             case 'militaryAdvisorCombatReportsArchive': $this->load->view('sidebox/militaryAdvisorCombatReportsArchive');
-            case 'militaryAdvisorMilitaryMovements':
-            case 'militaryAdvisorCombatReports': $this->load->view('sidebox/militaryOverview'); break;
-            case 'options': $this->load->view('sidebox/inviteFriends'); break;
+            case 'militaryAdvisorCombatReports':
+            case 'militaryAdvisorMilitaryMovements': $this->load->view('sidebox/militaryOverview'); break;
             default: break;
         }
     }
@@ -191,6 +190,7 @@ class View_Model extends Model
             // The attack on the barbarians
             //case 16: $this->load->view('tut/9',array('location' => $location, 'active' => true, 'id' => $id)); break;
             //case 17: $this->load->view('tut/9',array('location' => $location, 'active' => false, 'id' => $id)); break;
+            case 'abolishColony':
         }
     }
 
@@ -204,67 +204,67 @@ class View_Model extends Model
             case 'worldmap_iso': $this->load->view('view/'.$location, array('x' => $param1, 'y' => $param2)); break;
             case 'colonize': $this->load->view('view/'.$location, array('id' => $param1, 'position' => $param2)); break;
             case 'academy':
-            case 'buildingGround':
-            case 'city':
-            case 'informations':
-            case 'pedia':
+            case 'admin':
+            case 'alchemist':
+            case 'armyGarrisonEdit':
+            case 'barracks':
+            case 'branchOffice':
             case 'buildingDetail':
-            case 'wonderDetail':
+            case 'buildingGround':
+            case 'carpentering':
+            case 'city':
+            case 'cityMilitary':
+            case 'credits':
+            case 'demolition':
+            case 'diplomacyAdvisor':
+            case 'diplomacyAdvisorOutBox':
+            case 'error':
+            case 'finances':
+            case 'fleetGarrisonEdit':
+            case 'forester':
+            case 'glassblowing':
+            case 'highscore':
+            case 'informations':
             case 'island':
-            case 'renameCity':
-            case 'resource':
-            case 'tradegood':
-            case 'townHall':
+            case 'merchantNavy':
+            case 'militaryAdvisorCombatReports':
+            case 'militaryAdvisorCombatReportsArchive':
+            case 'militaryAdvisorMilitaryMovements':
+            case 'options':
+            case 'options_deletion_confirm':
+            case 'palace':
+            case 'palaceColony':
+            case 'pedia':
+            case 'plunder':
+            case 'port':
             case 'premium':
             case 'premiumDetails':
             case 'premiumPayment':
+            case 'premiumTradeAdvisor':
+            case 'renameCity':
             case 'researchAdvisor':
             case 'researchDetail':
-            case 'barracks':
-            case 'shipyard':
-            case 'demolition':
-            case 'armyGarrisonEdit':
-            case 'tradeAdvisor':
-            case 'tradeAdvisorTradeRoute':
-            case 'error':
-            case 'fleetGarrisonEdit':
-            case 'cityMilitary':
-            case 'warehouse':
-            case 'options':
-            case 'wall':
-            case 'tavern':
-            case 'palace':
-            case 'palaceColony':
-            case 'plunder':
-            case 'finances':
-            case 'port':
-            case 'merchantNavy':
-            case 'militaryAdvisorMilitaryMovements':
-            case 'militaryAdvisorCombatReports':
-            case 'militaryAdvisorCombatReportsArchive':
-            case 'transport':
-            case 'sendSpy':
-            case 'premiumTradeAdvisor':
-            case 'carpentering':
-            case 'branchOffice':
-            case 'takeOffer':
             case 'researchOverview':
+            case 'resource':
             case 'safehouse':
-            case 'abolishColony':
             case 'safehouseMissions':
             case 'safehouseReports':
-            case 'diplomacyAdvisor':
-            case 'diplomacyAdvisorOutBox':
             case 'sendIKMessage':
-            case 'forester':
-            case 'glassblowing':
+            case 'sendSpy':
+            case 'shipyard':
             case 'stonemason':
+            case 'takeOffer':
+            case 'tavern':
+            case 'townHall':
+            case 'tradeAdvisor':
+            case 'tradeAdvisorTradeRoute':
+            case 'tradegood':
+            case 'transport':
+            case 'wall':
+            case 'warehouse':
             case 'winegrower':
-            case 'alchemist':
-            case 'credits':
             case 'version':
-            case 'options_deletion_confirm':
-            case 'highscore': $this->load->view('view/'.$location); break;
+            case 'wonderDetail': $this->load->view('view/'.$location); break;
             default: $this->load->view('view/null'); break;
         }
     }

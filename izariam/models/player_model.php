@@ -11,8 +11,7 @@ class Player_Model extends Model
     function Error($error = '')
     {
         $this->session->set_flashdata(array('error' => $error));
-        // redirect($this->config->item('base_url').'main/error/', 'refresh');
-        $this->load->view('main_index_4', array('page' => 'error', 'errors' => $error));
+        redirect($this->config->item('base_url').'main/error/', 'refresh');
     }
     
     function Load_Player($id = 0)

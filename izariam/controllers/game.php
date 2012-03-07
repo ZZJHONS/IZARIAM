@@ -62,6 +62,10 @@ class Game extends Controller {
         }
     }
 
+    function admin() {
+        $this->show('admin');
+    }
+
     function alchemist($position = 0) {
         $pos_type = 'pos'.$position.'_type';
         if ($position == 0 or $this->Player_Model->now_town->$pos_type != 20) {
@@ -299,12 +303,16 @@ class Game extends Controller {
         $this->show('militaryAdvisorMilitaryMovements');
     }
 
-    function options($option = 'account') {
-        if($option == 'account' or $option == 'game' or $option == 'sso' or $option == 'openid') {
+    function options($option = 'account', $email = '') {
+        $view = array('account', 'game', 'sso', 'openid');
+        $show = (in_array($option, $view)) ? $option : 'account';
+        $send = ($email == 'sended' or $email == 'nosended') ? $email : '';
+        $this->show('options', $show, $send);
+        /*if($option == 'account' or $option == 'game' or $option == 'sso' or $option == 'openid') {
             $this->show('options', $option);
         } else {
             $this->show('options', 'account');
-        }
+        }*/
     }
 
     function options_deletion_confirm() {

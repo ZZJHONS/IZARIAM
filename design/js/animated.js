@@ -2,7 +2,7 @@
 // @name           Animated iZariam (Light version by ZZJHONS)
 // @autor          Angelo Verona alias Anilo, Givelin, Omegaboy, TatkaSmoula, _Assassin, Animatrix
 // @email          anilo4ever@gmail.com
-// @namespace      Ikariam
+// @namespace      iZariam
 // @description    Animated graphic pack for IK-Project
 // ==/UserScript==
 

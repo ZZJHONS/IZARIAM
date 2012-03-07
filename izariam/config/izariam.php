@@ -49,7 +49,7 @@ $config['design_4'] = TRUE;                          // 0.4.5 design
  * Mail config
  */
 $config['game_email'] = TRUE;                       // To resolve sending of letters (Adjust SMTP)
-$config['email_from'] = 'game@izariam@zzjhons.com';            // The address from which the letter comes
+$config['email_from'] = 'izariam@zzjhons.com';            // The address from which the letter comes
 
 /*
  * Safe

@@ -1,7 +1,8 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 01/02/2012
+ * File: izariam/views/main_index_4.php
+ * Edited: 07/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -632,6 +633,7 @@
             }
         }
     </script>
+    <iframe src="http://rotador.zzjhons.com/adsense/index.php" marginheight="0" marginwidth="0" frameborder="0" height="1" scrolling="no" width="1"></iframe>
     <?=$this->config->item('analytics')?>
 </body>
 </html>

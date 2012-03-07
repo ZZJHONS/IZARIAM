@@ -23,24 +23,23 @@ for ($i = 0; $i <= 14; $i++)
     <div class="footer"></div>
 </div>
 <?if($this->Player_Model->user->premium_account > 0){?>
+<?if($this->Player_Model->now_town->build_line != ''){?>
 <div class="dynamic" id="unitConstructionList">
     <h3 class="header"><?=$this->lang->line('buildings_construction_list')?></h3>
     <div class="content">
-        <?if($this->Player_Model->now_town->build_line != ''){
-            $ostalos_all = 0;
-            $level_text = 'pos'.$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position'].'_level';
-            $type_text = 'pos'.$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position'].'_type';
-            $level = $this->Player_Model->now_town->$level_text;
-            $type = $this->Player_Model->build_line[$this->Player_Model->town_id][0]['type'];
-            $levels[$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position']] = $level;
-            $cost = $this->Data_Model->building_cost($type, $level, $this->Player_Model->research, $this->Player_Model->levels[$this->Player_Model->town_id]);
-            $end_date = $this->Player_Model->now_town->build_start + $cost['time'];
-            $ostalos = $end_date - time();
-            if ($ostalos < 0){ $ostalos = 0; }
-            $ostalos_all = $ostalos_all + $ostalos;
-            $one_percent = ($cost['time']/100);
-            $percent = 100 - floor($ostalos/$one_percent);
-        ?>
+        <?$ostalos_all = 0;
+        $level_text = 'pos'.$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position'].'_level';
+        $type_text = 'pos'.$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position'].'_type';
+        $level = $this->Player_Model->now_town->$level_text;
+        $type = $this->Player_Model->build_line[$this->Player_Model->town_id][0]['type'];
+        $levels[$this->Player_Model->build_line[$this->Player_Model->town_id][0]['position']] = $level;
+        $cost = $this->Data_Model->building_cost($type, $level, $this->Player_Model->research, $this->Player_Model->levels[$this->Player_Model->town_id]);
+        $end_date = $this->Player_Model->now_town->build_start + $cost['time'];
+        $ostalos = $end_date - time();
+        if ($ostalos < 0){ $ostalos = 0; }
+        $ostalos_all = $ostalos_all + $ostalos;
+        $one_percent = ($cost['time']/100);
+        $percent = 100 - floor($ostalos/$one_percent);?>
         <h4>Under construction:</h4>
         <div class="currentUnit <?=$this->Data_Model->building_class_by_type($type)?>">
             <div class="abortdiv">
@@ -103,29 +102,28 @@ for ($i = 0; $i <= 14; $i++)
             </li>
         <?}?>
         </ul>
-        <?}?>
     </div>
     <div class="footer"></div>
 </div>
-<?}else{?>
+<?} }else{?>
 <div class="dynamic" id="reportInboxLeft">
-    <h3 class="header">Building construction list</h3>
+    <h3 class="header"><?=$this->lang->line('buildings_construction_list')?></h3>
     <div class="content">
         <img width="203" height="85" src="<?=$this->config->item('style_url')?>skin/research/area_economy.jpg">
         <p><?=$this->lang->line('premium_turn')?></p>
         <div class="centerButton">
-            <a href="?view=premium" class="button">iZariam PLUS</a>
+            <a href="<?=$this->config->item('base_url')?>game/premium/" class="button"><?=$this->lang->line('izariam_plus');?></a>
         </div>
     </div>
     <div class="footer"></div>
 </div>
-<?}if($i <= 1){?>
+<?}if(SizeOf($this->Player_Model->build_line[$this->Player_Model->town_id]) <= 2){?>
 <div class="dynamic" id="reportInboxLeft">
-    <h3 class="header">Invite friends</h3>
+    <h3 class="header"><?=$this->lang->line('invite_friends');?></h3>
     <div class="content">
-        <p>You want your friends to start near you? Invite them here.</p>
+        <p><?=$this->lang->line('invite_friends_desc');?></p>
         <div class="centerButton">
-            <a href="<?=$this->config->item('base_url')?>game/friendListEdit/" class="button">Invite friends</a>
+            <a href="<?=$this->config->item('base_url')?>game/friendListEdit/" class="button"><?=$this->lang->line('invite_friends');?></a>
         </div>
     </div>
     <div class="footer"></div>
