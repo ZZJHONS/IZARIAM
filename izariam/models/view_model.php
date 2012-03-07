@@ -190,6 +190,7 @@ class View_Model extends Model
             // The attack on the barbarians
             //case 16: $this->load->view('tut/9',array('location' => $location, 'active' => true, 'id' => $id)); break;
             //case 17: $this->load->view('tut/9',array('location' => $location, 'active' => false, 'id' => $id)); break;
+            case 'abolishColony':
         }
     }
 
