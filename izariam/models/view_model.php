@@ -190,7 +190,6 @@ class View_Model extends Model
             // The attack on the barbarians
             //case 16: $this->load->view('tut/9',array('location' => $location, 'active' => true, 'id' => $id)); break;
             //case 17: $this->load->view('tut/9',array('location' => $location, 'active' => false, 'id' => $id)); break;
-            case 'abolishColony':
         }
     }
 
@@ -203,6 +202,7 @@ class View_Model extends Model
         switch($location) {
             case 'worldmap_iso': $this->load->view('view/'.$location, array('x' => $param1, 'y' => $param2)); break;
             case 'colonize': $this->load->view('view/'.$location, array('id' => $param1, 'position' => $param2)); break;
+            case 'abolishColony':
             case 'academy':
             case 'admin':
             case 'alchemist':
