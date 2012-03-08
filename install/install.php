@@ -2,7 +2,7 @@
 /*
  * Project: iZariam
  * File: install/install.php
- * Edited: 07/03/2012
+ * Edited: 08/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
@@ -100,11 +100,7 @@ class Install{
 		global $database;
 		$str = file_get_contents('include/database.sql');
 		$str = preg_replace("'%PREFIX%'", 'alpha', $str);
-		/*if(DB_TYPE){
-			$result = $database->connection->multi_query($str);
-		}else{*/
-			$result = $database->mysql_exec_batch($str);
-		//}
+		$result = $database->mysql_exec_batch($str);
 		if($result){
 			header('Location: index.php?step=5');
 		}else{
@@ -113,7 +109,12 @@ class Install{
 	}
 
 	function ReplaceFiles(){
-		rename("include/index.tpl","../index.php");
+		$file = 'include/index.php';
+		$fh = fopen($file, 'w') or die('<br/><br/><br/>Can\'t open file: install\include\index.php');
+		$text = file_get_contents("include/index.tpl");
+		fwrite($fh, $text);
+		fclose($fh);
+		rename("include/index.php","../index.php");
 		rename("include/database.php","../izariam/config/database.php");
 		rename("include/config.php","../izariam/config/config.php");
 		rename("include/izariam.php","../izariam/config/izariam.php");

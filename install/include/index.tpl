@@ -1,7 +1,7 @@
 <?php
 /*
  * Project: iZariam
- * File: index.php & install/templates/index.tpl
+ * File: index.php & install/templates/index.php & install/templates/index.tpl
  * Edited: 07/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
