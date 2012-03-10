@@ -1,37 +1,29 @@
 <?php
 /*
  * Project: iZariam
- * Edited: 12/02/2012
+ * File: izariam/controllers/main.php
+ * Edited: 10/03/2012
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
-class Main extends Controller
-{
-    function Main()
-    {
+class Main extends Controller {
+    function Main() {
         parent::Controller();
-        if ($this->session->userdata('language'))
-        {
+        if ($this->session->userdata('language')) {
             $this->lang->load('izariam', $this->session->userdata('language'));
-        }
-        else
-        {
+        } else {
             $this->lang->load('izariam');
         }
     }
 
-    function error()
-    {
+    function error() {
         $this->session->keep_flashdata('error');
         $this->load->view('main_index_4', array('page' => 'error', 'errors' => $this->session->flashdata('error')));
     }
 
-    function index()
-    {
-        if (isset($_POST['action']))
-        {
-            switch($_POST['action'])
-            {
+    function index() {
+        if (isset($_POST['action'])) {
+            switch($_POST['action']) {
                 case 'register':
                     $this->load->model('Player_Model');
                     $this->register();
@@ -44,30 +36,48 @@ class Main extends Controller
                     $this->send_password();
                     break;
             }
-        }
-        else
-        {
-            if ($this->config->item('design_4'))
-            {
+        } else {
+            if ($this->config->item('design_4')) {
                 $this->load->view('main_index_4', array('page' => 'index_4'));
-            }
-            else
-            {
+            } else {
                 $this->load->view('main_index', array('page' => 'index'));
             }
         }
     }
 
-    function language($lang = 'english')
-    {
-        switch($lang)
-        {
+    function language($lang = 'english') {
+        switch($lang) {
             /*
-            case 'lang_name':
-                $this->session->set_userdata(array('language' => $lang));
-                break;
+            case 'arabic':
+            case 'bulgarian':
+            case 'chinese':
+            case 'czech':
+            case 'danish':
+            case 'dutch':
+            case 'finnish':
+            case 'french':
+            case 'german':
+            case 'greek':
+            case 'hebrew':
+            case 'hungarian':
+            case 'italian':
+            case 'latvian':
+            case 'lithuanian':
+            case 'norwegian':
+            case 'persian':
+            case 'polish':
+            case 'portuguese':
+            case 'romanian':
+            case 'russian':
+            case 'serbian':
+            case 'slovak':
+            case 'slovene':
             */
             case 'spanish':
+            /*
+            case 'swedish':
+            case 'turkish':
+            */
                 $this->session->set_userdata(array('language' => $lang));
                 break;
             default:
@@ -76,15 +86,13 @@ class Main extends Controller
         redirect($this->config->item('base_url'),'refresh');
     }
 
-    function page($page = 'index')
-    {
+    function page($page = 'index') {
         $errors = array();
         $this->session->set_flashdata(array('errors' => $errors));
         $this->load->view('main/'.$page);
     }
 
-    function register()
-    {
+    function register() {
         // The variable errors
         $errors = array();
         // Load the modules
@@ -101,15 +109,13 @@ class Main extends Controller
         if (!isset($_POST['agb']) or (isset($_POST['agb']) and !$_POST['agb'])){ $errors[] = $this->lang->line('error_order'); }
         if (!in_array($_POST['universe'], $this->config->item('uni_array'))) { $errors[] = $this->lang->line('error_world'); }
         // Register
-        if (count($errors) == 0)
-        {
+        if (count($errors) == 0) {
             $login = strip_tags($_POST['name']);
             $password = strip_tags($_POST['password']);
 
             $user_query = $this->db->get_where($_POST['universe'].'_users', array('login' => $login));
             // If no such player
-            if ($user_query->num_rows == 0)
-            {
+            if ($user_query->num_rows == 0) {
                 $key = random_key(30);
                 // Adding these player
                 $this->db->insert($_POST['universe'].'_users', array('login' => $login,'password' => md5($password),'email' => $_POST['email'], 'last_visit' => time(),'register_key' => $key));
@@ -119,21 +125,17 @@ class Main extends Controller
                 // Choose an island
                 $island_query = $this->db->query('SELECT * FROM `'.$_POST['universe'].'_islands'.'` WHERE `city0`=0 or `city2`=0 or `city4`=0 or `city6`=0 or `city8`=0 or `city10`=0 or `city12`=0 or `city14`=0 ORDER BY RAND() LIMIT 1');
 
-                if ($island_query->num_rows > 0)
-                {
+                if ($island_query->num_rows > 0) {
                     $island = $island_query->row();
                     // Find the position
                     $position = -1;
-                    for ($i = 0; $i <= 15; $i++)
-                    {
-                        if ($i == 0 or $i == 2 or $i == 4 or $i == 6 or $i == 8 or $i == 10 or $i == 12 or $i == 14)
-                        {
+                    for ($i = 0; $i <= 15; $i++) {
+                        if ($i == 0 or $i == 2 or $i == 4 or $i == 6 or $i == 8 or $i == 10 or $i == 12 or $i == 14) {
                             $parametr = 'city'.$i;
                             if ($island->$parametr == 0){$position = $i;break;}
                         }
                     }
-                    if ($position >= 0)
-                    {
+                    if ($position >= 0) {
                         // Add a city
                         $this->db->insert($_POST['universe'].'_towns', array('user' => $user->id,'island' => $island->id,'last_update' => time(), 'position' => $position));
                         // Find the city in the database
@@ -155,8 +157,7 @@ class Main extends Controller
                         $this->db->where(array('id' => $user->id));
                         $this->db->update($_POST['universe'].'_users');
                         // Send an email
-                        if ($this->config->item('game_email'))
-                        {
+                        if ($this->config->item('game_email')) {
                             $message = '
                                 <html>
                                     <body>
@@ -181,28 +182,20 @@ class Main extends Controller
                         }
                         // Writing session
                         $this->Player_Model->Check_Double_Login($user, $_POST['universe']);
-                        if($user->blocked_time > time())
-                        {
+                        if($user->blocked_time > time()) {
                             $this->Error($this->lang->line('error_blocked_text_1').' '.date("m.d.y H:i:s", $user->blocked_time).'!<br>'.$this->lang->line('error_blocked_text_2').': '.$user->blocked_why);
                         }
                         $this->session->set_userdata(array('id' => $user->id, 'universe' => $_POST['universe'], 'login' => $user->login, 'password' => md5($user->password)));
                         redirect('/game/', 'refresh');
-                    }
-                    else
-                    {
+                    } else {
                         $this->db->query('DELETE FROM '.$_POST['universe'].'_users where `id`="'.$user->id.'"');
                         $errors[] = $this->lang->line('error_world_text_1').' '.$_POST['universe'].' '.$this->lang->line('error_world_text_2');
                     }
-
-                }
-                else
-                {
+                } else {
                     $this->db->query('DELETE FROM '.$_POST['universe'].'_users where `id`="'.$user->id.'"');
                     $errors[] = $this->lang->line('error_world_text_1').' '.$_POST['universe'].' '.$this->lang->line('error_world_text_2');
                 }
-            }
-            else
-            {
+            } else {
                 $errors[] = $this->lang->line('error_name');
             }
         }
@@ -210,8 +203,7 @@ class Main extends Controller
         $this->load->view('main_index_4', array('page' => 'error', 'errors' => $errors));
     }
 
-    function send_password()
-    {
+    function send_password() {
         // Variable errors
         $errors = array();
         $sended = false;
@@ -224,15 +216,11 @@ class Main extends Controller
         if (!isset($_POST['universe'])){ $errors[] = $this->lang->line('error_universe'); }
         if (!isset($_POST['email']) or !valid_email($_POST['email'])){ $errors[] = $this->lang->line('error_email2'); }
         if (!in_array($_POST['universe'], $this->config->item('uni_array'))) { $errors[] = $this->lang->line('error_world'); }
-        if (count($errors) == 0)
-        {
+        if (count($errors) == 0) {
             $user_query = $this->db->get_where($_POST['universe'].'_users', array('email' => $_POST['email']));
-            if ($user_query->num_rows == 0)
-            {
+            if ($user_query->num_rows == 0) {
                 $errors[] = $this->lang->line('error_email3');
-            }
-            else
-            {
+            } else {
                 $user = $user_query->row();
                 $password = $key = random_key(8);
                 $this->db->set('password', md5($password));
@@ -267,31 +255,24 @@ class Main extends Controller
      * @param <string> $universe
      * @param <string> $key
      */
-    function validate($universe = '', $key = '')
-    {
+    function validate($universe = '', $key = '') {
         if (!in_array($_POST['universe'], $this->config->item('uni_array'))) { $errors[] = $this->lang->line('error_world'); }
         // if ($universe == 'alpha' or $universe == 'beta')
-        if (in_array($universe, $this->config->item('uni_array')))
-        {
+        if (in_array($universe, $this->config->item('uni_array'))) {
             $query = $this->db->get_where($universe.'_users', array('register_key' => $key, 'register_complete' => 0));
-            if ($query->num_rows() == 1)
-            {
+            if ($query->num_rows() == 1) {
                 $user = $query->row();
                 $this->db->set('register_complete', time());
                 $this->db->where(array('register_key' => $key, 'register_complete' => 0));
                 $this->db->update($universe.'_users');
                 $this->session->set_userdata(array('id' => $user->id, 'universe' => $universe, 'login' => $user->login, 'password' => md5($user->password)));
                 redirect('/game/', 'refresh');
-            }
-            else
-            {
+            } else {
                 $this->session->set_flashdata(array('error' => $this->lang->line('error_activation')));
                 // redirect('/main/error/', 'refresh');
                 $this->load->view('main_index_4', array('page' => 'error', 'errors' => $this->lang->line('error_activation')));
             }
-        }
-        else
-        {
+        } else {
             redirect('/', 'refresh');
         }
     }

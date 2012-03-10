@@ -6,6 +6,15 @@
  * By: ZZJHONS
  * Info: zzjhons@gmail.com
  */
+$userdata = $this->session->userdata('language');
+$item = $this->config->item('language');
+$item2 = $this->config->item('base_url');
+function langList($lang = 'english', $userdata, $item, $item2){
+	if($userdata == $lang or ($userdata == '' and $item == $lang)){
+		echo ' class="mmoActive"';
+	}
+	echo '><a href="'.$item2.'main/language/'.$lang.'/"';
+}
 ?>
 <div id="pagefoldtarget"></div>
 <script type="text/javascript">
@@ -70,49 +79,43 @@
 						</div>
 						<div class="mmoOptionsDivInvisible" id="mmoOptionsDiv1">
 							<ul class="mmoLangList mmoListHeight" id="mmoList1">
-								<!--
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_AR">Argentina</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_BR">Brazil</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_BG">Bulgaria</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_CL">Chile</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_CO">Colombia</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_CZ">Czech Republic</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_DK">Denmark</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_FI">Finland</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_FR">France</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_DE">Germany</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_GR">Greece</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_HK">Hong Kong</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_HU">Hungary</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_IR">Iran</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_IL">Israel</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_IT">Italy</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_LV">Latvia</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_LT">Lithuania</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_MX">Mexico</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_NL">Netherlands</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_NO">Norway</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_PE">Peru</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_PL">Poland</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_PT">Portugal</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_RO">Romania</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_RU">Russian Federation</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_RS">Serbia</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_SK">Slovakia</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_SI">Slovenia</a></li>
-								-->
-								<li <?if($this->session->userdata('language') == 'spanish' or ($this->session->userdata('language') == '' and $this->config->item('language') == 'spanish')){?>class="mmoActive"<?}?>><a href="<?=$this->config->item('base_url')?>main/language/spanish/" target="_top" rel="nofollow" class="mmoflag mmo_ES">Spanish</a></li>
-								<!--
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_SE">Sweden</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_TW">Taiwan</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_TR">Turkey</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_AE">United Arab Emirates</a></li>
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_EN">United Kingdom</a></li>
-								-->
-								<li <?if($this->session->userdata('language') == 'english' or ($this->session->userdata('language') == '' and $this->config->item('language') == 'english')){?>class="mmoActive"<?}?>><a href="<?=$this->config->item('base_url')?>main/language/english/" target="_top" class="mmoflag mmo_US">English</a></li>
-								<!--
-								<li><a href="<?=$this->config->item('base_url')?>" target="_top" rel="nofollow" class="mmoflag mmo_VE">Venezuela</a></li>
-								-->
+								<li<?langList('arabic', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_AE">Arabic</a></li>
+								<li<?langList('bulgarian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_BG">Bulgarian</a></li>
+								<li<?langList('chinese', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_HK">Chinese</a></li>
+								<li<?langList('chinese', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_TW">Chinese</a></li>
+								<li<?langList('czech', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_CZ">Czech</a></li>
+								<li<?langList('danish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_DK">Danish</a></li>
+								<li<?langList('dutch', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_NL">Dutch</a></li>
+								<li<?langList('english', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_EN">English</a></li>
+								<li<?langList('english', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_US">English</a></li>
+								<li<?langList('finnish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_FI">Finnish</a></li>
+								<li<?langList('french', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_FR">French</a></li>
+								<li<?langList('german', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_DE">German</a></li>
+								<li<?langList('greek', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_GR">Greek</a></li>
+								<li<?langList('hebrew', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_IL">Hebrew</a></li>
+								<li<?langList('hungarian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_HU">Hungarian</a></li>
+								<li<?langList('italian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_IT">Italian</a></li>
+								<li<?langList('latvian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_LV">Latvian</a></li>
+								<li<?langList('lithuanian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_LT">Lithuanian</a></li>
+								<li<?langList('norwegian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_NO">Norwegian</a></li>
+								<li<?langList('persian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_IR">Persian</a></li>
+								<li<?langList('polish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_PL">Polish</a></li>
+								<li<?langList('portuguese', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_BR">Portuguese</a></li>
+								<li<?langList('portuguese', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_PT">Portuguese</a></li>
+								<li<?langList('romanian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_RO">Romanian</a></li>
+								<li<?langList('russian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_RU">Russian</a></li>
+								<li<?langList('serbian', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_RS">Serbian</a></li>
+								<li<?langList('slovak', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_SK">Slovak</a></li>
+								<li<?langList('slovene', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_SI">Slovene</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_AR">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_CL">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_CO">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_MX">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_PE">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_ES">Spanish</a></li>
+								<li<?langList('spanish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_VE">Spanish</a></li>
+								<li<?langList('swedish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_SE">Swedish</a></li>
+								<li<?langList('turkish', $userdata, $item, $item2)?> target="_top" class="mmoflag mmo_TR">Turkish</a></li>
 							</ul>
 						</div>
 					</div>
