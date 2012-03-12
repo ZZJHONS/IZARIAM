@@ -256,7 +256,7 @@ class Main extends Controller {
      * @param <string> $key
      */
     function validate($universe = '', $key = '') {
-        if (!in_array($_POST['universe'], $this->config->item('uni_array'))) { $errors[] = $this->lang->line('error_world'); }
+        if (!in_array($universe, $this->config->item('uni_array'))) { $errors[] = $this->lang->line('error_world'); }
         // if ($universe == 'alpha' or $universe == 'beta')
         if (in_array($universe, $this->config->item('uni_array'))) {
             $query = $this->db->get_where($universe.'_users', array('register_key' => $key, 'register_complete' => 0));
